@@ -2,10 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:shape="rectangle"
     tools:ignore="ExtraText">
-    <solid android:color="@color/B2" />
+    <solid android:color="@android:color/transparent" />
     <stroke
         android:color="@color/P1"
-        android:width="5dp"/>
+        android:width="2dp"/>
     <corners android:radius="100dp" /> <!-- Bo góc -->
     <size
         android:width="950dp"
