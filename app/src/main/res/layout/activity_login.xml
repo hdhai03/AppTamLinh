@@ -14,6 +14,7 @@
         android:layout_height="970dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/png_login_2" />
@@ -28,20 +29,67 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/png_login_1" />
 
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="390dp"
+        android:layout_height="58dp"
+        android:background="@android:drawable/edit_text"
+        android:ems="10"
+        android:hint="Mật khẩu"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="245dp"
+        android:fontFamily="@font/lost_type"
+        android:text="Mật khẩu"
+        android:textColor="@color/W1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText" />
+
+    <Button
+        android:id="@+id/btn_DangNhap"
+        android:layout_width="225dp"
+        android:layout_height="52dp"
+        android:background="@drawable/btn_fill"
+        android:backgroundTint="@null"
+        android:fontFamily="@font/americana_eb"
+        android:text="Đăng nhập"
+        android:textAllCaps="false"
+        android:textColor="@color/W1"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText2"
+        app:layout_constraintVertical_bias="0.385" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
-        android:layout_marginTop="470dp"
+        android:layout_marginTop="436dp"
         android:layout_marginEnd="245dp"
-        android:layout_marginBottom="127dp"
         android:fontFamily="@font/lost_type"
         android:text="Tên đăng nhập"
         android:textColor="@color/W1"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,25 +103,23 @@
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintVertical_bias="0.091" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="608dp"
-        android:layout_marginEnd="245dp"
-        android:fontFamily="@font/lost_type"
-        android:text="Mật khẩu"
-        android:textColor="@color/W1"
-        android:textSize="16sp"
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/btn_back"
+        android:backgroundTint="@null"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/btn_DangNhap"
+        app:layout_constraintVertical_bias="0.621" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
