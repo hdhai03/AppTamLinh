@@ -8,6 +8,21 @@
     android:background="#191919"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lost_type"
+        android:text="WELCOME"
+        android:textColor="@color/W1"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.524" />
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="579dp"
@@ -23,16 +38,14 @@
         android:id="@+id/imageView4"
         android:layout_width="388dp"
         android:layout_height="841dp"
-        android:layout_marginTop="-200dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_DangNhap"
+        android:layout_marginTop="-230dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.285"
         app:srcCompat="@drawable/png_login_1" />
 
     <Button
-        android:id="@+id/btn_DangNhap"
+        android:id="@+id/btnDangNhap"
         android:layout_width="389dp"
         android:layout_height="67dp"
         android:background="@drawable/btn_fill"
@@ -47,7 +60,7 @@
         app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752" />
+        app:layout_constraintVertical_bias="0.723" />
 
     <Button
         android:id="@+id/btn_DangKy"
@@ -62,28 +75,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.863" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="470dp"
-        android:layout_marginEnd="245dp"
-        android:layout_marginBottom="127dp"
-        android:fontFamily="@font/lost_type"
-        android:text="WELCOME"
-        android:textColor="@color/W1"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_DangNhap"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0.83" />
 
     <TextView
         android:id="@+id/textView3"
@@ -96,12 +91,11 @@
         android:text="Chào mừng bạn đã đến với ứng dụng tâm linh của chúng tôi."
         android:textColor="@color/W1"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_DangNhap"
+        app:layout_constraintBottom_toTopOf="@+id/btnDangNhap"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.022"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

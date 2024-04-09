@@ -1,13 +1,32 @@
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:shape="rectangle"
-    tools:ignore="ExtraText">
-    <solid android:color="@android:color/transparent" />
-    <stroke
-        android:color="@color/P1"
-        android:width="2dp"/>
-    <corners android:radius="100dp" /> <!-- Bo góc -->
-    <size
-        android:width="950dp"
-        android:height="116dp" />
-</shape>
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:state_pressed="true">
+    <shape
+        android:shape="rectangle">
+        tools:ignore="ExtraText">
+        <solid android:color="@color/P2" />
+        <stroke
+            android:color="@color/P1"
+            android:width="2dp"/>
+        <corners android:radius="100dp" />
+        <size
+            android:width="950dp"
+            android:height="116dp" />
+    </shape>
+</item>
+
+<item android:state_enabled="true">
+    <shape
+        android:shape="rectangle">
+        tools:ignore="ExtraText">
+        <solid android:color="@android:color/transparent" />
+        <stroke
+            android:color="@color/P1"
+            android:width="2dp"/>
+        <corners android:radius="100dp" />
+        <size
+            android:width="950dp"
+            android:height="116dp" />
+    </shape>
+</item>
+</selector>

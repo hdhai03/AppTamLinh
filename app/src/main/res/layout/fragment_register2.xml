@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".RegisterFragment2">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="579dp"
+        android:layout_height="970dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/png_login_2" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="388dp"
+        android:layout_height="841dp"
+        android:layout_marginTop="-230dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/png_login_1" />
+
+    <Button
+        android:id="@+id/btnView"
+        android:layout_width="160dp"
+        android:layout_height="44dp"
+        android:background="@drawable/btn_stroke"
+        android:backgroundTint="@null"
+        android:fontFamily="@font/americana_eb"
+        android:text="Bước 2/3"
+        android:textAllCaps="false"
+        android:textColor="@color/W1"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lost_type"
+        android:text="Ngày sinh của bạn?"
+        android:textColor="@color/W1"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnView"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/btn_back"
+        android:backgroundTint="@null"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.944" />
+
+    <Button
+        android:id="@+id/btnContinue"
+        android:layout_width="225dp"
+        android:layout_height="52dp"
+        android:background="@drawable/btn_fill"
+        android:backgroundTint="@null"
+        android:fontFamily="@font/americana_eb"
+        android:text="Tiếp tục"
+        android:textAllCaps="false"
+        android:textColor="@color/W1"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.866" />
+
+    <LinearLayout
+        android:layout_width="315dp"
+        android:layout_height="119dp"
+        android:background="@drawable/custom_input"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/btnContinue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textView2"
+        app:layout_constraintVertical_bias="0.39">
+
+        <NumberPicker
+            android:id="@+id/numPickerDay"
+            android:layout_width="118dp"
+            android:layout_height="match_parent" />
+
+        <NumberPicker
+            android:id="@+id/numPickerMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <NumberPicker
+            android:id="@+id/numPickerYear"
+            android:layout_width="85dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

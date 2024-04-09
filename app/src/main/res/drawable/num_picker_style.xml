@@ -1,0 +1,4 @@
+<style name="MyNumberPickerStyle">
+    <item name="android:textColor">#FF0000</item>
+    <item name="android:divider">@drawable/my_divider</item>
+</style>
