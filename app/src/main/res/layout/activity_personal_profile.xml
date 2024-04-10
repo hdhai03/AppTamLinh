@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".PersonalProfileActivity">
+
+    <Button
+        android:id="@+id/btnBack_Profile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnEnergy_Profile"
+        android:layout_width="76dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_energy"
+        android:fontFamily="@font/americana_b"
+        android:paddingLeft="10dp"
+        android:text="01"
+        android:textColor="@color/W1"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageAva"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/png_ava" />
+
+    <TextView
+        android:id="@+id/textUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/lost_type"
+        android:text="USER_2706"
+        android:textColor="@color/W1"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageAva" />
+
+    <TextView
+        android:id="@+id/textUserBio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/americana_b"
+        android:text="FB: https://www.facebook.com/hoangduchaii/"
+        android:textColor="@color/W1"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textUserName" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/lost_type"
+        android:text="Tiện ích của bạn"
+        android:textColor="@color/W1"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textUserBio" />
+
+    <LinearLayout
+        android:id="@+id/lnDong1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView">
+
+        <Button
+            android:id="@+id/btnBXH_Profile"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:background="@drawable/btn_bxh" />
+
+        <Button
+            android:id="@+id/btnFreeEnergy_Profile"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:background="@drawable/btn_free_energy" />
+
+        <Button
+            android:id="@+id/btnXemBai_Profile"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:background="@drawable/btn_xem_bai" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnDong2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lnDong1">
+
+        <Button
+            android:id="@+id/btnChinhSua_Profile"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:background="@drawable/btn_chinh_sua" />
+
+        <Button
+            android:id="@+id/btnHDGD_Profile"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:background="@drawable/btn_hdgd" />
+
+        <Button
+            android:id="@+id/btnNhapMa_Profile"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:background="@drawable/btn_nhap_ma" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnDong3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lnDong2">
+
+        <Button
+            android:id="@+id/btnMoiBanBe_Profile"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:background="@drawable/btn_moi_ban_be" />
+
+        <Button
+            android:id="@+id/btnTroGiup_Profile"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:background="@drawable/btn_tro_giup" />
+
+        <Button
+            android:id="@+id/btnDangXuat_Profile"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:background="@drawable/btn_dang_xuat" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

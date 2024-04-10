@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".ThanSoHocActivity">
+
+    <Button
+        android:id="@+id/btnBack_CongDong"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnEnergy_ThanSH"
+        android:layout_width="76dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_energy"
+        android:fontFamily="@font/americana_b"
+        android:paddingLeft="10dp"
+        android:text="01"
+        android:textColor="@color/W1"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btnThanSHLaGi_ThanSH"
+                android:layout_width="250dp"
+                android:layout_height="260dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/btn_than_sh_la_gi"
+                android:layout_gravity="center" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="46dp"
+                android:layout_height="10dp"
+                android:layout_marginTop="14dp"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/btnThanSHLaGi_ThanSH"
+                app:srcCompat="@drawable/png_progress_scroll" />
+
+            <Button
+                android:id="@+id/btnCacChiSo_ThanSH"
+                android:layout_width="380dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="28dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_cac_chi_so"/>
+
+            <Button
+                android:id="@+id/btnBDNgaySinh_ThanSH"
+                android:layout_width="380dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="28dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_bieu_do_ngay_sinh"/>
+
+            <Button
+                android:id="@+id/btnBDTongHop_ThanSH"
+                android:layout_width="380dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="28dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_bieu_do_tong_hop"/>
+
+            <Button
+                android:id="@+id/btnChuKyVS_ThanSH"
+                android:layout_width="380dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="28dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_chu_ky_van_so"/>
+
+            <Button
+                android:id="@+id/btnTuongHopSDT_ThanSH"
+                android:layout_width="380dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="28dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_tuong_hop_sdt"/>
+
+            <Button
+                android:id="@+id/btnTuongHopTY_ThanSH"
+                android:layout_width="380dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="28dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_tuong_hop_tinh_yeu"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

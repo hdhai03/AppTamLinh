@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".ChiemTinhActivity">
+
+    <Button
+        android:id="@+id/btnBack_ChiemTinh"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnEnergy_ChiemTinh"
+        android:layout_width="76dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_energy"
+        android:fontFamily="@font/americana_b"
+        android:paddingLeft="10dp"
+        android:text="01"
+        android:textColor="@color/W1"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/btnChiemTinhLaGi_ChiemTinh"
+        android:layout_width="250dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/btn_chiem_tinh_la_gi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="46dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnChiemTinhLaGi_ChiemTinh"
+        app:srcCompat="@drawable/png_progress_scroll" />
+
+    <Button
+        android:id="@+id/btnChiemTinhTQ_ChiemTinh"
+        android:layout_width="380dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/btn_chiem_tinh_tong_quan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="24dp"
+        app:srcCompat="@drawable/png_cuoi_trang_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnChiemTinhTQ_ChiemTinh"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

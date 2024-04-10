@@ -18,12 +18,12 @@
         app:srcCompat="@drawable/png_header_home" />
 
     <Button
-        android:id="@+id/btnEnergy"
+        android:id="@+id/btnEnergy_Home"
         android:layout_width="64dp"
         android:layout_height="25dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/btn_energy"
-        android:fontFamily="@font/americana_eb"
+        android:fontFamily="@font/americana_b"
         android:paddingLeft="10dp"
         android:text="01"
         android:textColor="@color/W1"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnProfile"
+        android:id="@+id/btnProfile_Home"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnTarot"
+        android:id="@+id/btnTarot_Home"
         android:layout_width="154dp"
         android:layout_height="139dp"
         android:layout_marginTop="108dp"
@@ -58,7 +58,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnThanSh"
+        android:id="@+id/btnThanSH_Home"
         android:layout_width="200dp"
         android:layout_height="70dp"
         android:layout_marginTop="176dp"
@@ -69,8 +69,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnCongDong"
-        android:layout_width="378dp"
+        android:id="@+id/btnCongDong_Home"
+        android:layout_width="392dp"
         android:layout_height="89dp"
         android:layout_marginTop="260dp"
         android:background="@drawable/btn_cong_dong"
@@ -80,7 +80,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnChiemTinh"
+        android:id="@+id/btnChiemTinh_Home"
         android:layout_width="200dp"
         android:layout_height="70dp"
         android:layout_marginTop="108dp"
@@ -102,7 +102,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/btnCongDong"
+        app:layout_constraintTop_toTopOf="@id/btnCongDong_Home"
         app:layout_constraintVertical_bias="0.213" />
 
     <TextView
@@ -288,7 +288,7 @@
         app:layout_constraintVertical_bias="0.037" />
 
     <Button
-        android:id="@+id/btnTarot2"
+        android:id="@+id/btnTarot2_Home"
         android:layout_width="380dp"
         android:layout_height="60dp"
         android:layout_marginTop="12dp"
@@ -299,7 +299,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/btnChiemTinh2"
+        android:id="@+id/btnChiemTinh2_Home"
         android:layout_width="380dp"
         android:layout_height="60dp"
         android:layout_marginTop="4dp"
@@ -307,10 +307,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTarot2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnTarot2_Home" />
 
     <Button
-        android:id="@+id/btnThanSh2"
+        android:id="@+id/btnThanSH2_Home"
         android:layout_width="380dp"
         android:layout_height="60dp"
         android:layout_marginTop="4dp"
@@ -318,6 +318,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnChiemTinh2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnChiemTinh2_Home" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
