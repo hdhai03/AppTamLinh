@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_nu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#191919"
+    tools:context=".ChiemTinhFeature.ChiemTinhFragment.NuFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lost_type"
+                android:text="Tổng quan"
+                android:paddingBottom="12dp"
+                android:textColor="@color/P1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtTongQuan_Nu_ChiemTinhDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                android:textColor="@color/W1"
+                android:paddingBottom="20dp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lost_type"
+                android:text="Tính cách"
+                android:paddingBottom="12dp"
+                android:textColor="@color/P1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtTinhCach_Nu_ChiemTinhDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:paddingBottom="20dp"
+                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lost_type"
+                android:text="Điểm mạnh"
+                android:paddingBottom="12dp"
+                android:textColor="@color/P1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtDiemManh_Nu_ChiemTinhDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lost_type"
+                android:text="Điểm yếu"
+                android:paddingBottom="12dp"
+                android:textColor="@color/P1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtDiemYeu_Nu_ChiemTinhDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lost_type"
+                android:text="Gia đình"
+                android:paddingBottom="12dp"
+                android:textColor="@color/P1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtGiaDinh_Nu_ChiemTinhDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lost_type"
+                android:text="Tình yêu"
+                android:paddingBottom="12dp"
+                android:textColor="@color/P1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtTinhYeu_Nu_ChiemTinhDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lost_type"
+                android:text="Tình dục"
+                android:paddingBottom="12dp"
+                android:textColor="@color/P1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtTinhDuc_Nu_ChiemTinhDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lost_type"
+                android:text="Sự nghiệp"
+                android:paddingBottom="12dp"
+                android:textColor="@color/P1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtSuNghiep_Nu_ChiemTinhDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".ChiemTinhFeature.ChiemTinhListActivity">
+
+    <Button
+        android:id="@+id/btnBack_ChiemTinhList"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/lost_type"
+        android:text="Chiêm tinh"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
+                <Button
+                    android:id="@+id/btnMaKet"
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:layout_marginEnd="40dp"
+                    android:background="@drawable/btn_ma_ket" />
+
+                <Button
+                    android:id="@+id/btnBaoBinh"
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/btn_bao_binh" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
+                <Button
+                    android:id="@+id/btnSongNgu"
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:layout_marginEnd="40dp"
+                    android:background="@drawable/btn_song_ngu" />
+
+                <Button
+                    android:id="@+id/btnBachDuong"
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/btn_bach_duong" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
+                <Button
+                    android:id="@+id/btnKimNguu"
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:layout_marginEnd="40dp"
+                    android:background="@drawable/btn_kim_nguu" />
+
+                <Button
+                    android:id="@+id/btnSongTu"
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/btn_song_tu" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
+                <Button
+                    android:id="@+id/btnCuGiai"
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:layout_marginEnd="40dp"
+                    android:background="@drawable/btn_cu_giai" />
+
+                <Button
+                    android:id="@+id/btnSuTu"
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/btn_su_tu" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
+                <Button
+                    android:id="@+id/btnXuNu"
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:layout_marginEnd="40dp"
+                    android:background="@drawable/btn_xu_nu" />
+
+                <Button
+                    android:id="@+id/btnThienBinh"
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/btn_thien_binh" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
+                <Button
+                    android:id="@+id/btnBoCap"
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:layout_marginEnd="40dp"
+                    android:background="@drawable/btn_bo_cap" />
+
+                <Button
+                    android:id="@+id/btnNhanMa"
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/btn_nhan_ma" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

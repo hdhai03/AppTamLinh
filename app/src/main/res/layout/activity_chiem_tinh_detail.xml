@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".ChiemTinhFeature.ChiemTinhDetailActivity">
+
+    <Button
+        android:id="@+id/btnBack_ChiemTinhDetail"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/txtHeader_ChiemTinhDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/lost_type"
+        android:text="Ma kết"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgChiemTinh_ChiemTinhDetail"
+        android:layout_width="144dp"
+        android:layout_height="192dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtHeader_ChiemTinhDetail"
+        app:srcCompat="@drawable/png_ma_ket" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@id/tabLayout_ChiemTinhDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabTextColor="@color/W1"
+        app:tabSelectedTextColor="@color/P1"
+        app:tabIndicator="@drawable/png_indicator"
+        android:background="#00ffffff"
+        app:tabIndicatorColor="@color/P1"
+        app:tabIndicatorHeight="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgChiemTinh_ChiemTinhDetail"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager_ChiemTinhDetail"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fadeScrollbars="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout_ChiemTinhDetail"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

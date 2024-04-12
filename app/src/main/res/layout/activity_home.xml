@@ -290,7 +290,7 @@
     <Button
         android:id="@+id/btnTarot2_Home"
         android:layout_width="380dp"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/btn_tarot_2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -301,7 +301,7 @@
     <Button
         android:id="@+id/btnChiemTinh2_Home"
         android:layout_width="380dp"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/btn_chiem_tinh_2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -312,7 +312,7 @@
     <Button
         android:id="@+id/btnThanSH2_Home"
         android:layout_width="380dp"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/btn_than_sh_2"
         app:layout_constraintEnd_toEndOf="parent"

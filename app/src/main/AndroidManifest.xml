@@ -11,15 +11,27 @@
         android:theme="@style/Theme.AppTamLinh"
         tools:targetApi="31">
         <activity
-            android:name=".CongDongActivity"
-            android:parentActivityName=".HomeActivity"
+            android:name=".ChiemTinhFeature.ChiemTinhDetailActivity"
+            android:parentActivityName=".ChiemTinhFeature.ChiemTinhListActivity"
             android:exported="false" />
+        <activity
+            android:name=".ChiemTinhFeature.ChiemTinhListActivity"
+            android:exported="false"
+            android:parentActivityName=".ChiemTinhFeature.ChiemTinhActivity" />
+        <activity
+            android:name=".ChiemTinhFeature.ChiemTinhLaGiActivity"
+            android:exported="false"
+            android:parentActivityName=".ChiemTinhFeature.ChiemTinhActivity" />
+        <activity
+            android:name=".CongDongActivity"
+            android:exported="false"
+            android:parentActivityName=".HomeActivity" />
         <activity
             android:name=".ThanSoHocActivity"
             android:exported="false"
             android:parentActivityName=".HomeActivity" />
         <activity
-            android:name=".ChiemTinhActivity"
+            android:name=".ChiemTinhFeature.ChiemTinhActivity"
             android:exported="false"
             android:parentActivityName=".HomeActivity" />
         <activity
