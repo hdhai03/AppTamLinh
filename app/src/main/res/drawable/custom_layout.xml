@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="customtext" parent="TextAppearance.Design.Tab"
+        tools:ignore="MissingPrefix">
+        <item name="fontFamily">@font/americana_b</item>
+        <item name="fontStyle">bold</item>
+    </style>
+</resources>

@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.apptamlinh.ChiemTinhFeature.ChiemTinhActivity;
+
 public class HomeActivity extends AppCompatActivity {
     private Button btnProfile_Home;
     private Button btnTarot_Home;

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#191919"
-    tools:context=".ChiemTinhActivity">
+    tools:context=".ChiemTinhFeature.ChiemTinhActivity">
 
     <Button
         android:id="@+id/btnBack_ChiemTinh"
@@ -39,7 +39,7 @@
     <Button
         android:id="@+id/btnChiemTinhLaGi_ChiemTinh"
         android:layout_width="250dp"
-        android:layout_height="300dp"
+        android:layout_height="310dp"
         android:layout_marginTop="80dp"
         android:background="@drawable/btn_chiem_tinh_la_gi"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +59,7 @@
     <Button
         android:id="@+id/btnChiemTinhTQ_ChiemTinh"
         android:layout_width="380dp"
-        android:layout_height="120dp"
+        android:layout_height="115dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/btn_chiem_tinh_tong_quan"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,10 +70,10 @@
         android:id="@+id/imageView5"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="24dp"
-        app:srcCompat="@drawable/png_cuoi_trang_2"
+        android:layout_marginTop="45dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnChiemTinhTQ_ChiemTinh"/>
+        app:layout_constraintTop_toBottomOf="@id/btnChiemTinhTQ_ChiemTinh"
+        app:srcCompat="@drawable/png_cuoi_trang_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

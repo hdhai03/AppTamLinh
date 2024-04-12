@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".ChiemTinhFeature.ChiemTinhLaGiActivity">
+
+    <Button
+        android:id="@+id/btnBack_ChiemTinhLaGi"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lost_type"
+        android:text="Chiêm tinh"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lost_type"
+        android:text="là gì?"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView1" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="105dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="395dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/americana_b"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                android:text="Chiêm tinh, một trong những hình thức tìm kiếm tri thức cổ xưa nhất của loài người, đã đi một chặng đường dài và phức tạp qua lịch sử nhân loại. Nó bắt nguồn từ nhu cầu cơ bản của con người là hiểu biết về thế giới quanh họ và vị trí của chính mình trong vũ trụ rộng lớn. Trong các nền văn minh cổ đại như Babylon, Ai Cập, Ấn Độ và Trung Quốc, chiêm tinh không chỉ là một phần của nghi lễ tôn giáo và hệ thống niềm tin mà còn là công cụ quản lý thời gian, lập lịch canh tác và dự đoán các sự kiện quan trọng."
+                android:textColor="@color/W1" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="395dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/americana_b"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                android:text="Qua thời Trung cổ và thời kỳ Phục hưng, chiêm tinh tiếp tục được học giả và nhà lãnh đạo sử dụng như một công cụ dự đoán và quyết định. Nó được giảng dạy trong các trường địa học và thậm chí được các nhà khoa học danh tiếng như Kepler và Newton nghiên cứu. Tuy nhiên, với sự phát triển của khoa học thực nghiệm và thiên văn học hiện đại, chiêm tinh dần dần bị tách biệt khỏi khoa học chính thống và trở thành một phần của văn hoá dân gian."
+                android:textColor="@color/W1" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="395dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/americana_b"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                android:text="Dù vậy, cai trò của chiêm tinh không hề giảm bớt trong đời sống tinh thần và văn hoá của con người. Trong thế giới hiện đại, nó đã trở thành một công cụ phổ biến cho việc tự khám phá, phát triển cá nhân và tư vấn tâm lý. Nhiều người tìm đến chiêm tinh để tìm kiếm sự an ủi và hướng dẫn trong những thời kỳ bất ổn hoặc quyết định quan trọng. Nó cũng xuất hiện rộng rãi trong các tờ báo, tạp chí và trên các nền tảng số, nơi mà horoscope hàng ngày và bản đồ sao cá nhân là những điểm thu hút chú ý"
+                android:textColor="@color/W1" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="395dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/americana_b"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                android:text="Chiêm tinh, dù không được khoa học chính thống công nhận, vẫn có ảnh hưởng sâu rộng đến cách con người nhìn nhận và tương tác với thế giới xung quanh họ. Nó cung cấp một ngôn ngữ biểu tượng qua đó cá nhân có thể thể thiện hiểu biết và quan điểm của mình về cuộc sống và vận mệnh, và qua đó tiếp tục chứng minh như một phần quang trọng trong văn hoá loài người."
+                android:textColor="@color/W1" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="324dp"
+                android:layout_height="147dp"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/png_cuoi_trang" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

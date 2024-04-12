@@ -18,7 +18,6 @@ public class RegisterFragment2 extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -58,6 +57,7 @@ public class RegisterFragment2 extends Fragment {
         numPickerYear.setMinValue(1900);
         numPickerYear.setMaxValue(2024);
         return mView;
+
     }
 
 }
