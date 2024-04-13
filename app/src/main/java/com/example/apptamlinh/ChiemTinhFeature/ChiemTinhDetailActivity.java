@@ -40,7 +40,7 @@ public class ChiemTinhDetailActivity extends AppCompatActivity {
 
     // Du lieu
     ArrayList<ChiemTinhModel> chiemTinhModels = new ArrayList<>();
-    int[] chiemTinhImages = {R.drawable.png_ma_ket, R.drawable.png_bao_binh, R.drawable.png_bach_duong};
+    int[] chiemTinhImages = {R.drawable.png_ma_ket, R.drawable.png_bao_binh, R.drawable.png_bach_duong, R.drawable.png_ma_ket, R.drawable.png_bao_binh};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,78 +79,83 @@ public class ChiemTinhDetailActivity extends AppCompatActivity {
         mTabLayout.setupWithViewPager(mViewPager);
 
         // Setup dữ liệu
-        setUpChiemTinhModels();
+//        setUpChiemTinhModels();
 
         //Lấy ID từ danh sách 12 cung hoàng đạo r trả về các thông tin
-        Bundle extras = getIntent().getExtras();
-        int idChiemTinh = 0;
-        if (extras != null) {
-            String receivedData = extras.getString("data");
-            if (receivedData != null) {
-                idChiemTinh = Integer.parseInt(receivedData); //ID chiem tinh
-                //SetText và SetImage cho View
-                txtHeader_ChiemTinhDetail.setText(chiemTinhModels.get(idChiemTinh).chiemTinhName);
-                imgChiemTinh_ChiemTinhDetail.setImageResource(chiemTinhModels.get(idChiemTinh).chiemTinhImages);
-            }
-        }
-
-        //Truyền dữ liệu vào fragment
-        Bundle bundle = new Bundle();
-        bundle.putString("tongQuan", chiemTinhModels.get(idChiemTinh).chiemTinhTongQuan);
-        bundle.putString("tinhCach", chiemTinhModels.get(idChiemTinh).chiemTinhTinhCach);
-        bundle.putString("diemManh", chiemTinhModels.get(idChiemTinh).chiemTinhDiemManh);
-        bundle.putString("diemYeu", chiemTinhModels.get(idChiemTinh).chiemTinhDiemYeu);
-        bundle.putString("giaDinh", chiemTinhModels.get(idChiemTinh).chiemTinhGiaDinh);
-        bundle.putString("tinhYeu", chiemTinhModels.get(idChiemTinh).chiemTinhTinhYeu);
-        bundle.putString("tinhDuc", chiemTinhModels.get(idChiemTinh).chiemTinhTinhDuc);
-        bundle.putString("suNghiep", chiemTinhModels.get(idChiemTinh).chiemTinhSuNghiep);
-
-        NamFragment namFragment = (NamFragment) viewPagerAdapter.instantiateItem(mViewPager, mViewPager.getCurrentItem());
-        namFragment.setArguments(bundle);
-
-
-
-        Bundle bundleNu = new Bundle();
-        bundleNu.putString("tongQuanNu", chiemTinhModels.get(idChiemTinh+1).chiemTinhTongQuan);
-        bundleNu.putString("tinhCachNu", chiemTinhModels.get(idChiemTinh).chiemTinhTinhCach);
-        bundleNu.putString("diemManhNu", chiemTinhModels.get(idChiemTinh).chiemTinhDiemManh);
-        bundleNu.putString("diemYeuNu", chiemTinhModels.get(idChiemTinh).chiemTinhDiemYeu);
-        bundleNu.putString("giaDinhNu", chiemTinhModels.get(idChiemTinh).chiemTinhGiaDinh);
-        bundleNu.putString("tinhYeuNu", chiemTinhModels.get(idChiemTinh).chiemTinhTinhYeu);
-        bundleNu.putString("tinhDucNu", chiemTinhModels.get(idChiemTinh).chiemTinhTinhDuc);
-        bundleNu.putString("suNghiepNu", chiemTinhModels.get(idChiemTinh).chiemTinhSuNghiep);
-
-        NuFragment nuFragment = (NuFragment) viewPagerAdapter.instantiateItem(mViewPager, mViewPager.getCurrentItem());
-        nuFragment.setArguments(bundleNu);
+//        Bundle extras = getIntent().getExtras();
+//        int idChiemTinh1 = 0;
+//        int idChiemTinh2 = 0;
+//        if (extras != null) {
+//            String receivedData = extras.getString("data");
+//            if (receivedData != null) {
+//                idChiemTinh1 = Integer.parseInt(receivedData); //ID chiem tinh
+//                idChiemTinh2 = idChiemTinh1 + 1;
+//                //SetText và SetImage cho View
+//                txtHeader_ChiemTinhDetail.setText(chiemTinhModels.get(idChiemTinh1).chiemTinhName);
+//                imgChiemTinh_ChiemTinhDetail.setImageResource(chiemTinhModels.get(idChiemTinh1).chiemTinhImages);
+//            }
+//        }
+//
+//
+//
+//        //Truyền dữ liệu vào fragment
+//        Bundle bundle = new Bundle();
+//        bundle.putString("tongQuan", chiemTinhModels.get(idChiemTinh1).chiemTinhTongQuan);
+//        bundle.putString("tinhCach", chiemTinhModels.get(idChiemTinh1).chiemTinhTinhCach);
+//        bundle.putString("diemManh", chiemTinhModels.get(idChiemTinh1).chiemTinhDiemManh);
+//        bundle.putString("diemYeu", chiemTinhModels.get(idChiemTinh1).chiemTinhDiemYeu);
+//        bundle.putString("giaDinh", chiemTinhModels.get(idChiemTinh1).chiemTinhGiaDinh);
+//        bundle.putString("tinhYeu", chiemTinhModels.get(idChiemTinh1).chiemTinhTinhYeu);
+//        bundle.putString("tinhDuc", chiemTinhModels.get(idChiemTinh1).chiemTinhTinhDuc);
+//        bundle.putString("suNghiep", chiemTinhModels.get(idChiemTinh1).chiemTinhSuNghiep);
+//
+//        NamFragment namFragment = (NamFragment) viewPagerAdapter.instantiateItem(mViewPager, mViewPager.getCurrentItem());
+//        namFragment.setArguments(bundle);
+//
+//
+//
+//        Bundle bundleNu = new Bundle();
+//        bundleNu.putString("tongQuanNu", chiemTinhModels.get(idChiemTinh2).chiemTinhTongQuan);
+//        bundleNu.putString("tinhCachNu", chiemTinhModels.get(idChiemTinh2).chiemTinhTinhCach);
+//        bundleNu.putString("diemManhNu", chiemTinhModels.get(idChiemTinh2).chiemTinhDiemManh);
+//        bundleNu.putString("diemYeuNu", chiemTinhModels.get(idChiemTinh2).chiemTinhDiemYeu);
+//        bundleNu.putString("giaDinhNu", chiemTinhModels.get(idChiemTinh2).chiemTinhGiaDinh);
+//        bundleNu.putString("tinhYeuNu", chiemTinhModels.get(idChiemTinh2).chiemTinhTinhYeu);
+//        bundleNu.putString("tinhDucNu", chiemTinhModels.get(idChiemTinh2).chiemTinhTinhDuc);
+//        bundleNu.putString("suNghiepNu", chiemTinhModels.get(idChiemTinh2).chiemTinhSuNghiep);
+//
+//        NuFragment nuFragment = (NuFragment) viewPagerAdapter.instantiateItem(mViewPager, mViewPager.getCurrentItem());
+//        nuFragment.setArguments(bundleNu);
 
     }
 
-    private void setUpChiemTinhModels() {
-        String[] chiemTinhNames = {"Ma Kết", "Bảo Bình", "asdasd", "asdasd", "Ma Kết", "Bảo Bình", "asdasd","asdasd"};
-        String[] chiemTinhTongQuan = {"Hair", "asdasdasd", "asdasdasdas","asdasd", "Ma Kết", "Bảo Bình", "asdasd","asdasd"};
-        String[] chiemTinhTinhCach = {"tongqaunasd", "asdasdasd", "asdasdasdas","asdasd", "Ma Kết", "Bảo Bình", "asdasd","asdasd"};
-        String[] chiemTinhDiemManh = {"tongqaunasd", "asdasdasd", "asdasdasdas","asdasd", "Ma Kết", "Bảo Bình", "asdasd","asdasd"};
-        String[] chiemTinhDiemYeu = {"tongqaunasd", "asdasdasd", "asdasdasdas","asdasd", "Ma Kết", "Bảo Bình", "asdasd","asdasd"};
-        String[] chiemTinhGiaDinh = {"tongqaunasd", "asdasdasd", "asdasdasdas","asdasd", "Ma Kết", "Bảo Bình", "asdasd","asdasd"};
-        String[] chiemTinhTinhYeu = {"tongqaunasd", "asdasdasd", "asdasdasdas","asdasd", "Ma Kết", "Bảo Bình", "asdasd","asdasd"};
-        String[] chiemTinhTinhDuc = {"asdasdhaiyeuem", "asdasdasd", "asdasdasdas","asdasd", "Ma Kết", "Bảo Bình", "asdasd","asdasd"};
-        String[] chiemTinhSuNghiep = {"tongqaunasd", "asdasdasd", "asdasdasdas","asdasd", "Ma Kết", "Bảo Bình", "asdasd","asdasd"};
-
-        for(int i = 0; i < chiemTinhNames.length; i++){
-            chiemTinhModels.add(new ChiemTinhModel(
-                    chiemTinhNames[i],
-                    chiemTinhTongQuan[i],
-                    chiemTinhTinhCach[i],
-                    chiemTinhDiemManh[i],
-                    chiemTinhDiemYeu[i],
-                    chiemTinhGiaDinh[i],
-                    chiemTinhTinhYeu[i],
-                    chiemTinhTinhDuc[i],
-                    chiemTinhSuNghiep[i],
-                    chiemTinhImages[i]
-                    ));
-        }
-    }
+//    private void setUpChiemTinhModels() {
+//        String[] chiemTinhNames = {"Ma Kết", "Bảo Bình", "asdasd", "hai"};
+//        String[] chiemTinhTongQuan = {"Hair", "asdasdasd", "asdasdasdas","asdasd"};
+//        String[] chiemTinhTinhCach = {"tongqaunasd", "asdasdasd", "asdasdasdas","asdasd"};
+//        String[] chiemTinhDiemManh = {"tongqaunasd", "asdasdasd", "asdasdasdas","asdasd"};
+//        String[] chiemTinhDiemYeu = {"tongqaunasd", "asdasdasd", "asdasdasdas","asdasd"};
+//        String[] chiemTinhGiaDinh = {"tongqaunasd", "asdasdasd", "asdasdasdas","asdasd"};
+//        String[] chiemTinhTinhYeu = {"tongqaunasd", "asdasdasd", "asdasdasdas","asdasd"};
+//        String[] chiemTinhTinhDuc = {"asdasdhaiyeuem", "asdasdasd", "asdasdasdas","asdasd"};
+//        String[] chiemTinhSuNghiep = {"tongqaunasd", "asdasdasd", "asdasdasdas","asdasd"};
+//
+//            for (int i = 0; i < chiemTinhNames.length; i++) {
+//                chiemTinhModels.add(new ChiemTinhModel(
+//                        chiemTinhNames[i],
+//                        chiemTinhTongQuan[i],
+//                        chiemTinhTinhCach[i],
+//                        chiemTinhDiemManh[i],
+//                        chiemTinhDiemYeu[i],
+//                        chiemTinhGiaDinh[i],
+//                        chiemTinhTinhYeu[i],
+//                        chiemTinhTinhDuc[i],
+//                        chiemTinhSuNghiep[i],
+//                        chiemTinhImages[i]
+//                ));
+//
+//        }
+//    }
 
 
 }

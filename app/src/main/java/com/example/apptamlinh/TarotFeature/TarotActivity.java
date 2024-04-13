@@ -1,5 +1,6 @@
-package com.example.apptamlinh;
+package com.example.apptamlinh.TarotFeature;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,8 +11,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.apptamlinh.ChiemTinhFeature.ChiemTinhActivity;
+import com.example.apptamlinh.ChiemTinhFeature.ChiemTinhListActivity;
+import com.example.apptamlinh.R;
+
 public class TarotActivity extends AppCompatActivity {
     private Button btnBack_Tarot;
+    private Button btnTarotHN_Tarot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +28,19 @@ public class TarotActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        btnBack_Tarot = findViewById(R.id.btnBack_ChiemTinh);
+        btnBack_Tarot = findViewById(R.id.btnBack_Tarot);
+        btnTarotHN_Tarot = findViewById(R.id.btnTarotHN_Tarot);
         btnBack_Tarot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+        btnTarotHN_Tarot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentTarotHN = new Intent(TarotActivity.this, TarotHangNgayActivity.class);
+                startActivity(intentTarotHN);
             }
         });
 

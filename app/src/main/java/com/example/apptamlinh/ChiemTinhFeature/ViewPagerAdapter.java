@@ -22,7 +22,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
                 return new NamFragment();
             case 1:
                 return new NuFragment();
-
             default:
                 return new NamFragment();
         }

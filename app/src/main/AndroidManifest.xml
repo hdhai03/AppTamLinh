@@ -11,9 +11,13 @@
         android:theme="@style/Theme.AppTamLinh"
         tools:targetApi="31">
         <activity
-            android:name=".ChiemTinhFeature.ChiemTinhDetailActivity"
-            android:parentActivityName=".ChiemTinhFeature.ChiemTinhListActivity"
+            android:name=".TarotFeature.TarotHangNgayActivity"
+            android:parentActivityName=".TarotFeature.TarotActivity"
             android:exported="false" />
+        <activity
+            android:name=".ChiemTinhFeature.ChiemTinhDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".ChiemTinhFeature.ChiemTinhListActivity" />
         <activity
             android:name=".ChiemTinhFeature.ChiemTinhListActivity"
             android:exported="false"
@@ -35,7 +39,7 @@
             android:exported="false"
             android:parentActivityName=".HomeActivity" />
         <activity
-            android:name=".TarotActivity"
+            android:name=".TarotFeature.TarotActivity"
             android:exported="false"
             android:parentActivityName=".HomeActivity" />
         <activity
