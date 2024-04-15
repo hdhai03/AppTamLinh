@@ -35,10 +35,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/americana_b"
-                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
                 android:textColor="@color/W1"
                 android:paddingBottom="20dp"
-                android:textSize="12sp" />
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -59,8 +59,8 @@
                 android:fontFamily="@font/americana_b"
                 android:textColor="@color/W1"
                 android:paddingBottom="20dp"
-                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                android:textSize="12sp" />
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -81,8 +81,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/americana_b"
                 android:textColor="@color/W1"
-                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                android:textSize="12sp" />
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textView1"
@@ -103,8 +103,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/americana_b"
                 android:textColor="@color/W1"
-                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                android:textSize="12sp" />
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -125,8 +125,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/americana_b"
                 android:textColor="@color/W1"
-                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                android:textSize="12sp" />
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -147,8 +147,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/americana_b"
                 android:textColor="@color/W1"
-                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                android:textSize="12sp" />
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -169,8 +169,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/americana_b"
                 android:textColor="@color/W1"
-                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                android:textSize="12sp" />
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -191,8 +191,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/americana_b"
                 android:textColor="@color/W1"
-                android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                android:textSize="12sp" />
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp" />
 
         </LinearLayout>
 

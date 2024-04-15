@@ -61,15 +61,12 @@ public class ChiemTinhListActivity extends AppCompatActivity {
             }
         });
 
-        btnMaKet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentChiemTinhDetail = new Intent(ChiemTinhListActivity.this, ChiemTinhDetailActivity.class);
+        btnMaKet.setOnClickListener(v -> {
+            Intent intentChiemTinhDetail = new Intent(ChiemTinhListActivity.this, ChiemTinhDetailActivity.class);
 
-                intentChiemTinhDetail.putExtra("data", "0");
+            intentChiemTinhDetail.putExtra("data", "0");
 
-                startActivity(intentChiemTinhDetail);
-            }
+            startActivity(intentChiemTinhDetail);
         });
 
         btnBaoBinh.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +75,106 @@ public class ChiemTinhListActivity extends AppCompatActivity {
                 Intent intentChiemTinhDetail = new Intent(ChiemTinhListActivity.this, ChiemTinhDetailActivity.class);
 
                 intentChiemTinhDetail.putExtra("data", "1");
+
+                startActivity(intentChiemTinhDetail);
+            }
+        });
+        btnSongNgu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentChiemTinhDetail = new Intent(ChiemTinhListActivity.this, ChiemTinhDetailActivity.class);
+
+                intentChiemTinhDetail.putExtra("data", "2");
+
+                startActivity(intentChiemTinhDetail);
+            }
+        });
+        btnBachDuong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentChiemTinhDetail = new Intent(ChiemTinhListActivity.this, ChiemTinhDetailActivity.class);
+
+                intentChiemTinhDetail.putExtra("data", "3");
+
+                startActivity(intentChiemTinhDetail);
+            }
+        });
+        btnKimNguu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentChiemTinhDetail = new Intent(ChiemTinhListActivity.this, ChiemTinhDetailActivity.class);
+
+                intentChiemTinhDetail.putExtra("data", "4");
+
+                startActivity(intentChiemTinhDetail);
+            }
+        });
+        btnSongTu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentChiemTinhDetail = new Intent(ChiemTinhListActivity.this, ChiemTinhDetailActivity.class);
+
+                intentChiemTinhDetail.putExtra("data", "5");
+
+                startActivity(intentChiemTinhDetail);
+            }
+        });
+        btnCuGiai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentChiemTinhDetail = new Intent(ChiemTinhListActivity.this, ChiemTinhDetailActivity.class);
+
+                intentChiemTinhDetail.putExtra("data", "6");
+
+                startActivity(intentChiemTinhDetail);
+            }
+        });
+        btnSuTu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentChiemTinhDetail = new Intent(ChiemTinhListActivity.this, ChiemTinhDetailActivity.class);
+
+                intentChiemTinhDetail.putExtra("data", "7");
+
+                startActivity(intentChiemTinhDetail);
+            }
+        });
+        btnXuNu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentChiemTinhDetail = new Intent(ChiemTinhListActivity.this, ChiemTinhDetailActivity.class);
+
+                intentChiemTinhDetail.putExtra("data", "8");
+
+                startActivity(intentChiemTinhDetail);
+            }
+        });
+        btnThienBinh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentChiemTinhDetail = new Intent(ChiemTinhListActivity.this, ChiemTinhDetailActivity.class);
+
+                intentChiemTinhDetail.putExtra("data", "9");
+
+                startActivity(intentChiemTinhDetail);
+            }
+        });
+        btnBoCap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentChiemTinhDetail = new Intent(ChiemTinhListActivity.this, ChiemTinhDetailActivity.class);
+
+                intentChiemTinhDetail.putExtra("data", "10");
+
+                startActivity(intentChiemTinhDetail);
+            }
+        });
+        btnNhanMa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentChiemTinhDetail = new Intent(ChiemTinhListActivity.this, ChiemTinhDetailActivity.class);
+
+                intentChiemTinhDetail.putExtra("data", "11");
 
                 startActivity(intentChiemTinhDetail);
             }

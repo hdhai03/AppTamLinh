@@ -106,6 +106,7 @@
 
         <NumberPicker
             android:id="@+id/numPickerDay"
+            android:divider="@color/W1"
             android:layout_width="118dp"
             android:layout_height="match_parent" />
 

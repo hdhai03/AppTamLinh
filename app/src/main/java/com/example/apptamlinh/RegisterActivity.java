@@ -12,7 +12,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import android.os.Bundle;
 
 public class RegisterActivity extends AppCompatActivity {
     Button btnBack;

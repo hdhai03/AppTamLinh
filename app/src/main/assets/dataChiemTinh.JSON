@@ -1,6 +1,4 @@
-{
-    "dataChiemTinh": [
-      {
+[{
         "ten": "Ma Kết",
         "nam": {
           "tongquan": "Bạn là một nam Ma Kết chín chắn, thông minh nhưng khá trầm tính, bạn thường không thích đến những nơi quá náo động, có xu hướng ghét những thứ ồn ào. Là một người khá lạnh lùng và khó tiếp xúc, bạn đôi khi khiến người ta không dám lại gần bắt chuyện. Nghiêm túc trong cuộc sống và cả công việc, bạn luôn thực hiện đúng theo quy tắc đã đặt ra. Tuy là người có năng lực nhưng bạn lại rất khiêm tốn. Bạn hiếm khi mở lời khen ngợi người khác. Bởi vì bạn được bảo hộ bởi sao Thổ, ngôi sao đại diện cho những nguyên tắc khắt khe và sự giới hạn. Vậy nên, cũng không ngạc nhiên khi bạn bị đánh giá là khô khan và triết lí. Thế nhưng muốn tìm một chuyên gia để cho lời khuyên thì chắc chắn bạn sẽ là lựa chọn số một. Bạn theo đuổi phong cách thời trang đơn giản, cổ điển. Bạn cực kỳ ghét sự loè loẹt nên những bộ trang phục kiểu cách, màu sắc chắc chắn sẽ không phù hợp với bạn.",
@@ -278,4 +276,3 @@
       }
       
     ]
-  }

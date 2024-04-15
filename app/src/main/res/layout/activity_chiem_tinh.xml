@@ -54,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnChiemTinhLaGi_ChiemTinh"
-        app:srcCompat="@drawable/png_progress_scroll" />
+        app:srcCompat="@drawable/png_progress_scroll_true" />
 
     <Button
         android:id="@+id/btnChiemTinhTQ_ChiemTinh"

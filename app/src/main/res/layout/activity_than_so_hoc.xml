@@ -63,7 +63,7 @@
                 android:layout_marginTop="14dp"
                 android:layout_gravity="center"
                 app:layout_constraintTop_toBottomOf="@id/btnThanSHLaGi_ThanSH"
-                app:srcCompat="@drawable/png_progress_scroll" />
+                app:srcCompat="@drawable/png_progress_scroll_true" />
 
             <Button
                 android:id="@+id/btnCacChiSo_ThanSH"

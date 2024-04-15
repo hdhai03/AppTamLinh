@@ -18,7 +18,6 @@ public class NamFragment extends Fragment {
     public TextView txtDiemYeu_Nam_ChiemTinhDetail;
     public TextView txtGiaDinh_Nam_ChiemTinhDetail;
     public TextView txtTinhYeu_Nam_ChiemTinhDetail;
-    public TextView txtTinhDuc_Nam_ChiemTinhDetail;
     public TextView txtSuNghiep_Nam_ChiemTinhDetail;
 
     public NamFragment() {
@@ -36,7 +35,6 @@ public class NamFragment extends Fragment {
         txtDiemYeu_Nam_ChiemTinhDetail = mView.findViewById(R.id.txtDiemYeu_Nam_ChiemTinhDetail);
         txtGiaDinh_Nam_ChiemTinhDetail = mView.findViewById(R.id.txtGiaDinh_Nam_ChiemTinhDetail);
         txtTinhYeu_Nam_ChiemTinhDetail = mView.findViewById(R.id.txtTinhYeu_Nam_ChiemTinhDetail);
-        txtTinhDuc_Nam_ChiemTinhDetail = mView.findViewById(R.id.txtTinhDuc_Nam_ChiemTinhDetail);
         txtSuNghiep_Nam_ChiemTinhDetail = mView.findViewById(R.id.txtSuNghiep_Nam_ChiemTinhDetail);
 
         Bundle bundle = getArguments();
@@ -47,7 +45,6 @@ public class NamFragment extends Fragment {
             String diemYeu = bundle.getString("diemYeu");
             String giaDinh = bundle.getString("giaDinh");
             String tinhYeu = bundle.getString("tinhYeu");
-            String tinhDuc = bundle.getString("tinhDuc");
             String suNghiep = bundle.getString("suNghiep");
 
             // Lấy dữ liệu cho các trường khác từ bundle
@@ -59,7 +56,6 @@ public class NamFragment extends Fragment {
             txtDiemYeu_Nam_ChiemTinhDetail.setText(diemYeu);
             txtGiaDinh_Nam_ChiemTinhDetail.setText(giaDinh);
             txtTinhYeu_Nam_ChiemTinhDetail.setText(tinhYeu);
-            txtTinhDuc_Nam_ChiemTinhDetail.setText(tinhDuc);
             txtSuNghiep_Nam_ChiemTinhDetail.setText(suNghiep);
         }
         return mView;

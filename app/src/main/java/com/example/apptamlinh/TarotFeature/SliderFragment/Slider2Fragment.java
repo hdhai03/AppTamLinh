@@ -1,4 +1,4 @@
-package com.example.apptamlinh;
+package com.example.apptamlinh.TarotFeature.SliderFragment;
 
 import android.os.Bundle;
 
@@ -8,16 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class RegisterFragment3 extends Fragment {
-    public RegisterFragment3() {
+import com.example.apptamlinh.R;
+
+public class Slider2Fragment extends Fragment {
+    public Slider2Fragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register3, container, false);
+        return inflater.inflate(R.layout.fragment_slider2, container, false);
     }
 }

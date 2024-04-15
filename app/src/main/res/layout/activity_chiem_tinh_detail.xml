@@ -43,6 +43,7 @@
         app:layout_constraintTop_toBottomOf="@id/txtHeader_ChiemTinhDetail"
         app:srcCompat="@drawable/png_ma_ket" />
 
+
     <com.google.android.material.tabs.TabLayout
         android:id="@id/tabLayout_ChiemTinhDetail"
         android:layout_width="match_parent"
@@ -64,6 +65,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:fadeScrollbars="false"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tabLayout_ChiemTinhDetail"/>
+        app:layout_constraintTop_toBottomOf="@id/tabLayout_ChiemTinhDetail">
+
+    </androidx.viewpager.widget.ViewPager>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

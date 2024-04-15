@@ -1,123 +1,113 @@
 package com.example.apptamlinh.ChiemTinhFeature;
 
-
-import java.util.List;
-
 public class ChiemTinhModel {
-    private List<Constellation> constellations;
+    String chiemTinhName;
+    String chiemTinhTongQuan;
+    String chiemTinhTinhCach;
+    String chiemTinhDiemManh;
+    String chiemTinhDiemYeu;
+    String chiemTinhGiaDinh;
+    String chiemTinhTinhYeu;
+    String chiemTinhTinhDuc;
+    String chiemTinhSuNghiep;
+    int chiemTinhImages;
 
-    public List<Constellation> getConstellations() {
-        return constellations;
+    public ChiemTinhModel(String chiemTinhName, String chiemTinhTongQuan, String chiemTinhTinhCach,
+                          String chiemTinhDiemManh, String chiemTinhDiemYeu, String chiemTinhGiaDinh,
+                          String chiemTinhTinhYeu, String chiemTinhTinhDuc, String chiemTinhSuNghiep,
+                          int chiemTinhImages) {
+        this.chiemTinhName = chiemTinhName;
+        this.chiemTinhTongQuan = chiemTinhTongQuan;
+        this.chiemTinhTinhCach = chiemTinhTinhCach;
+        this.chiemTinhDiemManh = chiemTinhDiemManh;
+        this.chiemTinhDiemYeu = chiemTinhDiemYeu;
+        this.chiemTinhGiaDinh = chiemTinhGiaDinh;
+        this.chiemTinhTinhYeu = chiemTinhTinhYeu;
+        this.chiemTinhTinhDuc = chiemTinhTinhDuc;
+        this.chiemTinhSuNghiep = chiemTinhSuNghiep;
+        this.chiemTinhImages = chiemTinhImages;
     }
 
-    public void setConstellations(List<Constellation> constellations) {
-        this.constellations = constellations;
+    public ChiemTinhModel() {
     }
 
-    public static class Constellation {
-        private String ten;
-        private GenderAttributes nam;
-        private GenderAttributes nu;
-
-        // Getters và setters
-        public String getTen() {
-            return ten;
-        }
-
-        public void setTen(String ten) {
-            this.ten = ten;
-        }
-
-        public GenderAttributes getNam() {
-            return nam;
-        }
-
-        public void setNam(GenderAttributes nam) {
-            this.nam = nam;
-        }
-
-        public GenderAttributes getNu() {
-            return nu;
-        }
-
-        public void setNu(GenderAttributes nu) {
-            this.nu = nu;
-        }
+    public String getChiemTinhName() {
+        return chiemTinhName;
     }
 
-    public static class GenderAttributes {
-        private String tongquan;
-        private String tinhcach;
-        private String diemmanh;
-        private String diemyeu;
-        private String giadinh;
-        private String tinhyeu;
-        private String tinhduc;
-        private String sunghiep;
+    public String getChiemTinhTongQuan() {
+        return chiemTinhTongQuan;
+    }
 
-        // Getters và setters
-        public String getTongquan() {
-            return tongquan;
-        }
+    public String getChiemTinhTinhCach() {
+        return chiemTinhTinhCach;
+    }
 
-        public void setTongquan(String tongquan) {
-            this.tongquan = tongquan;
-        }
+    public String getChiemTinhDiemManh() {
+        return chiemTinhDiemManh;
+    }
 
-        public String getTinhcach() {
-            return tinhcach;
-        }
+    public String getChiemTinhDiemYeu() {
+        return chiemTinhDiemYeu;
+    }
 
-        public void setTinhcach(String tinhcach) {
-            this.tinhcach = tinhcach;
-        }
+    public String getChiemTinhGiaDinh() {
+        return chiemTinhGiaDinh;
+    }
 
-        public String getDiemmanh() {
-            return diemmanh;
-        }
+    public String getChiemTinhTinhYeu() {
+        return chiemTinhTinhYeu;
+    }
 
-        public void setDiemmanh(String diemmanh) {
-            this.diemmanh = diemmanh;
-        }
+    public String getChiemTinhTinhDuc() {
+        return chiemTinhTinhDuc;
+    }
 
-        public String getDiemyeu() {
-            return diemyeu;
-        }
+    public String getChiemTinhSuNghiep() {
+        return chiemTinhSuNghiep;
+    }
 
-        public void setDiemyeu(String diemyeu) {
-            this.diemyeu = diemyeu;
-        }
+    public int getChiemTinhImages() {
+        return chiemTinhImages;
+    }
 
-        public String getGiadinh() {
-            return giadinh;
-        }
+    public void setChiemTinhName(String chiemTinhName) {
+        this.chiemTinhName = chiemTinhName;
+    }
 
-        public void setGiadinh(String giadinh) {
-            this.giadinh = giadinh;
-        }
+    public void setChiemTinhTongQuan(String chiemTinhTongQuan) {
+        this.chiemTinhTongQuan = chiemTinhTongQuan;
+    }
 
-        public String getTinhyeu() {
-            return tinhyeu;
-        }
+    public void setChiemTinhTinhCach(String chiemTinhTinhCach) {
+        this.chiemTinhTinhCach = chiemTinhTinhCach;
+    }
 
-        public void setTinhyeu(String tinhyeu) {
-            this.tinhyeu = tinhyeu;
-        }
+    public void setChiemTinhDiemManh(String chiemTinhDiemManh) {
+        this.chiemTinhDiemManh = chiemTinhDiemManh;
+    }
 
-        public String getTinhduc() {
-            return tinhduc;
-        }
+    public void setChiemTinhDiemYeu(String chiemTinhDiemYeu) {
+        this.chiemTinhDiemYeu = chiemTinhDiemYeu;
+    }
 
-        public void setTinhduc(String tinhduc) {
-            this.tinhduc = tinhduc;
-        }
+    public void setChiemTinhGiaDinh(String chiemTinhGiaDinh) {
+        this.chiemTinhGiaDinh = chiemTinhGiaDinh;
+    }
 
-        public String getSunghiep() {
-            return sunghiep;
-        }
+    public void setChiemTinhTinhYeu(String chiemTinhTinhYeu) {
+        this.chiemTinhTinhYeu = chiemTinhTinhYeu;
+    }
 
-        public void setSunghiep(String sunghiep) {
-            this.sunghiep = sunghiep;
-        }
+    public void setChiemTinhTinhDuc(String chiemTinhTinhDuc) {
+        this.chiemTinhTinhDuc = chiemTinhTinhDuc;
+    }
+
+    public void setChiemTinhSuNghiep(String chiemTinhSuNghiep) {
+        this.chiemTinhSuNghiep = chiemTinhSuNghiep;
+    }
+
+    public void setChiemTinhImages(int chiemTinhImages) {
+        this.chiemTinhImages = chiemTinhImages;
     }
 }

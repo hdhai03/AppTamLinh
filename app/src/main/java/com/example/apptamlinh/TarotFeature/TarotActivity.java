@@ -10,12 +10,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.apptamlinh.ChiemTinhFeature.ChiemTinhActivity;
 import com.example.apptamlinh.ChiemTinhFeature.ChiemTinhListActivity;
+import com.example.apptamlinh.ChiemTinhFeature.ViewPagerAdapter;
 import com.example.apptamlinh.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import me.relex.circleindicator.CircleIndicator;
+
 public class TarotActivity extends AppCompatActivity {
+    private ViewPager mViewPager;
+    private CircleIndicator mCircleIndicator;
     private Button btnBack_Tarot;
     private Button btnTarotHN_Tarot;
     @Override
@@ -28,8 +38,17 @@ public class TarotActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        mViewPager = findViewById(R.id.view_pager_Tarot);
+        mCircleIndicator = findViewById(R.id.circle_indicator_Tarot);
+
+        SliderAdapter sliderAdapter = new SliderAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        mViewPager.setAdapter(sliderAdapter);
+        mCircleIndicator.setViewPager(mViewPager);
+
         btnBack_Tarot = findViewById(R.id.btnBack_Tarot);
         btnTarotHN_Tarot = findViewById(R.id.btnTarotHN_Tarot);
+
         btnBack_Tarot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
