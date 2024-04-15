@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".TarotFeature.SliderDetail.Slider3Detail_Tarot">
+
+    <Button
+        android:id="@+id/btnBack_Slider3Detail_Tarot"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lost_type"
+        android:text="Cách đặt"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lost_type"
+        android:text="câu hỏi"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView1" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="105dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="210dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/png_cach_dat_cau_hoi"/>
+
+            <TextView
+                android:layout_width="395dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="match_parent"
+                android:text="Việc đặt câu hỏi với Tarot là một quá trình quan trọng và có thể ảnh hưởng đến kết quả của trải bài. Dưới đây là một số lời khuyên về cách đặt câu hỏi với Tarot:"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="20dp"
+                android:textSize="14sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="395dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="match_parent"
+                android:text="1. Tập trung vào câu hỏi cụ thể:"
+                android:fontFamily="@font/americana_eb"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="395dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="Tarot được tin rằng xuất phát từ miền Bắc Ý vào thế kỷ 14, tuy nhiên, nguồn của nó vẫn còn tranh cãi đối với các nhà nghiên cứu. Tarot được sử dụng như một công cụ tâm linh và tiên tri từ thời Trung Cổ cho những gia đình quý tộc. Hiện nay, nó đã trở thành một phương tiện phổ biến cho các nhà tiên tri và những người quan tâm đến tâm linh học."
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="20dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="395dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="match_parent"
+                android:text="2. Tránh đặt câu hỏi chỉ dựa trên kết quả:"
+                android:fontFamily="@font/americana_eb"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="395dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="Hãy đặt câu hỏi dựa trên hành động và quá trình để giúp bạn hiểu rõ hơn về tình huống và tìm ra giải pháp. Ví dụ, thay vì đặt câu hỏi “Tôi có nên chọn A hay B?”, hãy đặt câu hỏi “Tôi nên làm gì để đạt được mục tiêu của mình?”."
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="20dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="395dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="match_parent"
+                android:text="3. Đặt câu hỏi tích cực:"
+                android:fontFamily="@font/americana_eb"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="395dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="Hãy đặt câu hỏi tích cực để thu được những lời khuyên và hướng dẫn tích cực từ bài Tarot. Tránh đặt câu hỏi tiêu cực hoặc quá sợ hãi, ví dụ như “Tôi sẽ bị sa thải không?”."
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="20dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="395dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="match_parent"
+                android:text="4. Sử dụng ngôn ngữ mở và tự do:"
+                android:fontFamily="@font/americana_eb"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="395dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="Hãy sử dụng ngôn ngữ tự nhiên và mở để đặt câu hỏi, tránh sử dụng ngôn từ quá hạn chế hoặc định sẵn. Hãy để cho bài Tarot trả lời câu hỏi của bạn một cách tự nhiên và chân thành nhất có thể."
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="20dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="395dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="match_parent"
+                android:text="5. Tâm trí mở và tập trung:"
+                android:fontFamily="@font/americana_eb"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="395dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="Trong khi đặt câu hỏi, hãy tập trung vào tâm trí và tinh thần của bạn. Hãy xoáy sâu vào câu hỏi và tạo ra một môi trường tĩnh lặng để bạn có thể nhận được những thông điệp từ Tarot."
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="20dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="395dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="Tóm lại, đặt câu hỏi với Tarot là một quá trình tâm linh và trực giác. Hãy tập trung vào câu hỏi cụ thể, sử dụng ngôn ngữ tự nhiên và tâm trí mở để đạt được kết quả tốt nhất trong cuộc đọc bài Tarot."
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="20dp"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="324dp"
+                android:layout_height="147dp"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/png_cuoi_trang" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

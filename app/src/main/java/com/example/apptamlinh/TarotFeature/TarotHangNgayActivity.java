@@ -2,6 +2,7 @@ package com.example.apptamlinh.TarotFeature;
 
 import android.animation.ValueAnimator;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,7 +24,8 @@ public class TarotHangNgayActivity extends AppCompatActivity {
 
     private Button btnBack_TarotHN;
     private ImageView imageView;
-    private TextView textView;
+    private TextView txtTenBai;
+    private TextView txtNoiDung;
     private TextView textView1;
     private TextView textView2;
     private boolean imageChanged = false;
@@ -46,8 +48,10 @@ public class TarotHangNgayActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
         imageView = findViewById(R.id.imgView);
-        textView = findViewById(R.id.textView);
+        txtTenBai = findViewById(R.id.txtTenBai);
+        txtNoiDung = findViewById(R.id.txtNoiDung);
         textView1 = findViewById(R.id.textView1);
         textView2 = findViewById(R.id.textView2);
 
@@ -55,19 +59,15 @@ public class TarotHangNgayActivity extends AppCompatActivity {
         translationY.setDuration(1200); // Tốc độ nè
         translationY.setRepeatCount(ObjectAnimator.INFINITE);
         translationY.setRepeatMode(ObjectAnimator.REVERSE);
-        translationY.start(); // Bắt đầu animation
+        translationY.start();
 
-        // Bắt sự kiện chạm vào bất kỳ nơi nào trên màn hình
         View tapAreaView = findViewById(R.id.main);
         tapAreaView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (tapEnabled && event.getAction() == MotionEvent.ACTION_DOWN) {
-                    tapEnabled = false; // Tắt khả năng chạm sau khi đã kích hoạt một lần
-
-                    // Thực hiện animation và hiển thị textView
-                    flipAndRaiseImageView();
-                    animateTextView();
+                    tapEnabled = false;
+                    animationView();
                     translationY.end();
                 }
                 return true;
@@ -75,41 +75,56 @@ public class TarotHangNgayActivity extends AppCompatActivity {
         });
     }
 
-    private void flipAndRaiseImageView() {
+    private void animationView() {
         // Sử dụng ValueAnimator để kiểm soát giá trị rotationY
-        ValueAnimator flipAnimator = ValueAnimator.ofFloat(180f, 0f);
-        flipAnimator.setDuration(1000);
+        ValueAnimator animationView = ValueAnimator.ofFloat(180f, 0f);
+        animationView.setDuration(1000);
 
-        flipAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        animationView.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(@NonNull ValueAnimator animation) {
-                // Lấy giá trị của fraction
                 float fraction = animation.getAnimatedFraction();
 
-                // Thay đổi hình ảnh khi animation đã hoàn thành 50%
                 if (fraction >= 0.5f && !imageChanged) {
-                    imageView.setImageResource(R.drawable.p01);
+                    imageView.setImageResource(R.drawable.p01);  //Set ảnh
                     imageChanged = true;
                 }
 
-                // Lấy giá trị rotationY hiện tại
                 float rotationY = (float) animation.getAnimatedValue();
                 imageView.setRotationY(rotationY);
 
-                // Di chuyển imageView lên trên
-                float translationYValue = -300f * fraction;
+                float translationYValue = -400f * fraction;
                 imageView.setTranslationY(translationYValue);
+
+                // Thu nhỏ hình ảnh lại
+                float scaleValue = 1.0f - fraction * 0.2f;
+                imageView.setScaleX(scaleValue);
+                imageView.setScaleY(scaleValue);
+                textView1.setVisibility(View.INVISIBLE);
+                textView2.setVisibility(View.INVISIBLE);
             }
         });
-        flipAnimator.start();
-    }
+        animationView.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(@NonNull ValueAnimator animation) {
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        txtTenBai.setVisibility(View.VISIBLE);
+                        txtNoiDung.setVisibility(View.VISIBLE);
+                    }
+                }, 1000);
 
-    private void animateTextView() {
-        textView1.setVisibility(View.INVISIBLE);
-        textView2.setVisibility(View.INVISIBLE);
-        textView.setVisibility(View.VISIBLE);
-        ObjectAnimator translateY = ObjectAnimator.ofFloat(textView, "translationY", textView.getHeight(), 0);
-        translateY.setDuration(1000);
-        translateY.start();
+                ObjectAnimator txtAnimation = ObjectAnimator.ofFloat(txtTenBai, "translationY", 30, 0);
+                txtAnimation.setDuration(1000);
+                txtAnimation.start();
+
+                ObjectAnimator txtAnimation2 = ObjectAnimator.ofFloat(txtNoiDung, "translationY", 30, 0);
+                txtAnimation2.setDuration(1000);
+                txtAnimation2.start();
+            }
+        });
+        animationView.start();
     }
 }

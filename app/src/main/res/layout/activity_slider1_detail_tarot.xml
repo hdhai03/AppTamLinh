@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#191919"
-    tools:context=".ChiemTinhFeature.ChiemTinhLaGiActivity">
+    tools:context=".TarotFeature.SliderDetail.Slider1Detail_Tarot">
 
     <Button
-        android:id="@+id/btnBack_ChiemTinhLaGi"
+        android:id="@+id/btnBack_Slider1Detail_Tarot"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/lost_type"
-        android:text="Chiêm tinh"
+        android:text="Tarot"
         android:textColor="@color/P1"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,18 +59,24 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="210dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/png_tarot_la_gi"/>
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="395dp"
+                android:layout_marginTop="16dp"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:text="Chiêm tinh, một trong những hình thức tìm kiếm tri thức cổ xưa nhất của loài người, đã đi một chặng đường dài và phức tạp qua lịch sử nhân loại. Nó bắt nguồn từ nhu cầu cơ bản của con người là hiểu biết về thế giới quanh họ và vị trí của chính mình trong vũ trụ rộng lớn. Trong các nền văn minh cổ đại như Babylon, Ai Cập, Ấn Độ và Trung Quốc, chiêm tinh không chỉ là một phần của nghi lễ tôn giáo và hệ thống niềm tin mà còn là công cụ quản lý thời gian, lập lịch canh tác và dự đoán các sự kiện quan trọng."
                 android:fontFamily="@font/americana_b"
                 android:textColor="@color/W1"
                 android:lineSpacingExtra="8sp"
                 android:paddingBottom="20dp"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:text="Tarot là một bộ bài bao gồm 78 lá bài được sử dụng để dự đoán tương lai và tìm ra những giải pháp cho những thách thức trong cuộc sống. Bộ bài này được chia thành 2 phần: 22 lá bài trưởng và 56 lá bài phụ. Mỗi lá bài có hình ảnh và ký hiệu độc đáo, thể hiện một khía cạnh khác nhau của cuộc sống."/>
 
             <TextView
                 android:id="@+id/textView4"
@@ -78,7 +84,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:text="Qua thời Trung cổ và thời kỳ Phục hưng, chiêm tinh tiếp tục được học giả và nhà lãnh đạo sử dụng như một công cụ dự đoán và quyết định. Nó được giảng dạy trong các trường địa học và thậm chí được các nhà khoa học danh tiếng như Kepler và Newton nghiên cứu. Tuy nhiên, với sự phát triển của khoa học thực nghiệm và thiên văn học hiện đại, chiêm tinh dần dần bị tách biệt khỏi khoa học chính thống và trở thành một phần của văn hoá dân gian."
+                android:text="Tarot được tin rằng xuất phát từ miền Bắc Ý vào thế kỷ 14, tuy nhiên, nguồn của nó vẫn còn tranh cãi đối với các nhà nghiên cứu. Tarot được sử dụng như một công cụ tâm linh và tiên tri từ thời Trung Cổ cho những gia đình quý tộc. Hiện nay, nó đã trở thành một phương tiện phổ biến cho các nhà tiên tri và những người quan tâm đến tâm linh học."
                 android:fontFamily="@font/americana_b"
                 android:textColor="@color/W1"
                 android:lineSpacingExtra="8sp"
@@ -91,7 +97,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:text="Dù vậy, cai trò của chiêm tinh không hề giảm bớt trong đời sống tinh thần và văn hoá của con người. Trong thế giới hiện đại, nó đã trở thành một công cụ phổ biến cho việc tự khám phá, phát triển cá nhân và tư vấn tâm lý. Nhiều người tìm đến chiêm tinh để tìm kiếm sự an ủi và hướng dẫn trong những thời kỳ bất ổn hoặc quyết định quan trọng. Nó cũng xuất hiện rộng rãi trong các tờ báo, tạp chí và trên các nền tảng số, nơi mà horoscope hàng ngày và bản đồ sao cá nhân là những điểm thu hút chú ý"
+                android:text="Khi sử dụng Tarot, người chơi sẽ thường hỏi một câu hỏi hoặc đưa ra một tình huống cụ thể, sau đó lựa chọn một số lá bài từ bộ bài Tarot. Những lá bài được lựa chọn sẽ được sắp xếp vào một mô hình nhất định và được giải thích bởi người chơi hoặc một nhà tiên tri chuyên nghiệp."
                 android:fontFamily="@font/americana_b"
                 android:textColor="@color/W1"
                 android:lineSpacingExtra="8sp"
@@ -104,7 +110,20 @@
                 android:layout_marginTop="16dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:text="Chiêm tinh, dù không được khoa học chính thống công nhận, vẫn có ảnh hưởng sâu rộng đến cách con người nhìn nhận và tương tác với thế giới xung quanh họ. Nó cung cấp một ngôn ngữ biểu tượng qua đó cá nhân có thể thể thiện hiểu biết và quan điểm của mình về cuộc sống và vận mệnh, và qua đó tiếp tục chứng minh như một phần quang trọng trong văn hoá loài người."
+                android:text="Mỗi lá bài trong Tarot đại diện cho một ý tưởng hoặc một khía cạnh khác của cuộn sống, ví dụ như sự may mắn, tình yêu, tài chính, công việc, sức khoẻ và nhiều hơn nữa. Bằng cách phân tích các lá bài được lựa chọn và cách chúng được sắp xếp trong mô hình, người chơi hoặc nhà tiên tri có thể đưa ra một dự đoán hoặc cung cấp sự chỉ đạo cho những vấn đề trong cuộc sống của người hỏi."
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="20dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="395dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="Tuy nhiên, cần lưu ý rằng Tarot chỉ là một công cụ và không thể thay thế cho sự tự quyết định và trách nghiệm cá nhân. Bất kỳ quyết định nào của bạn đều phụ thuộc vào sự hiểu biết và sự quyết định của bạn."
                 android:fontFamily="@font/americana_b"
                 android:textColor="@color/W1"
                 android:lineSpacingExtra="8sp"

@@ -7,13 +7,22 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppTamLinh"
         tools:targetApi="31">
         <activity
-            android:name=".TarotFeature.TarotHangNgayActivity"
+            android:name=".TarotFeature.SliderDetail.Slider3Detail_Tarot"
             android:parentActivityName=".TarotFeature.TarotActivity"
             android:exported="false" />
+        <activity
+            android:name=".TarotFeature.SliderDetail.Slider1Detail_Tarot"
+            android:exported="false"
+            android:parentActivityName=".TarotFeature.TarotActivity" />
+        <activity
+            android:name=".TarotFeature.TarotHangNgayActivity"
+            android:exported="false"
+            android:parentActivityName=".TarotFeature.TarotActivity" />
         <activity
             android:name=".ChiemTinhFeature.ChiemTinhDetailActivity"
             android:exported="false"
