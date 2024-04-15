@@ -25,9 +25,6 @@ import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-
-import me.relex.circleindicator.CircleIndicator;
-
 public class ChiemTinhDetailActivity extends AppCompatActivity {
     // Khai bao Button
     public Button btnBack_ChiemTinhDetail;

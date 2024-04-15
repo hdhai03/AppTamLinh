@@ -1,8 +1,10 @@
 package com.example.apptamlinh.TarotFeature;
 
 import android.animation.ValueAnimator;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,10 +20,18 @@ import android.animation.ObjectAnimator;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.apptamlinh.ChiemTinhFeature.ChiemTinhModel;
 import com.example.apptamlinh.R;
 
-public class TarotHangNgayActivity extends AppCompatActivity {
+import org.json.JSONArray;
+import org.json.JSONObject;
 
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Random;
+
+public class TarotHangNgayActivity extends AppCompatActivity {
     private Button btnBack_TarotHN;
     private ImageView imageView;
     private TextView txtTenBai;
@@ -30,6 +40,7 @@ public class TarotHangNgayActivity extends AppCompatActivity {
     private TextView textView2;
     private boolean imageChanged = false;
     private boolean tapEnabled = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +66,15 @@ public class TarotHangNgayActivity extends AppCompatActivity {
         textView1 = findViewById(R.id.textView1);
         textView2 = findViewById(R.id.textView2);
 
+        Random random = new Random();
+        int idTarot = random.nextInt(78);
+
+        TarotHNModel dataTarot = new TarotHNModel();
+        dataTarot = loadJsonTarot(idTarot);
+        String imgUrl = dataTarot.getImg();
+        txtNoiDung.setText(dataTarot.getMeaning());
+        txtTenBai.setText("Lá bài của bạn là \n " + dataTarot.getName());
+
         ObjectAnimator translationY = ObjectAnimator.ofFloat(imageView, "translationY", -25f, 25f); //Biên độ nè
         translationY.setDuration(1200); // Tốc độ nè
         translationY.setRepeatCount(ObjectAnimator.INFINITE);
@@ -67,7 +87,7 @@ public class TarotHangNgayActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 if (tapEnabled && event.getAction() == MotionEvent.ACTION_DOWN) {
                     tapEnabled = false;
-                    animationView();
+                    animationView(imgUrl);
                     translationY.end();
                 }
                 return true;
@@ -75,7 +95,7 @@ public class TarotHangNgayActivity extends AppCompatActivity {
         });
     }
 
-    private void animationView() {
+    private void animationView(String imgUrl) {
         // Sử dụng ValueAnimator để kiểm soát giá trị rotationY
         ValueAnimator animationView = ValueAnimator.ofFloat(180f, 0f);
         animationView.setDuration(1000);
@@ -84,9 +104,11 @@ public class TarotHangNgayActivity extends AppCompatActivity {
             @Override
             public void onAnimationUpdate(@NonNull ValueAnimator animation) {
                 float fraction = animation.getAnimatedFraction();
-
                 if (fraction >= 0.5f && !imageChanged) {
-                    imageView.setImageResource(R.drawable.p01);  //Set ảnh
+                    // Set anh
+                    Glide.with(TarotHangNgayActivity.this)
+                            .load(Uri.parse(imgUrl))
+                            .into(imageView);
                     imageChanged = true;
                 }
 
@@ -126,5 +148,30 @@ public class TarotHangNgayActivity extends AppCompatActivity {
             }
         });
         animationView.start();
+    }
+
+    private TarotHNModel loadJsonTarot(int i) {
+        TarotHNModel tarotData = new TarotHNModel();
+        try {
+            InputStream inputStream = getAssets().open("dataTarot.JSON");
+            int size = inputStream.available();
+            byte[] buffer = new byte[size];
+            inputStream.read(buffer);
+            inputStream.close();
+            String json = new String(buffer, StandardCharsets.UTF_8);
+            JSONArray jsonArray = new JSONArray(json);
+
+            JSONObject tarot = jsonArray.getJSONObject(i);
+
+            tarotData.setName(tarot.getString("name"));
+            tarotData.setNumber(tarot.getString("number"));
+            tarotData.setArcana(tarot.getString("arcana"));
+            tarotData.setSuit(tarot.getString("suit"));
+            tarotData.setImg(tarot.getString("img"));
+            tarotData.setMeaning(tarot.getString("meaning"));
+        } catch (Exception e) {
+            Log.e("TAG", "loadJson: error", e);
+        }
+        return tarotData;
     }
 }

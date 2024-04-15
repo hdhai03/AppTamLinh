@@ -63,36 +63,46 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.134" />
 
-    <TextView
-        android:id="@+id/txtTenBai"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="348dp"
-        android:fontFamily="@font/lost_type"
-        android:text="Lá bài của bạn là ..."
-        android:textAllCaps="false"
-        android:textColor="@color/W1"
-        android:textSize="15sp"
-        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/txtNoiDung"
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/americana_b"
-        android:lineSpacingExtra="8sp"
-        android:text="Tarot được tin rằng xuất phát từ miền Bắc Ý vào thế kỷ 14, tuy nhiên, nguồn của nó vẫn còn tranh cãi đối với các nhà nghiên cứu. Tarot được sử dụng như một công cụ tâm linh và tiên tri từ thời Trung Cổ cho những gia đình quý tộc. Hiện nay, nó đã trở thành một phương tiện phổ biến cho các nhà tiên tri và những người quan tâm đến tâm linh học."
-        android:textColor="@color/W1"
-        android:textSize="14sp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtTenBai" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/txtTenBai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lost_type"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:textSize="15sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/txtNoiDung"
+                android:layout_width="395dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/americana_b"
+                android:lineSpacingExtra="8sp"
+                android:textColor="@color/W1"
+                android:textSize="14sp"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

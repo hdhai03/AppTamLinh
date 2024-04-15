@@ -28,6 +28,7 @@ public class TarotActivity extends AppCompatActivity {
     private CircleIndicator mCircleIndicator;
     private Button btnBack_Tarot;
     private Button btnTarotHN_Tarot;
+    private Button btnTarotTQ_Tarot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +49,7 @@ public class TarotActivity extends AppCompatActivity {
 
         btnBack_Tarot = findViewById(R.id.btnBack_Tarot);
         btnTarotHN_Tarot = findViewById(R.id.btnTarotHN_Tarot);
+        btnTarotTQ_Tarot = findViewById(R.id.btnTarotTQ_Tarot);
 
         btnBack_Tarot.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +62,14 @@ public class TarotActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentTarotHN = new Intent(TarotActivity.this, TarotHangNgayActivity.class);
                 startActivity(intentTarotHN);
+            }
+        });
+
+        btnTarotTQ_Tarot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentTarotTQ = new Intent(TarotActivity.this, TarotTongQuanActivity.class);
+                startActivity(intentTarotTQ);
             }
         });
 
