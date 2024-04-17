@@ -5,7 +5,7 @@ junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 appcompat = "1.6.1"
 material = "1.11.0"
-activity = "1.8.0"
+activity = "1.8.2"
 constraintlayout = "2.1.4"
 gson = "2.10.1"
 circleindicator = "2.1.6"
@@ -22,6 +22,7 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 circleindicator = { group = "me.relex", name = "circleindicator", version.ref = "circleindicator" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
