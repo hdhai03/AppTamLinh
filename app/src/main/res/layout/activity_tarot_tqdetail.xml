@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".TarotFeature.TarotTQDetailActivity">
+
+    <Button
+        android:id="@+id/btnBack_TarotTQDetail"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lost_type"
+        android:text="Tarot"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lost_type"
+        android:text="Tổng quan"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgView"
+                    android:layout_width="120dp"
+                    android:layout_height="200dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/png_tarot_card_back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.208"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.17" />
+
+                <ImageView
+                    android:id="@+id/imgView2"
+                    android:layout_width="120dp"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/png_tarot_card_back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.17" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgView3"
+                    android:layout_width="120dp"
+                    android:layout_height="200dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/png_tarot_card_back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.208"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.17" />
+
+                <ImageView
+                    android:id="@+id/imgView4"
+                    android:layout_width="120dp"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/png_tarot_card_back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.17" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/nameCongViec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/lost_type"
+                android:paddingBottom="12dp"
+                android:layout_gravity="center"
+                android:text="Công việc"
+                android:textColor="@color/P1"
+                android:lineSpacingExtra="8sp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtCongViec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:paddingBottom="20dp"
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/nameTinhYeu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/lost_type"
+                android:paddingBottom="12dp"
+                android:layout_gravity="center"
+                android:text="Tình yêu"
+                android:textColor="@color/P1"
+                android:lineSpacingExtra="8sp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtTinhYeu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:paddingBottom="20dp"
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/nameTaiChinh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/lost_type"
+                android:paddingBottom="12dp"
+                android:layout_gravity="center"
+                android:text="Tài chính"
+                android:textColor="@color/P1"
+                android:lineSpacingExtra="8sp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtTaiChinh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:paddingBottom="20dp"
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/nameSucKhoe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/lost_type"
+                android:paddingBottom="12dp"
+                android:layout_gravity="center"
+                android:text="Sức khoẻ"
+                android:textColor="@color/P1"
+                android:lineSpacingExtra="8sp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtSucKhoe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:paddingBottom="20dp"
+                android:lineSpacingExtra="8sp"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="324dp"
+                android:layout_height="147dp"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/png_cuoi_trang" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

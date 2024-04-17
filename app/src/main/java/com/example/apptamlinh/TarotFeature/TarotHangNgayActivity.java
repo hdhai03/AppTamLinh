@@ -18,10 +18,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 import android.animation.ObjectAnimator;
 import android.view.MotionEvent;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.apptamlinh.ChiemTinhFeature.ChiemTinhModel;
 import com.example.apptamlinh.R;
 
 import org.json.JSONArray;
@@ -38,6 +38,7 @@ public class TarotHangNgayActivity extends AppCompatActivity {
     private TextView txtNoiDung;
     private TextView textView1;
     private TextView textView2;
+    private ScrollView scroll_view;
     private boolean imageChanged = false;
     private boolean tapEnabled = true;
 
@@ -65,6 +66,7 @@ public class TarotHangNgayActivity extends AppCompatActivity {
         txtNoiDung = findViewById(R.id.txtNoiDung);
         textView1 = findViewById(R.id.textView1);
         textView2 = findViewById(R.id.textView2);
+        scroll_view = findViewById(R.id.scroll_view);
 
         Random random = new Random();
         int idTarot = random.nextInt(78);
@@ -124,6 +126,7 @@ public class TarotHangNgayActivity extends AppCompatActivity {
                 imageView.setScaleY(scaleValue);
                 textView1.setVisibility(View.INVISIBLE);
                 textView2.setVisibility(View.INVISIBLE);
+                scroll_view.setVisibility(View.VISIBLE);
             }
         });
         animationView.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -149,7 +152,6 @@ public class TarotHangNgayActivity extends AppCompatActivity {
         });
         animationView.start();
     }
-
     private TarotHNModel loadJsonTarot(int i) {
         TarotHNModel tarotData = new TarotHNModel();
         try {
