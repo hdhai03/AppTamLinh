@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "435847959455",
+    "project_id": "apptamlinh",
+    "storage_bucket": "apptamlinh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435847959455:android:9d6f8a14586698e64623aa",
+        "android_client_info": {
+          "package_name": "com.example.apptamlinh"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtUfBHwf-nD2j3U-wnHgpJnDo4Gms9DGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

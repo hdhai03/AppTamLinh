@@ -10,6 +10,9 @@ constraintlayout = "2.1.4"
 gson = "2.10.1"
 circleindicator = "2.1.6"
 glide = "5.0.0-rc01"
+googleServices = "4.4.1"
+firebaseDatabase = "20.3.1"
+firebaseAuth = "22.3.1"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -22,6 +25,9 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 circleindicator = { group = "me.relex", name = "circleindicator", version.ref = "circleindicator" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+google-services = { group = "com.google.gms", name = "google-services", version.ref = "googleServices" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 
 
 [plugins]
