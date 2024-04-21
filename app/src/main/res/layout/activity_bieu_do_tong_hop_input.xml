@@ -44,7 +44,7 @@
         android:background="@drawable/custom_input"
         android:ems="10"
         android:fontFamily="@font/americana_b"
-        android:hint="Nhập họ và tên (không dấu)"
+        android:hint="Nhập tên của bạn (không dấu)"
         android:inputType="text"
         android:textSize="12sp"
         android:paddingLeft="20dp"

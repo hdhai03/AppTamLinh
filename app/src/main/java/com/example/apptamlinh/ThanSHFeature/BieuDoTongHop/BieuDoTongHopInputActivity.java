@@ -60,12 +60,13 @@ public class BieuDoTongHopInputActivity extends AppCompatActivity {
                 int iYear = numPickerYear.getValue();
                 int iMonth = numPickerMonth.getValue();
                 int iDay = numPickerDay.getValue();
-                String sHoTen = String.valueOf(edtHoTen.getText());
+                String sName = String.valueOf(edtHoTen.getText());
 
-                String selectedValueString = String.valueOf(iYear);
+                String sDay = String.format("%02d/%02d/%04d", iDay, iMonth, iYear);
 
                 Intent intentDetailBD = new Intent(BieuDoTongHopInputActivity.this, BieuDoTongHopDetailActivity.class);
-                intentDetailBD.putExtra("data", sHoTen);
+                intentDetailBD.putExtra("dataDate", sDay);
+                intentDetailBD.putExtra("dataName", sName.toUpperCase());
                 startActivity(intentDetailBD);
             }
         });

@@ -16,6 +16,7 @@
         tools:targetApi="31">
         <activity
             android:name=".ThanSHFeature.BieuDoTongHop.BieuDoTongHopDetailActivity"
+            android:parentActivityName=".ThanSHFeature.BieuDoTongHop.BieuDoTongHopInputActivity"
             android:exported="false" />
         <activity
             android:name=".ThanSHFeature.BieuDoTongHop.BieuDoTongHopInputActivity"

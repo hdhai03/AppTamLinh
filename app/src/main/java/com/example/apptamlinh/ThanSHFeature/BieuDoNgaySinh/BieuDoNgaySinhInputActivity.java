@@ -58,10 +58,11 @@ public class BieuDoNgaySinhInputActivity extends AppCompatActivity {
                 int iMonth = numPickerMonth.getValue();
                 int iDay = numPickerDay.getValue();
 
-                String selectedValueString = String.valueOf(iYear);
+                String inputData = String.format("%02d/%02d/%04d", iDay, iMonth, iYear);
 
                 Intent intentDetailBD = new Intent(BieuDoNgaySinhInputActivity.this, BieuDoNgaySinhDetailActivity.class);
-                intentDetailBD.putExtra("data", iYear);
+                intentDetailBD.putExtra("data", inputData);
+
                 startActivity(intentDetailBD);
             }
         });
