@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#191919"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterFeature.RegisterActivity">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -21,94 +21,21 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="388dp"
-        android:layout_height="841dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="-230dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/png_login_1" />
 
-    <Button
-        android:id="@+id/btnView"
-        android:layout_width="160dp"
-        android:layout_height="44dp"
-        android:background="@drawable/btn_stroke"
-        android:backgroundTint="@null"
-        android:fontFamily="@font/americana_eb"
-        android:text="Bước 1/3"
-        android:textAllCaps="false"
-        android:textColor="@color/W1"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/lost_type"
-        android:text="Tên của bạn?"
-        android:textColor="@color/W1"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/btnView"
-        app:layout_constraintVertical_bias="0.159" />
-
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@drawable/btn_back"
-        android:backgroundTint="@null"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.944" />
-
-    <Button
-        android:id="@+id/btnContinue"
-        android:layout_width="225dp"
-        android:layout_height="52dp"
-        android:background="@drawable/btn_fill"
-        android:backgroundTint="@null"
-        android:fontFamily="@font/americana_eb"
-        android:text="Tiếp tục"
-        android:textAllCaps="false"
-        android:textColor="@color/W1"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/btnBack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866" />
-
-    <EditText
-        android:id="@+id/edtTenDangNhap"
-        android:layout_width="390dp"
-        android:layout_height="58dp"
-        android:background="@drawable/custom_input"
-        android:ems="10"
-        android:fontFamily="@font/americana_b"
-        android:hint="Nhập tên đăng nhập ở đây"
-        android:inputType="text"
-        android:paddingLeft="20dp"
-        android:textColor="@color/W1"
-        android:textColorHint="@color/W1"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@id/btnContinue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.419" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

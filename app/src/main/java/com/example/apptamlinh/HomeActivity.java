@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.apptamlinh.ChiemTinhFeature.ChiemTinhActivity;
 import com.example.apptamlinh.TarotFeature.TarotActivity;
+import com.example.apptamlinh.ThanSHFeature.ThanSoHocActivity;
 
 public class HomeActivity extends AppCompatActivity {
     private Button btnProfile_Home;
