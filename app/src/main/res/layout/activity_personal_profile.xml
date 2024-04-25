@@ -70,7 +70,7 @@
         app:layout_constraintTop_toBottomOf="@id/txtUserName" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -92,7 +92,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView">
+        app:layout_constraintTop_toBottomOf="@id/txtNumber">
 
         <Button
             android:id="@+id/btnBXH_Profile"

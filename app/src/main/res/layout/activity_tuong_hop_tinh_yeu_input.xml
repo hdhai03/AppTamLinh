@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".ThanSHFeature.TuongHopTinhYeu.TuongHopTinhYeuInputActivity">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNumber"
+                android:layout_width="395dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:lineSpacingExtra="8sp"
+                android:text="Xin vui lòng nhập họ tên, ngày sinh dương lịch của bạn và người cần xem vào bên dưới."
+                android:textAlignment="center"
+                android:textColor="@color/W1"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/edtHoTen"
+                android:layout_width="313dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:fontFamily="@font/americana_b"
+                android:hint="Nhập họ và tên của bạn (không dấu)"
+                android:inputType="text"
+                android:textSize="12sp"
+                android:paddingLeft="20dp"
+                android:textColor="@color/W1"
+                android:textColorHint="@color/W1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Chọn ngày sinh của bạn"
+                android:fontFamily="@font/americana_eb"
+                android:textColor="@color/W1"
+                android:textColorHint="@color/W1" />
+
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="315dp"
+                android:layout_height="119dp"
+                android:background="@drawable/custom_input"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <NumberPicker
+                    android:id="@+id/numPickerDay"
+                    android:layout_width="85dp"
+                    android:layout_height="match_parent"
+                    android:divider="@drawable/divider_color"
+                    android:textColor="@color/W1" />
+
+                <NumberPicker
+                    android:id="@+id/numPickerMonth"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:divider="@drawable/divider_color"
+                    android:textColor="@color/W1" />
+
+                <NumberPicker
+                    android:id="@+id/numPickerYear"
+                    android:layout_width="85dp"
+                    android:layout_height="match_parent"
+                    android:divider="@drawable/divider_color"
+                    android:textColor="@color/W1" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edtHoTen2"
+                android:layout_width="313dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:fontFamily="@font/americana_b"
+                android:hint="Nhập họ và tên của bạn (không dấu)"
+                android:inputType="text"
+                android:textSize="12sp"
+                android:paddingLeft="20dp"
+                android:textColor="@color/W1"
+                android:textColorHint="@color/W1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Chọn ngày sinh của người ấy"
+                android:fontFamily="@font/americana_eb"
+                android:textColor="@color/W1"
+                android:textColorHint="@color/W1" />
+
+            <LinearLayout
+                android:id="@+id/linear2"
+                android:layout_width="315dp"
+                android:layout_height="119dp"
+                android:background="@drawable/custom_input"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <NumberPicker
+                    android:id="@+id/numPickerDay2"
+                    android:layout_width="85dp"
+                    android:layout_height="match_parent"
+                    android:divider="@drawable/divider_color"
+                    android:textColor="@color/W1" />
+
+                <NumberPicker
+                    android:id="@+id/numPickerMonth2"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:divider="@drawable/divider_color"
+                    android:textColor="@color/W1" />
+
+                <NumberPicker
+                    android:id="@+id/numPickerYear2"
+                    android:layout_width="85dp"
+                    android:layout_height="match_parent"
+                    android:divider="@drawable/divider_color"
+                    android:textColor="@color/W1" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnContinue"
+                android:layout_width="147dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_fill"
+                android:backgroundTint="@null"
+                android:fontFamily="@font/americana_eb"
+                android:text="Tiếp theo"
+                android:textAllCaps="false"
+                android:textColor="@color/W1"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

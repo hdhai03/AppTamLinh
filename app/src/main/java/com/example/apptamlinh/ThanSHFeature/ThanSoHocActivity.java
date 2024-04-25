@@ -14,10 +14,13 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.apptamlinh.R;
 import com.example.apptamlinh.ThanSHFeature.BieuDoNgaySinh.BieuDoNgaySinhInputActivity;
 import com.example.apptamlinh.ThanSHFeature.BieuDoTongHop.BieuDoTongHopInputActivity;
+import com.example.apptamlinh.ThanSHFeature.ChuKyVanSo.ChuKyVanSoInputActivity;
+import com.example.apptamlinh.ThanSHFeature.LuanGiaiSDT.LuanGiaiSDTInputActivity;
+import com.example.apptamlinh.ThanSHFeature.TuongHopTinhYeu.TuongHopTinhYeuInputActivity;
 
 public class ThanSoHocActivity extends AppCompatActivity {
     private Button btnBack_ThanSH;
-    private Button btnBDNgaySinh_ThanSH, btnBDTongHop_ThanSH;
+    private Button btnBDNgaySinh_ThanSH, btnBDTongHop_ThanSH, btnChuKyVS_ThanSH, btnTuongHopSDT_ThanSH, btnTuongHopTY_ThanSH;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,9 @@ public class ThanSoHocActivity extends AppCompatActivity {
         btnBack_ThanSH = findViewById(R.id.btnBack_CongDong);
         btnBDNgaySinh_ThanSH = findViewById(R.id.btnBDNgaySinh_ThanSH);
         btnBDTongHop_ThanSH = findViewById(R.id.btnBDTongHop_ThanSH);
+        btnChuKyVS_ThanSH = findViewById(R.id.btnChuKyVS_ThanSH);
+        btnTuongHopSDT_ThanSH = findViewById(R.id.btnTuongHopSDT_ThanSH);
+        btnTuongHopTY_ThanSH = findViewById(R.id.btnTuongHopTY_ThanSH);
 
         btnBack_ThanSH.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +58,30 @@ public class ThanSoHocActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentBDTongHop = new Intent(ThanSoHocActivity.this, BieuDoTongHopInputActivity.class);
                 startActivity(intentBDTongHop);
+            }
+        });
+
+        btnChuKyVS_ThanSH.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentCKVS = new Intent(ThanSoHocActivity.this, ChuKyVanSoInputActivity.class);
+                startActivity(intentCKVS);
+            }
+        });
+
+        btnTuongHopTY_ThanSH.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentCKVS = new Intent(ThanSoHocActivity.this, TuongHopTinhYeuInputActivity.class);
+                startActivity(intentCKVS);
+            }
+        });
+
+        btnTuongHopSDT_ThanSH.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentCKVS = new Intent(ThanSoHocActivity.this, LuanGiaiSDTInputActivity.class);
+                startActivity(intentCKVS);
             }
         });
     }

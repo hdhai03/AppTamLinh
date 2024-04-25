@@ -196,14 +196,14 @@
 
             <NumberPicker
                 android:id="@+id/numPickerDay"
-                android:layout_width="120dp"
+                android:layout_width="85dp"
                 android:layout_height="match_parent"
                 android:divider="@drawable/divider_color"
                 android:textColor="@color/W1" />
 
             <NumberPicker
                 android:id="@+id/numPickerMonth"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:divider="@drawable/divider_color"
                 android:textColor="@color/W1" />

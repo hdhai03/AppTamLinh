@@ -1,12 +1,15 @@
 package com.example.apptamlinh.ThanSHFeature.BieuDoNgaySinh;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -18,6 +21,12 @@ public class BieuDoNgaySinhInputActivity extends AppCompatActivity {
     private Button btnBack, btnContinue;
     private NumberPicker numPickerDay, numPickerMonth, numPickerYear;
 
+    private final String[] months = new String[]{
+            "Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6",
+            "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"
+    };
+
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +49,10 @@ public class BieuDoNgaySinhInputActivity extends AppCompatActivity {
         numPickerMonth.setMaxValue(12);
         numPickerYear.setMinValue(1900);
         numPickerYear.setMaxValue(2024);
+        numPickerMonth.setDisplayedValues(months);
+        numPickerDay.setTextColor(Color.WHITE);
+        numPickerMonth.setTextColor(Color.WHITE);
+        numPickerYear.setTextColor(Color.WHITE);
         //Default
         numPickerDay.setValue(29);
         numPickerMonth.setValue(12);

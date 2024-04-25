@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#191919"
-    tools:context=".ThanSHFeature.BieuDoTongHop.BieuDoTongHopInputActivity">
+    tools:context=".ThanSHFeature.ChuKyVanSo.ChuKyVanSoInputActivity">
 
     <Button
         android:id="@+id/btnBack"
@@ -28,31 +28,13 @@
         android:fontFamily="@font/americana_b"
         android:lineSpacingExtra="8sp"
         android:paddingBottom="20dp"
-        android:text="Xin vui lòng nhập tên và ngày sinh dương lịch muốn xem\nđể chúng tôi có thể tính toán các chỉ số thần số học. \n Thần số học là một phương pháp dự đoán và phân tích tính cách, tương lai và khả năng của một người."
+        android:text="Xin vui lòng nhập ngày sinh dương lịch muốn xem để \n chúng tôi có thể tính toán các chỉ số thần số học. \n Thần số học là một phương pháp dự đoán và phân tích tính cách, tương lai và khả năng của một người."
         android:textAlignment="center"
         android:textColor="@color/W1"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/edtHoTen"
-        android:layout_width="313dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_input"
-        android:ems="10"
-        android:fontFamily="@font/americana_b"
-        android:hint="Nhập tên của bạn (không dấu)"
-        android:inputType="text"
-        android:textSize="12sp"
-        android:paddingLeft="20dp"
-        android:textColor="@color/W1"
-        android:textColorHint="@color/W1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNumber" />
 
     <LinearLayout
         android:id="@+id/linear"
@@ -61,10 +43,10 @@
         android:background="@drawable/custom_input"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtHoTen">
+        app:layout_constraintTop_toBottomOf="@+id/txtNumber">
 
         <NumberPicker
             android:id="@+id/numPickerDay"

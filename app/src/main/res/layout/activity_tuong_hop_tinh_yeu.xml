@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".ThanSHFeature.TuongHopTinhYeu.TuongHopTinhYeuDetailActivity">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView99"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lost_type"
+        android:text="Tương hợp"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView98"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lost_type"
+        android:text="tình yêu"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView99" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingBottom="30dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView98">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:src="@drawable/png_thansh_heart" />
+
+                <TextView
+                    android:id="@+id/txtNumber"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/lost_type"
+                    android:textColor="@color/P1"
+                    android:textSize="30sp"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txtHeader2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lost_type"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/P1"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txtDetail2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:lineSpacingExtra="8sp"
+                android:layout_marginBottom="20dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txtDetail3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:lineSpacingExtra="8sp"
+                android:layout_marginBottom="20dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txtHeader3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lost_type"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/P1"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txtDetail4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:lineSpacingExtra="8sp"
+                android:layout_marginBottom="20dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txtDetail5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lost_type"
+                android:text="Sự tương hợp"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/P1"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txtDetail6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

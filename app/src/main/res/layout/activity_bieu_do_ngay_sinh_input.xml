@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtNumber"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -46,22 +46,28 @@
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/txtNumber">
 
         <NumberPicker
             android:id="@+id/numPickerDay"
-            android:layout_width="118dp"
-            android:layout_height="match_parent" />
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:divider="@drawable/divider_color"
+            android:textColor="@color/W1" />
 
         <NumberPicker
             android:id="@+id/numPickerMonth"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:divider="@drawable/divider_color"
+            android:textColor="@color/W1" />
 
         <NumberPicker
             android:id="@+id/numPickerYear"
             android:layout_width="85dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:divider="@drawable/divider_color"
+            android:textColor="@color/W1" />
     </LinearLayout>
 
     <Button
