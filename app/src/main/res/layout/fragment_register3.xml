@@ -54,17 +54,19 @@
                 android:id="@+id/numPickerDay"
                 android:layout_width="118dp"
                 android:layout_height="match_parent"
-                android:divider="@color/W1" />
+                android:divider="@drawable/divider_color" />
 
             <NumberPicker
                 android:id="@+id/numPickerMonth"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:divider="@drawable/divider_color" />
 
             <NumberPicker
                 android:id="@+id/numPickerYear"
                 android:layout_width="85dp"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:divider="@drawable/divider_color" />
         </LinearLayout>
 
         <Button

@@ -16,7 +16,6 @@ import com.example.apptamlinh.RegisterFeature.RegisterFragment.RegisterFragment1
 
 public class RegisterActivity extends AppCompatActivity {
     private Button btnBack;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

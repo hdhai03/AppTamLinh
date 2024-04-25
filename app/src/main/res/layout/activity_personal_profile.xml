@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#191919"
-    tools:context=".PersonalProfileActivity">
+    tools:context=".ProfileFeature.PersonalProfileActivity">
 
     <Button
         android:id="@+id/btnBack_Profile"
@@ -46,30 +46,28 @@
         app:srcCompat="@drawable/png_ava" />
 
     <TextView
-        android:id="@+id/textUserName"
+        android:id="@+id/txtUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="18dp"
         android:fontFamily="@font/lost_type"
-        android:text="USER_2706"
         android:textColor="@color/W1"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageAva" />
 
     <TextView
-        android:id="@+id/textUserBio"
+        android:id="@+id/txtUserBio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="6dp"
         android:fontFamily="@font/americana_b"
-        android:text="FB: https://www.facebook.com/hoangduchaii/"
         android:textColor="@color/W1"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textUserName" />
+        app:layout_constraintTop_toBottomOf="@id/txtUserName" />
 
     <TextView
         android:id="@+id/textView"
@@ -83,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textUserBio" />
+        app:layout_constraintTop_toBottomOf="@id/txtUserBio" />
 
     <LinearLayout
         android:id="@+id/lnDong1"

@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/edtTenDangNhap" />
+        app:layout_constraintTop_toTopOf="@+id/edtEmail" />
 
     <Button
         android:id="@+id/btnDangNhap"
@@ -99,7 +99,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtTenDangNhap"
+        android:id="@+id/edtEmail"
         android:layout_width="390dp"
         android:layout_height="58dp"
         android:background="@drawable/custom_input"

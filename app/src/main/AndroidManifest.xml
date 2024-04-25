@@ -15,9 +15,22 @@
         android:theme="@style/Theme.AppTamLinh"
         tools:targetApi="31">
         <activity
-            android:name=".ThanSHFeature.BieuDoTongHop.BieuDoTongHopDetailActivity"
-            android:parentActivityName=".ThanSHFeature.BieuDoTongHop.BieuDoTongHopInputActivity"
+            android:name=".ProfileFeature.ChinhSuaProfileActivity"
+            android:parentActivityName=".ProfileFeature.PersonalProfileActivity"
             android:exported="false" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ThanSHFeature.BieuDoTongHop.BieuDoTongHopDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".ThanSHFeature.BieuDoTongHop.BieuDoTongHopInputActivity" />
         <activity
             android:name=".ThanSHFeature.BieuDoTongHop.BieuDoTongHopInputActivity"
             android:exported="false"
@@ -79,7 +92,7 @@
             android:exported="false"
             android:parentActivityName=".HomeActivity" />
         <activity
-            android:name=".PersonalProfileActivity"
+            android:name=".ProfileFeature.PersonalProfileActivity"
             android:exported="false"
             android:parentActivityName=".HomeActivity" />
         <activity
@@ -95,13 +108,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

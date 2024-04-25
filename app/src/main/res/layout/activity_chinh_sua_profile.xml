@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".ProfileFeature.ChinhSuaProfileActivity">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lost_type"
+        android:text="Chỉnh sửa"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lost_type"
+        android:text="thông tin"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView1" />
+
+    <ImageView
+        android:id="@+id/imageAva"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/png_ava" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imageAva"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lost_type"
+                android:text="Bio"
+                android:paddingRight="20dp"
+                android:textColor="@color/W1"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtBio"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:fontFamily="@font/americana_b"
+                android:inputType="text"
+                android:paddingLeft="20dp"
+                android:textColor="@color/W1"
+                android:textColorHint="@color/W1"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lost_type"
+                android:text="Tên"
+                android:paddingRight="20dp"
+                android:textColor="@color/W1"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:fontFamily="@font/americana_b"
+                android:inputType="text"
+                android:paddingLeft="20dp"
+                android:textColor="@color/W1"
+                android:textColorHint="@color/W1"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lost_type"
+                android:text="Giới tính"
+                android:paddingRight="35dp"
+                android:textColor="@color/W1"
+                android:textSize="14sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@id/radioButtonNu">>
+
+                <RadioButton
+                    android:id="@+id/radioButtonNu"
+                    android:layout_width="80dp"
+                    android:layout_height="46dp"
+                    android:text="Nu"
+                    android:textColor="@android:color/transparent"
+                    android:background="@drawable/custom_gender_nu"
+                    android:button="@null" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonNam"
+                    android:layout_width="80dp"
+                    android:layout_height="46dp"
+                    android:background="@drawable/custom_gender_nam"
+                    android:button="@null"
+                    android:text="Nam"
+                    android:textColor="@android:color/transparent" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonKhac"
+                    android:layout_width="80dp"
+                    android:layout_height="46dp"
+                    android:background="@drawable/custom_gender_khac"
+                    android:button="@null"
+                    android:text="Khac"
+                    android:textColor="@android:color/transparent" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/lost_type"
+            android:layout_gravity="left"
+            android:text="Ngày sinh"
+            android:textColor="@color/W1"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="119dp"
+            android:background="@drawable/custom_input"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <NumberPicker
+                android:id="@+id/numPickerDay"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:divider="@drawable/divider_color"
+                android:textColor="@color/W1" />
+
+            <NumberPicker
+                android:id="@+id/numPickerMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:divider="@drawable/divider_color"
+                android:textColor="@color/W1" />
+
+            <NumberPicker
+                android:id="@+id/numPickerYear"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:divider="@drawable/divider_color"
+                android:textColor="@color/W1" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnLuu"
+            android:layout_width="225dp"
+            android:layout_height="52dp"
+            android:background="@drawable/btn_fill"
+            android:backgroundTint="@null"
+            android:fontFamily="@font/americana_eb"
+            android:text="Lưu"
+            android:textAllCaps="false"
+            android:textColor="@color/W1"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

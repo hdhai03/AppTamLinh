@@ -39,7 +39,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/edtTenDangNhap"
+            android:id="@+id/edtTen"
             android:layout_width="390dp"
             android:layout_height="58dp"
             android:background="@drawable/custom_input"

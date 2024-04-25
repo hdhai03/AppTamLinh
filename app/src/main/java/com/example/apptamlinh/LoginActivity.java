@@ -22,7 +22,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
-    private EditText edtTenDangNhap, edtMatKhau;
+    private EditText edtEmail, edtMatKhau;
     private Button btnBack;
     private Button btnDangNhap;
     private FirebaseAuth mAuth;
@@ -39,12 +39,12 @@ public class LoginActivity extends AppCompatActivity {
 
         btnBack = findViewById(R.id.btnBack);
         btnDangNhap = findViewById(R.id.btnDangNhap);
-        edtTenDangNhap = findViewById(R.id.edtTenDangNhap);
+        edtEmail = findViewById(R.id.edtEmail);
         edtMatKhau = findViewById(R.id.edtMatKhau);
 
         mAuth = FirebaseAuth.getInstance();
 
-        btnDangNhap.setOnClickListener(v -> loginUser(edtTenDangNhap.getText().toString(), edtMatKhau.getText().toString()));
+        btnDangNhap.setOnClickListener(v -> loginUser(edtEmail.getText().toString(), edtMatKhau.getText().toString()));
 
 
         btnBack.setOnClickListener(new View.OnClickListener() {

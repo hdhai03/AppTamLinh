@@ -38,29 +38,39 @@
             android:layout_marginTop="15dp" />
 
         <RadioGroup
+            android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="15dp"
+            android:checkedButton="@id/radioButtonNu">>
 
             <RadioButton
+                android:id="@+id/radioButtonNu"
                 android:layout_width="111dp"
                 android:layout_height="64dp"
+                android:text="Nu"
+                android:textColor="@android:color/transparent"
                 android:background="@drawable/custom_gender_nu"
                 android:button="@null" />
 
             <RadioButton
+                android:id="@+id/radioButtonNam"
                 android:layout_width="111dp"
                 android:layout_height="64dp"
                 android:background="@drawable/custom_gender_nam"
-                android:button="@null" />
+                android:button="@null"
+                android:text="Nam"
+                android:textColor="@android:color/transparent" />
 
             <RadioButton
+                android:id="@+id/radioButtonKhac"
                 android:layout_width="111dp"
                 android:layout_height="64dp"
                 android:background="@drawable/custom_gender_khac"
-                android:button="@null" />
-
+                android:button="@null"
+                android:text="Khac"
+                android:textColor="@android:color/transparent" />
 
         </RadioGroup>
 
