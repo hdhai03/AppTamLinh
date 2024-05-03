@@ -1,6 +1,5 @@
 package com.example.apptamlinh;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +26,19 @@ public class HomeActivity extends AppCompatActivity {
     private Button btnThanSH2_Home;
     private Button btnCongDong_Home;
 
-    @SuppressLint("MissingInflatedId")
+    private final int[] buttonIds = {
+            R.id.btnCard1, R.id.btnCard2, R.id.btnCard3, R.id.btnCard4,
+            R.id.btnCard5, R.id.btnCard6, R.id.btnCard7, R.id.btnCard8,
+            R.id.btnCard9, R.id.btnCard10, R.id.btnCard11, R.id.btnCard12
+    };
+    private final Button[] buttons = new Button[buttonIds.length];
+
+    // Ánh xạ các nút Button từ id và lưu vào mảng buttons
+    private void mapButtons() {
+        for (int i = 0; i < buttonIds.length; i++) {
+            buttons[i] = findViewById(buttonIds[i]);
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,5 +124,4 @@ public class HomeActivity extends AppCompatActivity {
         });
 
     }
-
 }

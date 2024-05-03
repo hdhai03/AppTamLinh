@@ -136,137 +136,98 @@
 
 
             <Button
+                android:id="@+id/btnCard1"
                 android:layout_width="70dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/png_tarot_card_back" />
 
             <Button
+                android:id="@+id/btnCard2"
                 android:layout_width="70dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/png_tarot_card_back" />
 
             <Button
+                android:id="@+id/btnCard3"
+
                 android:layout_width="70dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/png_tarot_card_back" />
 
             <Button
+                android:id="@+id/btnCard4"
+
                 android:layout_width="70dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/png_tarot_card_back" />
 
             <Button
+                android:id="@+id/btnCard5"
+
                 android:layout_width="70dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/png_tarot_card_back" />
 
             <Button
+                android:id="@+id/btnCard6"
+
                 android:layout_width="70dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/png_tarot_card_back" />
 
             <Button
+                android:id="@+id/btnCard7"
+
                 android:layout_width="70dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/png_tarot_card_back" />
 
             <Button
+                android:id="@+id/btnCard8"
+
                 android:layout_width="70dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/png_tarot_card_back" />
 
             <Button
+                android:id="@+id/btnCard9"
+
                 android:layout_width="70dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/png_tarot_card_back" />
 
             <Button
+                android:id="@+id/btnCard10"
+
                 android:layout_width="70dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/png_tarot_card_back" />
 
             <Button
+                android:id="@+id/btnCard11"
+
                 android:layout_width="70dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/png_tarot_card_back" />
 
             <Button
+                android:id="@+id/btnCard12"
+
                 android:layout_width="70dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/png_tarot_card_back" />
-
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/png_tarot_card_back" />
-
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/png_tarot_card_back" />
-
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/png_tarot_card_back" />
-
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/png_tarot_card_back" />
-
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/png_tarot_card_back" />
-
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/png_tarot_card_back" />
-
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/png_tarot_card_back" />
-
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/png_tarot_card_back" />
-
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/png_tarot_card_back" />
-
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/png_tarot_card_back" />
-
 
         </LinearLayout>
     </HorizontalScrollView>

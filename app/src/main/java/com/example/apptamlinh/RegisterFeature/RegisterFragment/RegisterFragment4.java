@@ -1,5 +1,6 @@
 package com.example.apptamlinh.RegisterFeature.RegisterFragment;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,18 +18,23 @@ import androidx.fragment.app.Fragment;
 import com.example.apptamlinh.HomeActivity;
 import com.example.apptamlinh.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterFragment4 extends Fragment {
     private Button btnBack, btnContinue;
 
     private FirebaseAuth mAuth;
-    DatabaseReference mDatabase;
+    FirebaseFirestore db;
     private String gioiTinh;
 
     public RegisterFragment4() {
@@ -47,7 +53,7 @@ public class RegisterFragment4 extends Fragment {
         RadioButton rdKhac = view.findViewById(R.id.radioButtonKhac);
 
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        db = FirebaseFirestore.getInstance();
 
         Bundle bundle = getArguments();
         if (bundle != null) {
@@ -77,6 +83,7 @@ public class RegisterFragment4 extends Fragment {
     private void registerFirebase(String email, String password, String name, String ngaySinh, String gioiTinh) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @SuppressLint("RestrictedApi")
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
@@ -84,16 +91,29 @@ public class RegisterFragment4 extends Fragment {
                             FirebaseUser user = mAuth.getCurrentUser();
                             String userId = user.getUid();
 
-                            // Lưu thông tin người dùng vào Realtime Database
-                            DatabaseReference userRef = mDatabase.child("users").child(userId);
-                            userRef.child("userName").setValue(name);
-                            userRef.child("userNgaySinh").setValue(ngaySinh);
-                            userRef.child("userGioiTinh").setValue(gioiTinh);
-                            userRef.child("userBio").setValue("");
-                            Toast.makeText(getContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
-                            saveLoginLocal(email, FirebaseAuth.getInstance().getCurrentUser().getUid());
-                            Intent intentHome = new Intent(getContext(), HomeActivity.class);
-                            startActivity(intentHome);
+                            Map<String, Object> newData = new HashMap<>();
+                            newData.put("userName", name);
+                            newData.put("userNgaySinh", ngaySinh);
+                            newData.put("userGioiTinh", gioiTinh);
+                            newData.put("userBio", "Bio");
+
+                            DocumentReference userRef = db.collection("users").document(userId);
+                            userRef.set(newData)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Toast.makeText(getContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                                            saveLoginLocal(email, FirebaseAuth.getInstance().getCurrentUser().getUid());
+                                            Intent intentHome = new Intent(getContext(), HomeActivity.class);
+                                            startActivity(intentHome);
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(getContext(), "Lỗi khi lưu dữ liệu: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
                         } else {
                             Toast.makeText(getContext(), "Đăng ký thất bại: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

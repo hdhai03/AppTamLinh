@@ -16,19 +16,18 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.apptamlinh.MainActivity;
 import com.example.apptamlinh.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PersonalProfileActivity extends AppCompatActivity {
     private Button btnBack_Profile, btnDangXuat_Profile, btnChinhSua_Profile;
     TextView txtUserName, txtUserBio;
     private FirebaseAuth mAuth;
-    DatabaseReference databaseRef;
-    String userName, userBio;
+    DocumentReference dbRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,23 +46,25 @@ public class PersonalProfileActivity extends AppCompatActivity {
         txtUserName = findViewById(R.id.txtUserName);
         btnChinhSua_Profile = findViewById(R.id.btnChinhSua_Profile);
 
-        mAuth = FirebaseAuth.getInstance();
-        databaseRef = FirebaseDatabase.getInstance().getReference().child("users");
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        dbRef = FirebaseFirestore.getInstance().collection("users").document(userId);
 
-        databaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        dbRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                    // Lấy dữ liệu từ dataSnapshot
-                    userName = userSnapshot.child("userName").getValue(String.class);
-                    userBio = userSnapshot.child("userBio").getValue(String.class);
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    // Lấy dữ liệu từ DocumentSnapshot
+                    String userName = documentSnapshot.getString("userName");
+                    String userBio = documentSnapshot.getString("userBio");
                     txtUserBio.setText(userBio);
                     txtUserName.setText(userName);
+                } else {
+                    // Xử lý khi không có dữ liệu tồn tại
                 }
             }
-
+        }).addOnFailureListener(new OnFailureListener() {
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            public void onFailure(@NonNull Exception e) {
                 // Xử lý khi đọc dữ liệu thất bại
             }
         });

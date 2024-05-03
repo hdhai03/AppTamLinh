@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.circleindicator)
     implementation(libs.glide)
     implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

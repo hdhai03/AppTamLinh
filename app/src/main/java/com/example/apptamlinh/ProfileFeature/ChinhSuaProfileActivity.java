@@ -19,18 +19,21 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.apptamlinh.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ChinhSuaProfileActivity extends AppCompatActivity {
     private Button btnBack, btnLuu;
@@ -43,8 +46,7 @@ public class ChinhSuaProfileActivity extends AppCompatActivity {
     };
 
     private FirebaseAuth mAuth;
-    DatabaseReference databaseRef;
-    String userName, userBio, userNgaySinh, userGioiTinh;
+    DocumentReference dbRef;
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
@@ -67,7 +69,9 @@ public class ChinhSuaProfileActivity extends AppCompatActivity {
         rdKhac = findViewById(R.id.radioButtonKhac);
 
         mAuth = FirebaseAuth.getInstance();
-        databaseRef = FirebaseDatabase.getInstance().getReference().child("users");
+        FirebaseUser user = mAuth.getCurrentUser();
+        String userId = user.getUid();
+        dbRef = FirebaseFirestore.getInstance().collection("users").document(userId);
 
         numPickerDay = findViewById(R.id.numPickerDay);
         numPickerMonth = findViewById(R.id.numPickerMonth);
@@ -83,16 +87,17 @@ public class ChinhSuaProfileActivity extends AppCompatActivity {
         numPickerMonth.setTextColor(Color.WHITE);
         numPickerYear.setTextColor(Color.WHITE);
 
-        databaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        dbRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                    // Lấy dữ liệu từ dataSnapshot
-                    userName = userSnapshot.child("userName").getValue(String.class);
-                    userBio = userSnapshot.child("userBio").getValue(String.class);
-                    userNgaySinh = userSnapshot.child("userNgaySinh").getValue(String.class);
-                    userGioiTinh = userSnapshot.child("userGioiTinh").getValue(String.class);
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    // Lấy dữ liệu từ DocumentSnapshot
+                    String userName = documentSnapshot.getString("userName");
+                    String userBio = documentSnapshot.getString("userBio");
+                    String userNgaySinh = documentSnapshot.getString("userNgaySinh");
+                    String userGioiTinh = documentSnapshot.getString("userGioiTinh");
 
+                    // Xử lý ngày sinh
                     DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                     Date date = null;
                     try {
@@ -106,6 +111,7 @@ public class ChinhSuaProfileActivity extends AppCompatActivity {
                     int iMonth = calendar.get(Calendar.MONTH) + 1;
                     int iYear = calendar.get(Calendar.YEAR);
 
+                    // Cập nhật giao diện người dùng
                     numPickerDay.setValue(iDay);
                     numPickerMonth.setValue(iMonth);
                     numPickerYear.setValue(iYear);
@@ -119,11 +125,13 @@ public class ChinhSuaProfileActivity extends AppCompatActivity {
                     } else {
                         rdKhac.setChecked(true);
                     }
+                } else {
+                    // Xử lý khi không có dữ liệu tồn tại
                 }
             }
-
+        }).addOnFailureListener(new OnFailureListener() {
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            public void onFailure(@NonNull Exception e) {
                 // Xử lý khi đọc dữ liệu thất bại
             }
         });
@@ -152,20 +160,33 @@ public class ChinhSuaProfileActivity extends AppCompatActivity {
                 String bio = String.valueOf(edtBio.getText());
                 String name = String.valueOf(edtName.getText());
                 updateUser(bio, name, ngaySinh, gioiTinh);
-                Toast.makeText(ChinhSuaProfileActivity.this, "Lưu thành công", Toast.LENGTH_SHORT).show();
-
             }
         });
     }
 
     private void updateUser(String bio, String name, String date, String gioiTinh) {
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("users").child(userId);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference userRef = db.collection("users").document(userId);
 
-        userRef.child("userBio").setValue(bio);
-        userRef.child("userName").setValue(name);
-        userRef.child("userNgaySinh").setValue(date);
-        userRef.child("userGioiTinh").setValue(gioiTinh);
+        Map<String, Object> updates = new HashMap<>();
+        updates.put("userBio", bio);
+        updates.put("userName", name);
+        updates.put("userNgaySinh", date);
+        updates.put("userGioiTinh", gioiTinh);
 
+        userRef.update(updates)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(ChinhSuaProfileActivity.this, "Lưu thành công", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(ChinhSuaProfileActivity.this, "Lưu thất bại", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }
