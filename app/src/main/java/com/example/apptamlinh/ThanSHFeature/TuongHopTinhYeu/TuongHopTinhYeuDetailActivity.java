@@ -34,7 +34,7 @@ public class TuongHopTinhYeuDetailActivity extends AppCompatActivity {
         });
 
         txtNumber = findViewById(R.id.txtNumber);
-        txtHeader2 = findViewById(R.id.txtHeader2);
+        txtHeader2 = findViewById(R.id.txt1Header);
         txtHeader3 = findViewById(R.id.txtHeader3);
         txtDetail2 = findViewById(R.id.txtDetail2);
         txtDetail3 = findViewById(R.id.txtDetail3);

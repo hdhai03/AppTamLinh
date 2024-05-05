@@ -154,13 +154,12 @@
         android:id="@+id/txtView1"
         android:layout_width="40dp"
         android:layout_height="50dp"
-        android:textSize="18sp"
-        android:gravity="center"
         android:layout_marginTop="135dp"
         android:fontFamily="@font/americana_eb"
-        android:text="777777"
+        android:gravity="center"
         android:textAlignment="center"
         android:textColor="@color/W1"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
@@ -211,7 +210,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtHeader2"
+                android:id="@+id/txt1Header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
