@@ -24,7 +24,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PersonalProfileActivity extends AppCompatActivity {
-    private Button btnBack_Profile, btnDangXuat_Profile, btnChinhSua_Profile;
+    private Button btnBack_Profile, btnDangXuat_Profile, btnChinhSua_Profile, btnMoiBanBe_Profile;
     TextView txtUserName, txtUserBio;
     private FirebaseAuth mAuth;
     DocumentReference dbRef;
@@ -45,7 +45,8 @@ public class PersonalProfileActivity extends AppCompatActivity {
         txtUserBio = findViewById(R.id.txtUserBio);
         txtUserName = findViewById(R.id.txtUserName);
         btnChinhSua_Profile = findViewById(R.id.btnChinhSua_Profile);
-
+        btnMoiBanBe_Profile = findViewById(R.id.btnMoiBanBe_Profile);
+        mAuth = FirebaseAuth.getInstance();
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         dbRef = FirebaseFirestore.getInstance().collection("users").document(userId);
 
@@ -73,6 +74,14 @@ public class PersonalProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentChinhSua = new Intent(PersonalProfileActivity.this, ChinhSuaProfileActivity.class);
                 startActivity(intentChinhSua);
+            }
+        });
+
+        btnMoiBanBe_Profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentMoiBanBe = new Intent(PersonalProfileActivity.this, MoiBanBeActivity.class);
+                startActivity(intentMoiBanBe);
             }
         });
         btnDangXuat_Profile.setOnClickListener(new View.OnClickListener() {
