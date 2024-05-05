@@ -15,29 +15,37 @@
         android:theme="@style/Theme.AppTamLinh"
         tools:targetApi="31">
         <activity
-            android:name=".ProfileFeature.MoiBanBeActivity"
-            android:parentActivityName=".ProfileFeature.PersonalProfileActivity"
+            android:name=".ThanSHFeature.CacChiSo.CacChiSoDetailActivity"
+            android:parentActivityName=".ThanSHFeature.ThanSoHocActivity"
             android:exported="false" />
+        <activity
+            android:name=".ThanSHFeature.CacChiSo.CacChiSoInputActivity"
+            android:parentActivityName=".ThanSHFeature.ThanSoHocActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileFeature.MoiBanBeActivity"
+            android:exported="false"
+            android:parentActivityName=".ProfileFeature.PersonalProfileActivity" />
         <activity
             android:name=".ThanSHFeature.TuongHopTinhYeu.TuongHopTinhYeuDetailActivity"
-            android:parentActivityName=".ThanSHFeature.ThanSoHocActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ThanSHFeature.ThanSoHocActivity" />
         <activity
             android:name=".ThanSHFeature.TuongHopTinhYeu.TuongHopTinhYeuInputActivity"
-            android:parentActivityName=".ThanSHFeature.ThanSoHocActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ThanSHFeature.ThanSoHocActivity" />
         <activity
             android:name=".ThanSHFeature.LuanGiaiSDT.LuanGiaiSDTDetailActivity"
-            android:parentActivityName=".ThanSHFeature.ThanSoHocActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ThanSHFeature.ThanSoHocActivity" />
         <activity
             android:name=".ThanSHFeature.LuanGiaiSDT.LuanGiaiSDTInputActivity"
-            android:parentActivityName=".ThanSHFeature.ThanSoHocActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ThanSHFeature.ThanSoHocActivity" />
         <activity
             android:name=".ThanSHFeature.ChuKyVanSo.ChuKyVanSoDetailActivity"
-            android:parentActivityName=".ThanSHFeature.ThanSoHocActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ThanSHFeature.ThanSoHocActivity" />
         <activity
             android:name=".ThanSHFeature.ChuKyVanSo.ChuKyVanSoInputActivity"
             android:exported="false"
