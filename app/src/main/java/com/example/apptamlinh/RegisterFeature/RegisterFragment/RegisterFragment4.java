@@ -96,6 +96,8 @@ public class RegisterFragment4 extends Fragment {
                             newData.put("userNgaySinh", ngaySinh);
                             newData.put("userGioiTinh", gioiTinh);
                             newData.put("userBio", "Bio");
+                            newData.put("userEnergy", 5);
+                            newData.put("userInvite", false);
 
                             DocumentReference userRef = db.collection("users").document(userId);
                             userRef.set(newData)

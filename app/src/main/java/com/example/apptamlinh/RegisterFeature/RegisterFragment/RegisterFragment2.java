@@ -11,10 +11,8 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.MutableLiveData;
 
 import com.example.apptamlinh.R;
-import com.example.apptamlinh.RegisterFeature.DangKyModel;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,13 +23,6 @@ public class RegisterFragment2 extends Fragment {
     public RegisterFragment2() {
         // Required empty public constructor
     }
-
-    private MutableLiveData<DangKyModel> dangKyModelLiveData;
-
-    public void setDangKyModelLiveData(MutableLiveData<DangKyModel> dangKyModelLiveData) {
-        this.dangKyModelLiveData = dangKyModelLiveData;
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

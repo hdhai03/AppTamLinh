@@ -24,7 +24,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PersonalProfileActivity extends AppCompatActivity {
-    private Button btnBack_Profile, btnDangXuat_Profile, btnChinhSua_Profile, btnMoiBanBe_Profile;
+    private Button btnBack_Profile, btnEnergy_Profile, btnDangXuat_Profile, btnChinhSua_Profile, btnMoiBanBe_Profile, btnNhapMa_Profile;
     TextView txtUserName, txtUserBio;
     private FirebaseAuth mAuth;
     DocumentReference dbRef;
@@ -46,6 +46,9 @@ public class PersonalProfileActivity extends AppCompatActivity {
         txtUserName = findViewById(R.id.txtUserName);
         btnChinhSua_Profile = findViewById(R.id.btnChinhSua_Profile);
         btnMoiBanBe_Profile = findViewById(R.id.btnMoiBanBe_Profile);
+        btnEnergy_Profile = findViewById(R.id.btnEnergy_Profile);
+        btnNhapMa_Profile = findViewById(R.id.btnNhapMa_Profile);
+
         mAuth = FirebaseAuth.getInstance();
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         dbRef = FirebaseFirestore.getInstance().collection("users").document(userId);
@@ -57,8 +60,10 @@ public class PersonalProfileActivity extends AppCompatActivity {
                     // Lấy dữ liệu từ DocumentSnapshot
                     String userName = documentSnapshot.getString("userName");
                     String userBio = documentSnapshot.getString("userBio");
+                    Long userEnergy = documentSnapshot.getLong("userEnergy");
                     txtUserBio.setText(userBio);
                     txtUserName.setText(userName);
+                    btnEnergy_Profile.setText(String.valueOf(userEnergy));
                 } else {
                     // Xử lý khi không có dữ liệu tồn tại
                 }
@@ -84,6 +89,13 @@ public class PersonalProfileActivity extends AppCompatActivity {
                 startActivity(intentMoiBanBe);
             }
         });
+        btnNhapMa_Profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentNhapMa = new Intent(PersonalProfileActivity.this, NhapMaActivity.class);
+                startActivity(intentNhapMa);
+            }
+        });
         btnDangXuat_Profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +108,7 @@ public class PersonalProfileActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
     }
 
     private void logoutUser() {

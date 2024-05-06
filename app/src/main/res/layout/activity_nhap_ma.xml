@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".ProfileFeature.NhapMaActivity">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/lost_type"
+        android:text="Nhập mã \n giới thiệu"
+        android:textAlignment="center"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView1"
+        app:srcCompat="@drawable/png_nhap_ma_gt" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/lost_type"
+        android:text="Nhập mã giới thiệu"
+        android:textColor="@color/W1"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+    <EditText
+        android:id="@+id/edtCode"
+        android:layout_width="375dp"
+        android:layout_height="45dp"
+        android:hint="Nhập mã tại đây"
+        android:fontFamily="@font/americana_eb"
+        android:textColor="@color/W1"
+        android:textColorHint="@color/W1"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        android:paddingStart="70dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="start|center_vertical"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_nhap_code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+    <Button
+        android:id="@+id/btnNhanMa"
+        android:layout_width="225dp"
+        android:layout_height="52dp"
+        android:background="@drawable/btn_fill"
+        android:backgroundTint="@null"
+        android:fontFamily="@font/americana_eb"
+        android:text="Nhận mã"
+        android:textAllCaps="false"
+        android:textColor="@color/W1"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtCode" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="289dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnNhanMa"
+        app:srcCompat="@drawable/png_cuoi_trang" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
