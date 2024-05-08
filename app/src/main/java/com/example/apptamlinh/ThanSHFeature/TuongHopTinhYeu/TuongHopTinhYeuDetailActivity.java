@@ -1,7 +1,10 @@
 package com.example.apptamlinh.ThanSHFeature.TuongHopTinhYeu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -11,6 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.apptamlinh.R;
+import com.example.apptamlinh.ThanSHFeature.ThanSoHocActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -20,6 +24,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class TuongHopTinhYeuDetailActivity extends AppCompatActivity {
+    Button btnBack;
     TextView txtNumber, txtHeader2, txtHeader3, txtDetail2, txtDetail3, txtDetail4, txtDetail5, txtDetail6;
 
     @Override
@@ -41,6 +46,17 @@ public class TuongHopTinhYeuDetailActivity extends AppCompatActivity {
         txtDetail4 = findViewById(R.id.txtDetail4);
         txtDetail5 = findViewById(R.id.txtDetail5);
         txtDetail6 = findViewById(R.id.txtDetail6);
+        btnBack = findViewById(R.id.btnBack);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TuongHopTinhYeuDetailActivity.this, ThanSoHocActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
         Bundle extras = getIntent().getExtras();

@@ -17,8 +17,6 @@ import androidx.core.view.WindowInsetsCompat;
 import com.bumptech.glide.Glide;
 import com.example.apptamlinh.R;
 
-import java.util.ArrayList;
-
 public class TarotTQDetailActivity extends AppCompatActivity {
     private Button btnBack_TarotTQDetail;
     private ImageView imgView, imgView2, imgView3, imgView4;
@@ -51,7 +49,10 @@ public class TarotTQDetailActivity extends AppCompatActivity {
         btnBack_TarotTQDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                Intent intent = new Intent(TarotTQDetailActivity.this, TarotActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish(); // Kết thúc Act3 để không còn duy trì trong stack.
             }
         });
 

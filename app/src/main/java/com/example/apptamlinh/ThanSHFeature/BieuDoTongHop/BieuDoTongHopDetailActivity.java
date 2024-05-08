@@ -1,5 +1,6 @@
 package com.example.apptamlinh.ThanSHFeature.BieuDoTongHop;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.apptamlinh.R;
+import com.example.apptamlinh.ThanSHFeature.ThanSoHocActivity;
 
 public class BieuDoTongHopDetailActivity extends AppCompatActivity {
     private Button btnBack;
@@ -60,7 +62,10 @@ public class BieuDoTongHopDetailActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                Intent intent = new Intent(BieuDoTongHopDetailActivity.this, ThanSoHocActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
             }
         });
 

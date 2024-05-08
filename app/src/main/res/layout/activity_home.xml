@@ -25,7 +25,6 @@
         android:background="@drawable/btn_energy"
         android:fontFamily="@font/americana_b"
         android:paddingLeft="10dp"
-        android:text="01"
         android:textColor="@color/W1"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"

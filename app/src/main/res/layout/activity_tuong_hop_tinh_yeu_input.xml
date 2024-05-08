@@ -109,12 +109,12 @@
                 android:background="@drawable/custom_input"
                 android:ems="10"
                 android:fontFamily="@font/americana_b"
-                android:hint="Nhập họ và tên của bạn (không dấu)"
+                android:hint="Nhập họ và tên của người ấy (không dấu)"
                 android:inputType="text"
-                android:textSize="12sp"
                 android:paddingLeft="20dp"
                 android:textColor="@color/W1"
-                android:textColorHint="@color/W1" />
+                android:textColorHint="@color/W1"
+                android:textSize="12sp" />
 
             <TextView
                 android:layout_width="wrap_content"

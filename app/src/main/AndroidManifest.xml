@@ -105,7 +105,7 @@
         <activity
             android:name=".ChiemTinhFeature.ChiemTinhDetailActivity"
             android:exported="false"
-            android:parentActivityName=".ChiemTinhFeature.ChiemTinhListActivity" />
+            android:parentActivityName=".ChiemTinhFeature.ChiemTinhActivity" />
         <activity
             android:name=".ChiemTinhFeature.ChiemTinhListActivity"
             android:exported="false"

@@ -1,6 +1,9 @@
 package com.example.apptamlinh.ThanSHFeature.LuanGiaiSDT;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -10,10 +13,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.apptamlinh.R;
+import com.example.apptamlinh.ThanSHFeature.ThanSoHocActivity;
 
 import java.util.Calendar;
 
 public class LuanGiaiSDTDetailActivity extends AppCompatActivity {
+    Button btnBack;
     TextView txtNumber, txtHeader, txtDetail;
 
 
@@ -42,6 +47,17 @@ public class LuanGiaiSDTDetailActivity extends AppCompatActivity {
         txtNumber = findViewById(R.id.txtNumber);
         txtHeader = findViewById(R.id.txtHeader);
         txtDetail = findViewById(R.id.txtDetail);
+        btnBack = findViewById(R.id.btnBack);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LuanGiaiSDTDetailActivity.this, ThanSoHocActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         Bundle extras = getIntent().getExtras();
         String dataSDT = extras.getString("dataSDT");

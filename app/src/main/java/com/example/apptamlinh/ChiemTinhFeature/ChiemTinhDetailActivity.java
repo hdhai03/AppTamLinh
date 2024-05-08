@@ -1,5 +1,6 @@
 package com.example.apptamlinh.ChiemTinhFeature;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -61,7 +62,10 @@ public class ChiemTinhDetailActivity extends AppCompatActivity {
         btnBack_ChiemTinhDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                Intent intent = new Intent(ChiemTinhDetailActivity.this, ChiemTinhActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
             }
         });
 

@@ -1,5 +1,6 @@
 package com.example.apptamlinh.ThanSHFeature.CacChiSo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,11 +13,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.apptamlinh.R;
+import com.example.apptamlinh.ThanSHFeature.ThanSoHocActivity;
 
 public class CacChiSoDetailActivity extends AppCompatActivity {
     private Button btnBack;
     TextView[] txtDetails = new TextView[9];
     TextView[] txtHeaders = new TextView[9];
+
+    TextView[] txtNumbers = new TextView[6];
 
     String[] csDuongDoi = new String[]{
             "Số chủ đạo 1 (số chủ đạo 10) thường là những người năng động, chăm chỉ và vô cùng tự chủ. Họ luôn cố gắng hoàn thành mọi việc một cách tốt nhất, luôn muốn tự mình thực hiện và không thích nhờ sự trợ giúp từ người khác.Những người sở hữu chỉ số đường đời 1 cũng thể hiện sự cố chấp của mình bằng cách hiếm khi nghe và làm theo những lời khuyên của người khác. Một khi đã quyết định điều gì thì rất khó khiến số 1 đổi ý. Người mang con số chủ đạo 1 có tố chất lãnh đạo, sự tiên phong và quyết đoán trong công việc. Họ có tiềm năng rất lớn để trở thành những người lãnh, đạo, đứng đầu tổ chức, đội nhóm. Cùng với tư duy linh hoạt không ngừng cải cách và đổi mới của mình, số 1 chủ đạo sẽ là điểm tựa vững chắc cho cấp dưới. Họ sẽ không ngừng học hỏi và tìm kiếm những công thức, cách làm mang lại hiệu quả cao nhất để mang lại kết quả cho tổ chức của mình. Nếu là chủ doanh nghiệp, số 1 trong thần số học sẽ không ngừng cải thiện mô hình kinh doanh, tối ưu hóa chi phí vận hành để thành công. Tâm trí của con số chủ đạo này là luôn muốn học hỏi, khám phá và cải tiến của mình. Vì là người kiêm định nên con số chủ đạo 1 sẽ không dễ dàng từ bỏ mục tiêu của mình dù cho có gặp nhiều khó khăn. Họ thuộc nhóm người đã làm thì hết sức con chơi thì hết mình. Với con người có chỉ số đường đời 1 thì việc hoàn thành mục tiêu là điều tối thượng, dù cho mục tiêu đó có lớn hay nhỏ, dễ dàng hay khó khăn. Sự quyết liệt này khiến cho những người trong đội nhóm của họ luôn luôn có tâm thế tiến lên. Những người có tâm lý chán nản, chậm chạm, tiêu cực và dễ lùi bước sẽ không thể làm việc được với số 1. Số đường đời 1 đại diện cho tố chất lãnh đạo, thủ lĩnh, người đứng đầu. Người mang con số này được sinh ra để chinh phục những giấc mơ và mục tiêu lớn. Với tâm thái bao dung số chủ đạo 1 trong thần số học sẽ dễ dàng bỏ qua những lỗi lầm nhỏ của người khác. Nhưng sẽ không thể bỏ qua những hành động dẫn đến sự ảnh hưởng xấu tới công việc. Chỉ số đường đời 1 sẵn sàng giúp đỡ người khác trong công việc một cách nhiệt tình và giúp họ đưa ra những ý tưởng đột phá. Người có thần số học số 1 trong chỉ số đường đời thích chinh phục mục tiêu, chiến thắng là điều luôn được họ hướng tới. Trong các cuộc thi đấu người này sẽ khó chấp nhận thất bại. Họ sẽ tiếp tục tập luyện cho lần thi đấu sau nếu không thể chiến thắng trong lần đầu. Cảm giác chiến thắng luôn tồn tại trong tâm trí của đường đời 1, khiến học vui vẻ và thích thú khi khoe về những chiến thắng của mình. Với công việc, số 1 đường đời là người có thiên hướng độc lập và tự chủ rất cao, không thích phụ thuộc vào người khác. Do vậy mà nếu làm nhân viên thì đôi lúc con số chủ đạo 1 sẽ gây ra sự khó chịu cho cấp trên. Mặc dù vậy đây cũng không phải vấn đề lớn bởi khả năng tự chủ và trách nghiệm của mình khiến cho họ luôn là người đáng tin cậy. Trong công việc thì cấp dưới và người xung quanh sẽ khó có thể làm việc được với người có thần số học số 1 trong số chủ đạo. Tuy nhiên nếu thích nghi và làm việc với họ thì mọi người xung quanh sẽ phát triển rất nhanh chóng. Bởi trong công việc số chủ đạo 1 luôn là người tiên phong, đi trước đón đầu giúp người khác có thể học hỏi thêm nhiều kinh nghiệm. Người mang chỉ số đường đời 1 không bao giờ tự hài lòng với chính mình, nếu người khác hài lòng bạn cũng sẽ không lài lòng với chính mình. Có điểm yếu cố hữu đó là sự độc đoán và ích kỷ của mình sẽ dẫn đến việc đôi khi bạn sẽ chèn ép người khác. Điều này sẽ làm cho mọi người khó chịu thấm chí là căm ghét số chủ đạo 1.",
@@ -100,7 +104,10 @@ public class CacChiSoDetailActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                Intent intent = new Intent(CacChiSoDetailActivity.this, ThanSoHocActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
             }
         });
         for (int i = 0; i < 9; i++) {
@@ -111,6 +118,11 @@ public class CacChiSoDetailActivity extends AppCompatActivity {
         for (int i = 0; i < 9; i++) {
             int resId = getResources().getIdentifier("txt" + (i + 1) + "Detail", "id", getPackageName());
             txtDetails[i] = findViewById(resId);
+        }
+
+        for (int i = 0; i < 6; i++) {
+            int resId = getResources().getIdentifier("txt" + "Number" + (i + 1), "id", getPackageName());
+            txtNumbers[i] = findViewById(resId);
         }
 
         Bundle extras = getIntent().getExtras();
@@ -124,15 +136,20 @@ public class CacChiSoDetailActivity extends AppCompatActivity {
         int iDuongDoi = Integer.parseInt(sumDigitsToOne(sDay));
         txtHeaders[0].setText("Chỉ số đường đời của bạn là " + iDuongDoi);
         txtDetails[0].setText(csDuongDoi[iDuongDoi - 1]);
+        txtNumbers[0].setText(String.valueOf(iDuongDoi));
 
         String tmp = taoChuoi(dataTen);
         int iLinhHon = Integer.parseInt(sumDigitsToOne(tmp));
         txtHeaders[1].setText("Chỉ số linh hồn của bạn là " + iLinhHon);
         txtDetails[1].setText(csLinhHon[iLinhHon - 1]);
+        txtNumbers[1].setText(String.valueOf(iLinhHon));
+
 
         int iSuMenh = iLinhHon;
         txtHeaders[2].setText("Chỉ số sứ mệnh của bạn là " + iSuMenh);
         txtDetails[2].setText(csSuMenh[iSuMenh - 1]);
+        txtNumbers[2].setText(String.valueOf(iSuMenh));
+
 
 
         int tmpDay = Integer.parseInt(sumDigitsToOne(String.valueOf(iDay)));
@@ -149,27 +166,34 @@ public class CacChiSoDetailActivity extends AppCompatActivity {
                 "Giai đoạn 2: " + iThuThach2 + "\n" + csThuThach[iThuThach2] + "\n" +
                 "Giai đoạn 3: " + iThuThach3 + "\n" + csThuThach[iThuThach3] + "\n" +
                 "Giai đoạn 4: " + iThuThach4 + "\n" + csThuThach[iThuThach4]);
+        txtNumbers[3].setText(String.valueOf(iThuThach1));
 
         String tmp3 = taoChuoi(dataHoTen);
         int iNhanCach = Integer.parseInt(sumDigitsToOne(tmp3));
         txtHeaders[4].setText("Chỉ số nhân cách của bạn là " + iNhanCach);
         txtDetails[4].setText(csNhanCach[iNhanCach - 1]);
+        txtNumbers[4].setText(String.valueOf(iNhanCach));
+
 
         switch (iDay) {
             case 13:
                 txtHeaders[5].setText("Chỉ số nợ nghiệp của bạn là " + iDay);
+                txtNumbers[5].setText(String.valueOf(iDay));
                 txtDetails[5].setText(csNoNghiep1[0] + "\n" + csNoNghiep2[0]);
                 break;
             case 14:
                 txtHeaders[5].setText("Chỉ số nợ nghiệp của bạn là " + iDay);
+                txtNumbers[5].setText(String.valueOf(iDay));
                 txtDetails[5].setText(csNoNghiep1[1] + "\n" + csNoNghiep2[1]);
                 break;
             case 16:
                 txtHeaders[5].setText("Chỉ số nợ nghiệp của bạn là " + iDay);
+                txtNumbers[5].setText(String.valueOf(iDay));
                 txtDetails[5].setText(csNoNghiep1[2] + "\n" + csNoNghiep2[2]);
                 break;
             case 19:
                 txtHeaders[5].setText("Chỉ số nợ nghiệp của bạn là " + iDay);
+                txtNumbers[5].setText(String.valueOf(iDay));
                 txtDetails[5].setText(csNoNghiep1[3] + "\n" + csNoNghiep2[3]);
                 break;
             default:

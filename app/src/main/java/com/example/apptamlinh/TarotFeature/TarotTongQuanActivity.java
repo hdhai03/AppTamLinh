@@ -46,11 +46,11 @@ public class TarotTongQuanActivity extends AppCompatActivity {
 
     private int touchCount = 0;
 
-    private TapAreaState tapAreaState1 = new TapAreaState();
-    private TapAreaState tapAreaState2 = new TapAreaState();
-    private TapAreaState tapAreaState3 = new TapAreaState();
-    private TapAreaState tapAreaState4 = new TapAreaState();
-    private ArrayList<TarotTQModel> tarotModels = new ArrayList<>();
+    private final TapAreaState tapAreaState1 = new TapAreaState();
+    private final TapAreaState tapAreaState2 = new TapAreaState();
+    private final TapAreaState tapAreaState3 = new TapAreaState();
+    private final TapAreaState tapAreaState4 = new TapAreaState();
+    private final ArrayList<TarotTQModel> tarotModels = new ArrayList<>();
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -133,6 +133,7 @@ public class TarotTongQuanActivity extends AppCompatActivity {
                     Intent intentDetail = new Intent(TarotTongQuanActivity.this, TarotTQDetailActivity.class);
                     intentDetail.putExtras(bundleTarot);
                     startActivity(intentDetail);
+                    finish();
                     return true;
                 }
             });

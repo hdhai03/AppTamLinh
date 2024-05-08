@@ -50,14 +50,11 @@ public class NhapMaActivity extends AppCompatActivity {
 
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         dbRef = FirebaseFirestore.getInstance().collection("users").document(userId);
-        edtCode.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    edtCode.setHint("Nhập mã tại đây");
-                } else {
-                    edtCode.setHint("");
-                }
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 

@@ -1,6 +1,9 @@
 package com.example.apptamlinh.ThanSHFeature.ChuKyVanSo;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -10,10 +13,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.apptamlinh.R;
+import com.example.apptamlinh.ThanSHFeature.ThanSoHocActivity;
 
 import java.util.Calendar;
 
 public class ChuKyVanSoDetailActivity extends AppCompatActivity {
+    Button btnBack;
     TextView txtNumber, txtHeader, txtDetail;
 
     private final String[] result = new String[]{"Năm cá nhân số 1 được xem là một con số thể hiện một sự phát triển cá nhân rất mạnh mẽ. Sức mạnh này chắc chắn sẽ thúc đẩy bạn trở nên đặc biệt và có thể phát triển được lòng tự tin của chính mình trong năm nay. Cũng trong năm nay, bạn nên bỏ đi những thói quen cũ xây dựng một lối sống khác với những đòi hỏi khắc khe hơn. Năm cá nhân là số 1 chắc chắn sẽ là năm có tác động không hề nhỏ đến những con người mang số chủ đạo là số 10. Lý do là vì mọi việc đều sẽ diễn ra vô cùng thuận lợi tới mức mà bạn dễ dàng rơi vào tình trạng thiếu cảnh giác, phần lớn là liên quan đến tài chính. Nếu năm cá nhân của bạn là số này cần phải lưu ý, không nên ngủ quên trên chiến thắng, phải tự chủ cuộc sống để có những phát triển vượt bậc cả về vật chất lẫn tinh thần khi luôn nhận được sự ủng hộ và quan tâm từ những người xung quanh.",
@@ -41,6 +46,17 @@ public class ChuKyVanSoDetailActivity extends AppCompatActivity {
         txtNumber = findViewById(R.id.txtNumber);
         txtHeader = findViewById(R.id.txtHeader);
         txtDetail = findViewById(R.id.txtDetail);
+        btnBack = findViewById(R.id.btnBack);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChuKyVanSoDetailActivity.this, ThanSoHocActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         Bundle extras = getIntent().getExtras();
         String dataDate = extras.getString("dataDate");

@@ -45,16 +45,237 @@
         app:layout_constraintTop_toBottomOf="@id/textView99" />
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:padding="30dp"
-        android:layout_marginTop="300dp"
-        app:layout_constraintTop_toBottomOf="@id/imageView">
+        android:layout_marginTop="90dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView98">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/png_thansh_circle_4" />
+
+                    <TextView
+                        android:id="@+id/txtNumber1"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/lost_type"
+                        android:gravity="center"
+                        android:paddingBottom="40dp"
+                        android:textColor="@color/W1"
+                        android:textSize="45sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/americana_eb"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Đường đời"
+                        android:textColor="@color/P1"
+                        android:layout_marginTop="100dp"
+                        android:textSize="13sp"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/png_thansh_circle_4" />
+
+                    <TextView
+                        android:id="@+id/txtNumber2"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/lost_type"
+                        android:gravity="center"
+                        android:paddingBottom="40dp"
+                        android:textColor="@color/W1"
+                        android:textSize="45sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/americana_eb"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Linh hồn"
+                        android:textColor="@color/P1"
+                        android:layout_marginTop="100dp"
+                        android:textSize="13sp"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/png_thansh_circle_4" />
+
+                    <TextView
+                        android:id="@+id/txtNumber3"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/lost_type"
+                        android:gravity="center"
+                        android:paddingBottom="40dp"
+                        android:textColor="@color/W1"
+                        android:textSize="45sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/americana_eb"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Sứ mệnh"
+                        android:textColor="@color/P1"
+                        android:layout_marginTop="100dp"
+                        android:textSize="13sp"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/png_thansh_circle_4" />
+
+                    <TextView
+                        android:id="@+id/txtNumber4"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/lost_type"
+                        android:gravity="center"
+                        android:paddingBottom="40dp"
+                        android:textColor="@color/W1"
+                        android:textSize="45sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/americana_eb"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Thử thách"
+                        android:textColor="@color/P1"
+                        android:layout_marginTop="100dp"
+                        android:textSize="13sp"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/png_thansh_circle_4" />
+
+                    <TextView
+                        android:id="@+id/txtNumber5"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/lost_type"
+                        android:gravity="center"
+                        android:paddingBottom="40dp"
+                        android:textColor="@color/W1"
+                        android:textSize="45sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/americana_eb"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Nhân cách"
+                        android:textColor="@color/P1"
+                        android:layout_marginTop="100dp"
+                        android:textSize="13sp"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/png_thansh_circle_4" />
+
+                    <TextView
+                        android:id="@+id/txtNumber6"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/lost_type"
+                        android:gravity="center"
+                        android:paddingBottom="40dp"
+                        android:textColor="@color/W1"
+                        android:textSize="45sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/americana_eb"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Nợ nghiệp"
+                        android:textColor="@color/P1"
+                        android:layout_marginTop="100dp"
+                        android:textSize="13sp"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+            </LinearLayout>
+
 
             <TextView
                 android:id="@+id/txt1Header"

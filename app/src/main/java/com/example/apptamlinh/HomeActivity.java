@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -15,6 +16,12 @@ import com.example.apptamlinh.ChiemTinhFeature.ChiemTinhActivity;
 import com.example.apptamlinh.ProfileFeature.PersonalProfileActivity;
 import com.example.apptamlinh.TarotFeature.TarotActivity;
 import com.example.apptamlinh.ThanSHFeature.ThanSoHocActivity;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class HomeActivity extends AppCompatActivity {
     private Button btnProfile_Home;
@@ -24,7 +31,9 @@ public class HomeActivity extends AppCompatActivity {
     private Button btnChiemTinh2_Home;
     private Button btnThanSH_Home;
     private Button btnThanSH2_Home;
-    private Button btnCongDong_Home;
+    private Button btnCongDong_Home, btnEnergy_Home;
+    DocumentReference dbRef;
+    Long userEnergy = null;
 
     private final int[] buttonIds = {
             R.id.btnCard1, R.id.btnCard2, R.id.btnCard3, R.id.btnCard4,
@@ -38,6 +47,28 @@ public class HomeActivity extends AppCompatActivity {
         for (int i = 0; i < buttonIds.length; i++) {
             buttons[i] = findViewById(buttonIds[i]);
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        dbRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    // Lấy dữ liệu từ DocumentSnapshot
+                    userEnergy = documentSnapshot.getLong("userEnergy");
+                    btnEnergy_Home.setText(String.valueOf(userEnergy));
+                } else {
+                    // Xử lý khi không có dữ liệu tồn tại
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                // Xử lý khi đọc dữ liệu thất bại
+            }
+        });
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +89,29 @@ public class HomeActivity extends AppCompatActivity {
         btnThanSH_Home = findViewById(R.id.btnThanSH_Home);
         btnThanSH2_Home = findViewById(R.id.btnThanSH2_Home);
         btnCongDong_Home = findViewById(R.id.btnCongDong_Home);
+        btnEnergy_Home = findViewById(R.id.btnEnergy_Home);
 
+
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        dbRef = FirebaseFirestore.getInstance().collection("users").document(userId);
+
+        dbRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    // Lấy dữ liệu từ DocumentSnapshot
+                    userEnergy = documentSnapshot.getLong("userEnergy");
+                    btnEnergy_Home.setText(String.valueOf(userEnergy));
+                } else {
+                    // Xử lý khi không có dữ liệu tồn tại
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                // Xử lý khi đọc dữ liệu thất bại
+            }
+        });
         btnProfile_Home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
