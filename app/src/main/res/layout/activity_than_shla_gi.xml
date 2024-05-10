@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".ThanSHFeature.ThanSHLaGiActivity">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lost_type"
+        android:text="Thần số học"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lost_type"
+        android:text="là gì?"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView1" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:layout_marginTop="105dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="210dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/png_than_so_hoc" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="20dp"
+                android:textSize="14sp"
+                android:text="Thần số học (Numerology) là một lĩnh vực của tâm linh và tâm lý học nghiên cứu về tác động của số và chữ số đến cuộc sống và tính cách con người. Thần số học cho rằng mỗi số và chữ số đều có năng lượng và ý nghĩa riêng, và chúng có thể ảnh hưởng đến tính cách, sự phát triển và cuộc sống của một người."
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Phương pháp tính toán trong thần số học chủ yếu dựa trên ngày sinh, tên và số điện thoại của con người. Bằng cách áp dụng các quy tắc và công thức tính toán, thần số học có thể cho ra các kết quả về số định mệnh, số may mắn, số vận động, số năng lượng và nhiều yếu tố khác liên quan đến tính cách và cuộc sống của con người."
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="20dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Thần số học đã được sử dụng từ lâu trong các nên văn hoá và tôn giáo khác nhau trên khắp thế giới, từ Ai Cập cổ đại đến Trung Quốc, Ấn Độ và các nền văn hoá phương Tây. Hiện nay, thần số học vẫn được sử dụng phổ biến trong các lĩnh vực tư vấn tâm linh, tư vấn tình yêu, tư vấn nghề nghiệp và tư vấn sức khoẻ."
+                android:fontFamily="@font/americana_b"
+                android:textColor="@color/W1"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="20dp"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="324dp"
+                android:layout_height="147dp"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/png_cuoi_trang" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

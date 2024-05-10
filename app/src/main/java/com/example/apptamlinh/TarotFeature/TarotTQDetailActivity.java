@@ -52,7 +52,7 @@ public class TarotTQDetailActivity extends AppCompatActivity {
                 Intent intent = new Intent(TarotTQDetailActivity.this, TarotActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
-                finish(); // Kết thúc Act3 để không còn duy trì trong stack.
+                finish();
             }
         });
 

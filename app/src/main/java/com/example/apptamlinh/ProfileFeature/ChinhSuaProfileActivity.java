@@ -1,5 +1,6 @@
 package com.example.apptamlinh.ProfileFeature;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -160,6 +161,10 @@ public class ChinhSuaProfileActivity extends AppCompatActivity {
                 String bio = String.valueOf(edtBio.getText());
                 String name = String.valueOf(edtName.getText());
                 updateUser(bio, name, ngaySinh, gioiTinh);
+                Intent intent = new Intent(ChinhSuaProfileActivity.this, PersonalProfileActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
             }
         });
     }

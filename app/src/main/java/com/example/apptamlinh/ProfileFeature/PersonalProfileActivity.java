@@ -14,6 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.apptamlinh.EnergyClass;
 import com.example.apptamlinh.MainActivity;
 import com.example.apptamlinh.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -28,6 +29,36 @@ public class PersonalProfileActivity extends AppCompatActivity {
     TextView txtUserName, txtUserBio;
     private FirebaseAuth mAuth;
     DocumentReference dbRef;
+
+    EnergyClass eg = new EnergyClass();
+
+    Long userEnergy = null;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        dbRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    // Lấy dữ liệu từ DocumentSnapshot
+                    String userName = documentSnapshot.getString("userName");
+                    String userBio = documentSnapshot.getString("userBio");
+                    userEnergy = documentSnapshot.getLong("userEnergy");
+                    txtUserBio.setText(userBio);
+                    txtUserName.setText(userName);
+                    btnEnergy_Profile.setText(String.valueOf(userEnergy));
+                } else {
+                    // Xử lý khi không có dữ liệu tồn tại
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                // Xử lý khi đọc dữ liệu thất bại
+            }
+        });
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +91,7 @@ public class PersonalProfileActivity extends AppCompatActivity {
                     // Lấy dữ liệu từ DocumentSnapshot
                     String userName = documentSnapshot.getString("userName");
                     String userBio = documentSnapshot.getString("userBio");
-                    Long userEnergy = documentSnapshot.getLong("userEnergy");
+                    userEnergy = documentSnapshot.getLong("userEnergy");
                     txtUserBio.setText(userBio);
                     txtUserName.setText(userName);
                     btnEnergy_Profile.setText(String.valueOf(userEnergy));
