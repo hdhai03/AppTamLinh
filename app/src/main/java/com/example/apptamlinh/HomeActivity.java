@@ -13,6 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.apptamlinh.ChiemTinhFeature.ChiemTinhActivity;
+import com.example.apptamlinh.CongDongFeature.CongDongActivity;
 import com.example.apptamlinh.ProfileFeature.PersonalProfileActivity;
 import com.example.apptamlinh.TarotFeature.TarotActivity;
 import com.example.apptamlinh.ThanSHFeature.ThanSoHocActivity;

@@ -37,7 +37,10 @@ public class ChiemTinhDetailActivity extends AppCompatActivity {
     public TextView txtHeader_ChiemTinhDetail;
     public ImageView imgChiemTinh_ChiemTinhDetail;
 
-    int[] chiemTinhImages = {R.drawable.png_ma_ket, R.drawable.png_bao_binh, R.drawable.png_bach_duong, R.drawable.png_ma_ket, R.drawable.png_bao_binh, R.drawable.png_ma_ket, R.drawable.png_bao_binh, R.drawable.png_bach_duong, R.drawable.png_ma_ket, R.drawable.png_bao_binh, R.drawable.png_ma_ket, R.drawable.png_bao_binh, R.drawable.png_bach_duong, R.drawable.png_ma_ket, R.drawable.png_bao_binh};
+    int[] chiemTinhImages = {R.drawable.png_ma_ket, R.drawable.png_bao_binh, R.drawable.png_song_ngu,
+            R.drawable.png_bach_duong, R.drawable.png_kim_nguu, R.drawable.png_song_ngu, R.drawable.png_cu_giai,
+            R.drawable.png_su_tu, R.drawable.png_xu_nu, R.drawable.png_thien_binh, R.drawable.png_thien_yet,
+            R.drawable.png_nhan_ma};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
