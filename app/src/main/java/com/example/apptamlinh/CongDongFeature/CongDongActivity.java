@@ -1,6 +1,7 @@
 package com.example.apptamlinh.CongDongFeature;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,7 +26,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 
 public class CongDongActivity extends AppCompatActivity {
-    private Button btnBack_CongDong;
+    private Button btnBack_CongDong, btnGuiCauHoi;
     RecyclerView mRecyclerView;
     CongDongAdapter congDongAdapter;
     ArrayList<PostModel> postModels = new ArrayList<>();
@@ -51,10 +52,14 @@ public class CongDongActivity extends AppCompatActivity {
             }
         });
 
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setCancelable(false);
-        progressDialog.setMessage("Fetching data");
-        progressDialog.show();
+        btnGuiCauHoi = findViewById(R.id.btnGuiCauHoi);
+        btnGuiCauHoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentGuiCauHoi = new Intent(CongDongActivity.this, CongDongInputActivity.class);
+                startActivity(intentGuiCauHoi);
+            }
+        });
 
         mRecyclerView = findViewById(R.id.mRecyclerView);
         mRecyclerView.setHasFixedSize(true);
@@ -69,24 +74,30 @@ public class CongDongActivity extends AppCompatActivity {
         EventChangeListener();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Clear the current list to avoid duplicates
+        postModels.clear();
+        // Re-fetch the data from Firestore
+        EventChangeListener();
+    }
+
     private void EventChangeListener() {
         db.collection("post")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                         if (error != null) {
-                            if (progressDialog.isShowing())
-                                progressDialog.dismiss();
                             Log.e("Firestore error", error.getMessage());
                             return;
                         }
+                        postModels.clear();
                         for (DocumentChange dc : value.getDocumentChanges()) {
                             if (dc.getType() == DocumentChange.Type.ADDED) {
                                 postModels.add(dc.getDocument().toObject(PostModel.class));
                             }
                             congDongAdapter.notifyDataSetChanged();
-                            if (progressDialog.isShowing())
-                                progressDialog.dismiss();
                         }
                     }
                 });

@@ -37,19 +37,36 @@ public class CongDongAdapter extends RecyclerView.Adapter<CongDongAdapter.MyView
     public void onBindViewHolder(@NonNull CongDongAdapter.MyViewHolder holder, int position) {
         PostModel postModel = postModelArrayList.get(position);
 
-        holder.txtTime.setText(postModel.postTime);
-        holder.textView.setText(postModel.postDetail);
+        long currentTime = System.currentTimeMillis();
+        long duration = currentTime - postModel.postTime;
+
+        long seconds = duration / 1000;
+        long minutes = seconds / 60;
+        long hours = minutes / 60;
+        long days = hours / 24;
+
+        String durationString;
+        if (hours < 1) {
+            durationString = minutes + " phút trước";
+        } else if (hours < 24) {
+            durationString = hours + " giờ trước";
+        } else {
+            durationString = days + " ngày trước";
+        }
+
+        holder.txtTime.setText(durationString);
+        holder.textView.setText(postModel.postCauHoi);
         Glide.with(context)
-                .load(postModel.postImg1) // Thay imageURL1 bằng URL của ảnh hoặc đường dẫn tệp ảnh
+                .load(postModel.postImgUrl1)
                 .into(holder.imageView1);
         Glide.with(context)
-                .load(postModel.postImg2)
+                .load(postModel.postImgUrl2)
                 .into(holder.imageView2);
         Glide.with(context)
-                .load(postModel.postImg3)
+                .load(postModel.postImgUrl3)
                 .into(holder.imageView3);
         Glide.with(context)
-                .load(postModel.postImg4)
+                .load(postModel.postImgUrl4)
                 .into(holder.imageView4);
     }
 
