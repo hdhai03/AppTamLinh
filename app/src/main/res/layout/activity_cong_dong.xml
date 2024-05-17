@@ -46,6 +46,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView1" />
 
+    <Button
+        android:id="@+id/btnGuiCauHoi"
+        android:layout_width="339dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/btn_gui_cau_hoi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView2" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mRecyclerView"
         android:layout_width="wrap_content"
@@ -53,6 +63,6 @@
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2" />
+        app:layout_constraintTop_toBottomOf="@id/btnGuiCauHoi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

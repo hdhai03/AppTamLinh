@@ -42,19 +42,15 @@ public class CongDongAdapter extends RecyclerView.Adapter<CongDongAdapter.MyView
         Glide.with(context)
                 .load(postModel.postImg1) // Thay imageURL1 bằng URL của ảnh hoặc đường dẫn tệp ảnh
                 .into(holder.imageView1);
-
         Glide.with(context)
                 .load(postModel.postImg2)
                 .into(holder.imageView2);
-
         Glide.with(context)
                 .load(postModel.postImg3)
                 .into(holder.imageView3);
-
         Glide.with(context)
                 .load(postModel.postImg4)
                 .into(holder.imageView4);
-
     }
 
     @Override
