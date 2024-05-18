@@ -1,6 +1,5 @@
 package com.example.apptamlinh.CongDongFeature;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,14 +24,13 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class CongDongActivity extends AppCompatActivity {
+public class CongDongActivity extends AppCompatActivity implements RecyclerViewInterface {
     private Button btnBack_CongDong, btnGuiCauHoi;
     RecyclerView mRecyclerView;
     CongDongAdapter congDongAdapter;
     ArrayList<PostModel> postModels = new ArrayList<>();
 
     FirebaseFirestore db;
-    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +65,7 @@ public class CongDongActivity extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
         postModels = new ArrayList<PostModel>();
-        congDongAdapter = new CongDongAdapter(CongDongActivity.this, postModels);
+        congDongAdapter = new CongDongAdapter(CongDongActivity.this, postModels, this);
 
         mRecyclerView.setAdapter(congDongAdapter);
 
@@ -82,7 +80,6 @@ public class CongDongActivity extends AppCompatActivity {
         // Re-fetch the data from Firestore
         EventChangeListener();
     }
-
     private void EventChangeListener() {
         db.collection("post")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -95,11 +92,23 @@ public class CongDongActivity extends AppCompatActivity {
                         postModels.clear();
                         for (DocumentChange dc : value.getDocumentChanges()) {
                             if (dc.getType() == DocumentChange.Type.ADDED) {
-                                postModels.add(dc.getDocument().toObject(PostModel.class));
+                                PostModel postModel = dc.getDocument().toObject(PostModel.class);
+                                postModel.setPostID(dc.getDocument().getId());
+                                postModels.add(postModel);
                             }
                             congDongAdapter.notifyDataSetChanged();
                         }
                     }
                 });
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        PostModel selectedPost = postModels.get(position);
+        String postID = selectedPost.getPostID(); // Assuming PostModel has a method getPostID()
+
+        Intent intentItem = new Intent(CongDongActivity.this, CongDongDetailActivity.class);
+        intentItem.putExtra("postID", postID);
+        startActivity(intentItem);
     }
 }

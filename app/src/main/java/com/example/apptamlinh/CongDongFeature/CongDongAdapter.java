@@ -16,13 +16,14 @@ import com.example.apptamlinh.R;
 import java.util.ArrayList;
 
 public class CongDongAdapter extends RecyclerView.Adapter<CongDongAdapter.MyViewHolder> {
-
+    private final RecyclerViewInterface recyclerViewInterface;
     Context context;
     ArrayList<PostModel> postModelArrayList;
 
-    public CongDongAdapter(Context context, ArrayList<PostModel> postModelArrayList) {
+    public CongDongAdapter(Context context, ArrayList<PostModel> postModelArrayList, RecyclerViewInterface recyclerViewInterface) {
         this.context = context;
         this.postModelArrayList = postModelArrayList;
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     @NonNull
@@ -30,7 +31,7 @@ public class CongDongAdapter extends RecyclerView.Adapter<CongDongAdapter.MyView
     public CongDongAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(context).inflate(R.layout.recycler_view_row, parent, false);
-        return new MyViewHolder(v);
+        return new MyViewHolder(v, recyclerViewInterface);
     }
 
     @Override
@@ -47,7 +48,11 @@ public class CongDongAdapter extends RecyclerView.Adapter<CongDongAdapter.MyView
 
         String durationString;
         if (hours < 1) {
-            durationString = minutes + " phút trước";
+            if (seconds < 60) {
+                durationString = seconds + " giây trước";
+            } else {
+                durationString = minutes + " phút trước";
+            }
         } else if (hours < 24) {
             durationString = hours + " giờ trước";
         } else {
@@ -79,7 +84,7 @@ public class CongDongAdapter extends RecyclerView.Adapter<CongDongAdapter.MyView
         TextView txtTime, textView;
         ImageView imageView1, imageView2, imageView3, imageView4;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
             txtTime = itemView.findViewById(R.id.txtTime);
             textView = itemView.findViewById(R.id.textView);
@@ -88,6 +93,17 @@ public class CongDongAdapter extends RecyclerView.Adapter<CongDongAdapter.MyView
             imageView3 = itemView.findViewById(R.id.imageView3);
             imageView4 = itemView.findViewById(R.id.imageView4);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (recyclerViewInterface != null) {
+                        int pos = getAdapterPosition();
+                        if (pos != RecyclerView.NO_POSITION) {
+                            recyclerViewInterface.onItemClick(pos);
+                        }
+                    }
+                }
+            });
         }
     }
 }

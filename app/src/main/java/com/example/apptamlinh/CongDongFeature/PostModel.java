@@ -1,10 +1,15 @@
 package com.example.apptamlinh.CongDongFeature;
 
 public class PostModel {
-    String postName, postNgaySinh, postGioiTinh, postCauHoi, postChiTiet, postImgUrl1, postImgUrl2, postImgUrl3, postImgUrl4, postUserID;
+    String postID, postName, postNgaySinh, postGioiTinh, postCauHoi, postChiTiet, postImgUrl1, postImgUrl2, postImgUrl3, postImgUrl4, postUserID;
     long postTime;
 
-    public PostModel(String postName, String postNgaySinh, String postGioiTinh, String postCauHoi, String postChiTiet, String postImgUrl1, String postImgUrl2, String postImgUrl3, String postImgUrl4, String postUserID, long postTime) {
+
+    public PostModel() {
+    }
+
+    public PostModel(String postID, String postName, String postNgaySinh, String postGioiTinh, String postCauHoi, String postChiTiet, String postImgUrl1, String postImgUrl2, String postImgUrl3, String postImgUrl4, String postUserID, long postTime) {
+        this.postID = postID;
         this.postName = postName;
         this.postNgaySinh = postNgaySinh;
         this.postGioiTinh = postGioiTinh;
@@ -16,9 +21,6 @@ public class PostModel {
         this.postImgUrl4 = postImgUrl4;
         this.postUserID = postUserID;
         this.postTime = postTime;
-    }
-
-    public PostModel() {
     }
 
     public String getPostName() {
@@ -107,5 +109,13 @@ public class PostModel {
 
     public void setPostTime(long postTime) {
         this.postTime = postTime;
+    }
+
+    public String getPostID() {
+        return postID;
+    }
+
+    public void setPostID(String postID) {
+        this.postID = postID;
     }
 }

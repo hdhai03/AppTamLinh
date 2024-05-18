@@ -15,6 +15,9 @@
         android:theme="@style/Theme.AppTamLinh"
         tools:targetApi="31">
         <activity
+            android:name=".CongDongFeature.CongDongDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".CongDongFeature.CongDongInputActivity"
             android:exported="false" />
         <activity
