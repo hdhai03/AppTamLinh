@@ -46,140 +46,174 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView1" />
 
-    <TextView
-        android:id="@+id/txtTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/americana_b"
-        android:gravity="start"
-        android:text="2 giờ trước"
-        android:textColor="@color/W1"
-        android:textSize="12sp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2" />
+        app:layout_constraintTop_toBottomOf="@id/textView2">
 
-    <TextView
-        android:id="@+id/txtName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="6dp"
-        android:fontFamily="@font/americana_eb"
-        android:gravity="start"
-        android:text="Hoàng Đức Hải"
-        android:textColor="@color/W1"
-        android:textSize="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtTime" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtGioiTinh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="6dp"
-        android:fontFamily="@font/americana_b"
-        android:gravity="start"
-        android:text="Giới tính: Nam"
-        android:textColor="@color/W1"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtName" />
+            <TextView
+                android:id="@+id/txtTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/americana_b"
+                android:gravity="start"
+                android:text="2 giờ trước"
+                android:textColor="@color/W1"
+                android:textSize="12sp" />
 
-    <TextView
-        android:id="@+id/txtNgaySinh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="6dp"
-        android:fontFamily="@font/americana_b"
-        android:gravity="start"
-        android:text="Ngày sinh: 29/12/2003"
-        android:textColor="@color/W1"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtGioiTinh" />
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/americana_eb"
+                android:gravity="start"
+                android:text="Hoàng Đức Hải"
+                android:textColor="@color/W1"
+                android:textSize="16dp" />
 
-    <TextView
-        android:id="@+id/txtCauHoi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="6dp"
-        android:fontFamily="@font/americana_eb"
-        android:gravity="start"
-        android:text="Tôi sẽ có người yêu chứ, ny tôi thế nào?"
-        android:textColor="@color/W1"
-        android:textSize="14dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtNgaySinh" />
+            <TextView
+                android:id="@+id/txtGioiTinh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/americana_b"
+                android:gravity="start"
+                android:text="Giới tính: Nam"
+                android:textColor="@color/W1"
+                android:textSize="12sp" />
 
-    <TextView
-        android:id="@+id/txtChiTiet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="6dp"
-        android:fontFamily="@font/americana_b"
-        android:gravity="start"
-        android:paddingRight="32dp"
-        android:text="Tôi chưa từng có mối tình nào. TÍnh cách không muốn mở lòng cho lắm, cũng không chủ động tiếp xúc, ..........."
-        android:textColor="@color/W1"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtCauHoi" />
+            <TextView
+                android:id="@+id/txtNgaySinh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/americana_b"
+                android:gravity="start"
+                android:text="Ngày sinh: 29/12/2003"
+                android:textColor="@color/W1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtCauHoi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/americana_eb"
+                android:gravity="start"
+                android:text="Tôi sẽ có người yêu chứ, ny tôi thế nào?"
+                android:textColor="@color/W1"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/txtChiTiet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/americana_b"
+                android:gravity="start"
+                android:paddingRight="32dp"
+                android:text="Tôi chưa từng có mối tình nào. TÍnh cách không muốn mở lòng cho lắm, cũng không chủ động tiếp xúc, ..........."
+                android:textColor="@color/W1"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@id/linear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="70dp"
+                    android:layout_height="111dp"
+                    android:layout_marginRight="20dp"
+                    app:srcCompat="@drawable/png_tarot_card_back" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="70dp"
+                    android:layout_height="111dp"
+                    android:layout_marginRight="20dp"
+                    app:srcCompat="@drawable/png_tarot_card_back" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="70dp"
+                    android:layout_height="111dp"
+                    android:layout_marginRight="20dp"
+                    app:srcCompat="@drawable/png_tarot_card_back" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="70dp"
+                    android:layout_height="111dp"
+                    android:layout_marginRight="20dp"
+                    app:srcCompat="@drawable/png_tarot_card_back" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/lineSeparator"
+                android:layout_width="390dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="#FFFFFF"
+                android:layout_gravity="center" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mRecyclerView_CMT"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp" />
+        </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
-        android:id="@id/linear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:gravity="start"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtChiTiet">
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="70dp"
-            android:layout_height="111dp"
-            android:layout_marginRight="20dp"
-            app:srcCompat="@drawable/png_tarot_card_back" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="70dp"
-            android:layout_height="111dp"
-            android:layout_marginRight="20dp"
-            app:srcCompat="@drawable/png_tarot_card_back" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="70dp"
-            android:layout_height="111dp"
-            android:layout_marginRight="20dp"
-            app:srcCompat="@drawable/png_tarot_card_back" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="70dp"
-            android:layout_height="111dp"
-            android:layout_marginRight="20dp"
-            app:srcCompat="@drawable/png_tarot_card_back" />
-    </LinearLayout>
-
-    <View
-        android:id="@+id/lineSeparator"
-        android:layout_width="390dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="12dp"
-        android:background="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linear" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <EditText
+            android:id="@+id/edtCMT"
+            android:hint="Bình luận"
+            android:fontFamily="@font/americana_b"
+            android:textColorHint="@color/W1"
+            android:textSize="12dp"
+            android:paddingLeft="12dp"
+            android:textColor="@color/W1"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/custom_input" />
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/btn_send" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

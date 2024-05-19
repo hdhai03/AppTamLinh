@@ -5,35 +5,54 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.apptamlinh.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CongDongDetailActivity extends AppCompatActivity {
     private TextView txtTime, txtName, txtGioiTinh, txtNgaySinh, txtCauHoi, txtChiTiet;
     private ImageView imageView1, imageView2, imageView3, imageView4;
+    private EditText edtCMT;
+
     private FirebaseFirestore db;
-    private Button btnBack_CongDong;
+    private Button btnBack_CongDong, btnSend;
     private List<PostModel> postModels;
     private String postID;
+
+    RecyclerView mRecyclerView_CMT;
+    CommentAdapter commentAdapter;
+    ArrayList<CommentModel> commentModels = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +65,6 @@ public class CongDongDetailActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Ánh xạ các TextView và ImageView
         txtTime = findViewById(R.id.txtTime);
         txtName = findViewById(R.id.txtName);
         txtGioiTinh = findViewById(R.id.txtGioiTinh);
@@ -58,6 +76,8 @@ public class CongDongDetailActivity extends AppCompatActivity {
         imageView3 = findViewById(R.id.imageView3);
         imageView4 = findViewById(R.id.imageView4);
         btnBack_CongDong = findViewById(R.id.btnBack_CongDong);
+        edtCMT = findViewById(R.id.edtCMT);
+        btnSend = findViewById(R.id.btnSend);
 
         btnBack_CongDong.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +97,65 @@ public class CongDongDetailActivity extends AppCompatActivity {
         } else {
             Toast.makeText(CongDongDetailActivity.this, "Post ID not found", Toast.LENGTH_SHORT).show();
         }
+
+        mRecyclerView_CMT = findViewById(R.id.mRecyclerView_CMT);
+        mRecyclerView_CMT.setHasFixedSize(true);
+        mRecyclerView_CMT.setLayoutManager(new LinearLayoutManager(this));
+
+        db = FirebaseFirestore.getInstance();
+        commentModels = new ArrayList<CommentModel>();
+        commentAdapter = new CommentAdapter(CongDongDetailActivity.this, commentModels);
+
+        mRecyclerView_CMT.setAdapter(commentAdapter);
+
+        EventChangeListener2();
+
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commentDetail = edtCMT.getText().toString();
+                String commentUserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                String commentPostID = postID;
+                long commentTime = System.currentTimeMillis();
+                long commentLikeCount = 0;
+
+                CommentModel commentModel = new CommentModel(commentDetail, commentUserID, commentPostID, commentTime, commentLikeCount);
+
+                addComment(commentModel);
+            }
+        });
+
+    }
+
+    private void EventChangeListener2() {
+        db.collection("comment")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            Log.e("Firestore error", error.getMessage());
+                            return;
+                        }
+                        postModels.clear();
+                        for (DocumentChange dc : value.getDocumentChanges()) {
+                            if (dc.getType() == DocumentChange.Type.ADDED) {
+                                CommentModel commentModel = dc.getDocument().toObject(CommentModel.class);
+                                commentModel.setCommentID(dc.getDocument().getId());
+
+                                if (commentModel.getCommentPostID().equals(postID)) {
+                                    commentModels.add(commentModel);
+                                }
+                            }
+                            Collections.sort(commentModels, new Comparator<CommentModel>() {
+                                @Override
+                                public int compare(CommentModel o1, CommentModel o2) {
+                                    return Long.compare(o2.getCommentLikeCount(), o1.getCommentLikeCount());
+                                }
+                            });
+                            commentAdapter.notifyDataSetChanged();
+                        }
+                    }
+                });
     }
 
     private void EventChangeListener() {
@@ -132,7 +211,6 @@ public class CongDongDetailActivity extends AppCompatActivity {
                 txtCauHoi.setText(post.getPostCauHoi());
                 txtChiTiet.setText(post.getPostChiTiet());
 
-                // Sử dụng Glide để load ảnh vào ImageView
                 Glide.with(this).load(post.getPostImgUrl1()).into(imageView1);
                 Glide.with(this).load(post.getPostImgUrl2()).into(imageView2);
                 Glide.with(this).load(post.getPostImgUrl3()).into(imageView3);
@@ -141,5 +219,28 @@ public class CongDongDetailActivity extends AppCompatActivity {
                 break;
             }
         }
+    }
+
+    private void addComment(CommentModel commentModel) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        Map<String, Object> updates = new HashMap<>();
+        updates.put("commentDetail", commentModel.getCommentDetail());
+        updates.put("commentUserID", commentModel.getCommentUserID());
+        updates.put("commentPostID", commentModel.getCommentPostID());
+        updates.put("commentLikeCount", 0);
+
+        db.collection("comment")
+                .add(updates)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                    }
+                });
     }
 }
