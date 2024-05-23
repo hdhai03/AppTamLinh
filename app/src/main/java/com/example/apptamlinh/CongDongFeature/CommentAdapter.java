@@ -43,26 +43,21 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull CommentAdapter.MyViewHolder holder, int position) {
         CommentModel commentModel = commentModelArrayList.get(position);
-        DocumentReference dbRef = db.collection("users").document(commentModel.getCommentUserID());
-        dbRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+
+        setDefaultButton(commentModel.getCommentID(), holder.likeButton);
+
+        holder.txtChiTiet.setText(commentModel.getCommentDetail());
+        holder.likeButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                if (documentSnapshot.exists()) {
-                    // Lấy dữ liệu từ DocumentSnapshot
-                    String userName = documentSnapshot.getString("userName");
-                    holder.txtName.setText(userName);
-                } else {
-                    // Xử lý khi không có dữ liệu tồn tại
-                }
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                // Xử lý khi đọc dữ liệu thất bại
+            public void onClick(View v) {
+                handleLikeButtonClick(commentModel.getCommentID(), holder.likeButton, holder.likeCount);
             }
         });
-        holder.txtChiTiet.setText(commentModel.getCommentDetail());
-        DocumentReference commentRef = db.collection("comment").document(commentModel.getCommentID());
+
+    }
+
+    private void setDefaultButton(String commentID, ImageButton likeButton) {
+        DocumentReference commentRef = db.collection("comment").document(commentID);
         commentRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -70,9 +65,9 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
                     boolean isLiked = documentSnapshot.contains("likedBy") && ((ArrayList<String>) documentSnapshot.get("likedBy")).contains(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                     if (isLiked) {
-                        holder.likeButton.setBackgroundResource(R.drawable.ic_liked_button);
+                        likeButton.setBackgroundResource(R.drawable.ic_liked_button);
                     } else {
-                        holder.likeButton.setBackgroundResource(R.drawable.ic_like_button);
+                        likeButton.setBackgroundResource(R.drawable.ic_like_button);
                     }
                 }
             }
@@ -84,13 +79,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
                 Toast.makeText(context, "Error updating like count", Toast.LENGTH_SHORT).show();
             }
         });
-        holder.likeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handleLikeButtonClick(commentModel.getCommentID(), holder.likeButton, holder.likeCount);
-            }
-        });
-
     }
 
     private void handleLikeButtonClick(String commentID, ImageButton likeButton, int likeCount) {

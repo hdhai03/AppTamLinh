@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".ProfileFeature.TroGiupActivity">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lost_type"
+        android:text="Trợ giúp"
+        android:textColor="@color/P1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/americana_b"
+        android:lineSpacingExtra="8sp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="Nếu bạn cần trợ giúp hoặc gặp bất kỳ vấn đề gì liên quan đến ứng dụng của chúng tôi, xin vui lòng liên hệ qua địa chỉ email hai0188566@gmail.com hoặc điền vào form bên dưới. Chúng tôi luôn sẵn sàng hỗ trợ bạn và tìm cách giải quyết mọi vấn đề một cách nhanh chóng và hiệu quả. Nếu bạn có trải nghiệm không tốt về ứng dụng của chúng tôi, xin vui lòng chia sẻ để chúng tôi có thể cải thiện và nâng cao chất lượng sản phẩm. Chân thành cảm ơn bạn đã sử dụng ứng dụng của chúng tôi."
+        android:textAlignment="center"
+        android:textColor="@color/W1"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+    <EditText
+        android:id="@+id/edtTieuDe"
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:fontFamily="@font/americana_b"
+        android:gravity="top|start"
+        android:hint="Nhập tiêu đề"
+        android:inputType="textMultiLine"
+        android:maxLength="200"
+        android:maxLines="3"
+        android:minLines="1"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/W1"
+        android:textColorHint="@color/W1"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/edtNoiDung"
+        android:layout_width="350dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:fontFamily="@font/americana_b"
+        android:gravity="top|start"
+        android:hint="Nhập nội dung"
+        android:inputType="textMultiLine"
+        android:maxLength="2000"
+        android:maxLines="10"
+        android:minLines="1"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/W1"
+        android:textColorHint="@color/W1"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtTieuDe" />
+
+    <Button
+        android:id="@+id/btnGui"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/btn_fill"
+        android:backgroundTint="@null"
+        android:layout_gravity="center"
+        android:fontFamily="@font/americana_eb"
+        android:text="Gửi"
+        android:textAllCaps="false"
+        android:textColor="@color/W1"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNoiDung" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

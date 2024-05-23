@@ -25,7 +25,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PersonalProfileActivity extends AppCompatActivity {
-    private Button btnBack_Profile, btnEnergy_Profile, btnDangXuat_Profile, btnChinhSua_Profile, btnMoiBanBe_Profile, btnNhapMa_Profile;
+    private Button btnBack_Profile, btnEnergy_Profile, btnDangXuat_Profile, btnChinhSua_Profile, btnMoiBanBe_Profile,
+            btnNhapMa_Profile, btnFreeEnergy_Profile, btnTroGiup_Profile;
     TextView txtUserName, txtUserBio;
     private FirebaseAuth mAuth;
     DocumentReference dbRef;
@@ -79,6 +80,8 @@ public class PersonalProfileActivity extends AppCompatActivity {
         btnMoiBanBe_Profile = findViewById(R.id.btnMoiBanBe_Profile);
         btnEnergy_Profile = findViewById(R.id.btnEnergy_Profile);
         btnNhapMa_Profile = findViewById(R.id.btnNhapMa_Profile);
+        btnFreeEnergy_Profile = findViewById(R.id.btnFreeEnergy_Profile);
+        btnTroGiup_Profile = findViewById(R.id.btnTroGiup_Profile);
 
         mAuth = FirebaseAuth.getInstance();
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -137,6 +140,22 @@ public class PersonalProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+
+        btnFreeEnergy_Profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentDiemDanh = new Intent(PersonalProfileActivity.this, DiemDanhActivity.class);
+                startActivity(intentDiemDanh);
+            }
+        });
+
+        btnTroGiup_Profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentTroGiup = new Intent(PersonalProfileActivity.this, TroGiupActivity.class);
+                startActivity(intentTroGiup);
             }
         });
 
