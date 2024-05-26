@@ -2,6 +2,8 @@ package com.example.apptamlinh.TarotFeature;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -28,9 +30,14 @@ import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class TarotHangNgayActivity extends AppCompatActivity {
+    private static final String SHARED_PREF_NAME = "TarotHangNgayPrefs";
+    private static final String KEY_IMAGE_URLS = "imageUrls";
+    private List<String> randomImageUrls;
     private Button btnBack_TarotHN;
     private ImageView imageView;
     private TextView txtTenBai;
@@ -76,6 +83,8 @@ public class TarotHangNgayActivity extends AppCompatActivity {
         txtNoiDung.setText(dataTarot.getMeaning());
         txtTenBai.setText("Lá bài của bạn là \n " + dataTarot.getName());
 
+        randomImageUrls = getImageUrlsFromSharedPreferences(getApplicationContext());
+
         ObjectAnimator translationY = ObjectAnimator.ofFloat(imageView, "translationY", -25f, 25f); //Biên độ nè
         translationY.setDuration(1200); // Tốc độ nè
         translationY.setRepeatCount(ObjectAnimator.INFINITE);
@@ -90,6 +99,7 @@ public class TarotHangNgayActivity extends AppCompatActivity {
                     tapEnabled = false;
                     animationView(imgUrl);
                     translationY.end();
+                    saveImageUrlsToSharedPreferences(getApplicationContext(), randomImageUrls);
                 }
                 return true;
             }
@@ -175,5 +185,30 @@ public class TarotHangNgayActivity extends AppCompatActivity {
             Log.e("TAG", "loadJson: error", e);
         }
         return tarotData;
+    }
+
+    private void saveImageUrlsToSharedPreferences(Context context, List<String> imageUrls) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        JSONArray jsonArray = new JSONArray(imageUrls);
+        editor.putString(KEY_IMAGE_URLS, jsonArray.toString());
+        editor.apply();
+    }
+
+    private List<String> getImageUrlsFromSharedPreferences(Context context) {
+        List<String> imageUrls = new ArrayList<>();
+        SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        String json = sharedPreferences.getString(KEY_IMAGE_URLS, null);
+        if (json != null) {
+            try {
+                JSONArray jsonArray = new JSONArray(json);
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    imageUrls.add(jsonArray.getString(i));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return imageUrls;
     }
 }

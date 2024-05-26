@@ -46,6 +46,7 @@
         app:layout_constraintTop_toBottomOf="@id/textView1" />
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -85,29 +86,249 @@
             android:fontFamily="@font/lost_type"
             android:textColor="@color/W1"
             android:textSize="12sp" />
-
-
     </RelativeLayout>
 
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:background="@drawable/custom_comment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--        android:id="@+id/recyclerView"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:clipToPadding="false"-->
-    <!--        android:orientation="horizontal"-->
-    <!--        android:paddingBottom="8dp"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-    <!--    <Button-->
-    <!--        android:id="@+id/btnDiemDanh"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="Điểm danh"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+            <Button
+                android:id="@+id/btnDiemDanh1"
+                android:layout_width="40dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/icon_diem_danh_1" />
+
+            <Button
+                android:id="@+id/btnDiemDanh2"
+                android:layout_width="40dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/icon_diem_danh_1" />
+
+            <Button
+                android:id="@+id/btnDiemDanh3"
+                android:layout_width="40dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/icon_diem_danh_1" />
+
+            <Button
+                android:id="@+id/btnDiemDanh4"
+                android:layout_width="40dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/icon_diem_danh_1" />
+
+            <Button
+                android:id="@+id/btnDiemDanh5"
+                android:layout_width="40dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/icon_diem_danh_1" />
+
+            <Button
+                android:id="@+id/btnDiemDanh6"
+                android:layout_width="40dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/icon_diem_danh_1" />
+
+            <Button
+                android:id="@+id/btnDiemDanh7"
+                android:layout_width="40dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:background="@drawable/icon_diem_danh_1" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnDiemDanh"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:textColor="@color/W1"
+            android:fontFamily="@font/americana_b"
+            android:layout_marginTop="20dp"
+            android:textSize="13dp"
+            android:textAllCaps="false"
+            android:background="@drawable/btn_fill"
+            android:text="Điểm danh" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/lost_type"
+        android:text="Nhận thêm năng lượng"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/W1"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear" />
+
+    <LinearLayout
+        android:id="@id/linear2"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+        <RelativeLayout
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/custom_comment"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView2">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/lost_type"
+                android:text="Mời bạn bè"
+                android:textColor="@color/W1"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="18dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="75dp"
+                android:layout_toEndOf="@id/textView11"
+                android:src="@drawable/png_energy" />
+
+            <TextView
+                android:id="@+id/txtEnergy11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/imageView11"
+                android:fontFamily="@font/lost_type"
+                android:text="+3"
+                android:textColor="@color/W1"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnMoiBanBe_diemDanh"
+            android:layout_width="18dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/btn_stroke"
+            android:fontFamily="@font/americana_b"
+            android:text="Mời"
+            android:textAllCaps="false"
+            android:textColor="@color/W1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear3"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear2">
+
+        <RelativeLayout
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/custom_comment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView2">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Xem quảng cáo"
+                android:textColor="@color/W1"
+                android:fontFamily="@font/lost_type"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="18dp"
+                android:layout_height="20dp"
+                android:layout_toEndOf="@id/textView12"
+                android:layout_marginStart="36dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/png_energy" />
+
+            <TextView
+                android:id="@+id/txtEnergy12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageView12"
+                android:layout_marginStart="5dp"
+                android:layout_centerVertical="true"
+                android:text="+1"
+                android:fontFamily="@font/lost_type"
+                android:textColor="@color/W1"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnXemQuangCao"
+            android:layout_width="18dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:textColor="@color/W1"
+            android:fontFamily="@font/americana_b"
+            android:textAllCaps="false"
+            android:background="@drawable/btn_stroke"
+            android:layout_weight="1"
+            android:text="Xem" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/png_cuoi_trang_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear3" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
