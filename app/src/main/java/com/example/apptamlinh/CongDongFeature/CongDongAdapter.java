@@ -29,7 +29,6 @@ public class CongDongAdapter extends RecyclerView.Adapter<CongDongAdapter.MyView
     @NonNull
     @Override
     public CongDongAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View v = LayoutInflater.from(context).inflate(R.layout.recycler_view_row, parent, false);
         return new MyViewHolder(v, recyclerViewInterface);
     }

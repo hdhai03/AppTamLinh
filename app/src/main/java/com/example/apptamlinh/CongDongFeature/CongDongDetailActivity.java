@@ -28,6 +28,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -235,6 +236,9 @@ public class CongDongDetailActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
+                        String commentID = documentReference.getId();
+                        updateCommentIDsForUser(commentID);
+                        updateScore();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -243,4 +247,48 @@ public class CongDongDetailActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    private void updateCommentIDsForUser(String commentID) {
+        DocumentReference userRef = FirebaseFirestore.getInstance()
+                .collection("users")
+                .document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+        userRef.update("commentedIDs", FieldValue.arrayUnion(commentID))
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("Comments", "Comment ID successfully added to user's list");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("Comments", "Failed to add comment ID to user's list", e);
+                    }
+                });
+    }
+
+    public void updateScore() {
+        DocumentReference userRef = FirebaseFirestore.getInstance()
+                .collection("users")
+                .document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        Map<String, Object> updatedData = new HashMap<>();
+        int newEnergyValue = 10;
+        updatedData.put("userScore", FieldValue.increment(newEnergyValue));
+
+        userRef.update(updatedData)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("Update User Energy", "Cập nhật năng lượng thành công");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e("Update User Energy", "Lỗi khi cập nhật năng lượng: " + e.getMessage());
+                    }
+                });
+    }
 }
+

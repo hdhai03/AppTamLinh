@@ -16,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.apptamlinh.EnergyClass;
 import com.example.apptamlinh.MainActivity;
+import com.example.apptamlinh.ProfileFeature.BXH.BXHActivity;
 import com.example.apptamlinh.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -26,7 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PersonalProfileActivity extends AppCompatActivity {
     private Button btnBack_Profile, btnEnergy_Profile, btnDangXuat_Profile, btnChinhSua_Profile, btnMoiBanBe_Profile,
-            btnNhapMa_Profile, btnFreeEnergy_Profile, btnTroGiup_Profile;
+            btnNhapMa_Profile, btnFreeEnergy_Profile, btnTroGiup_Profile, btnBXH_Profile;
     TextView txtUserName, txtUserBio;
     private FirebaseAuth mAuth;
     DocumentReference dbRef;
@@ -82,6 +83,7 @@ public class PersonalProfileActivity extends AppCompatActivity {
         btnNhapMa_Profile = findViewById(R.id.btnNhapMa_Profile);
         btnFreeEnergy_Profile = findViewById(R.id.btnFreeEnergy_Profile);
         btnTroGiup_Profile = findViewById(R.id.btnTroGiup_Profile);
+        btnBXH_Profile = findViewById(R.id.btnBXH_Profile);
 
         mAuth = FirebaseAuth.getInstance();
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -156,6 +158,14 @@ public class PersonalProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentTroGiup = new Intent(PersonalProfileActivity.this, TroGiupActivity.class);
                 startActivity(intentTroGiup);
+            }
+        });
+
+        btnBXH_Profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentBXH = new Intent(PersonalProfileActivity.this, BXHActivity.class);
+                startActivity(intentBXH);
             }
         });
 

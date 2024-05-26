@@ -27,6 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -91,13 +92,21 @@ public class RegisterFragment4 extends Fragment {
                             FirebaseUser user = mAuth.getCurrentUser();
                             String userId = user.getUid();
 
+                            Calendar calendar = Calendar.getInstance();
+                            int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
+                            int currentMonth = calendar.get(Calendar.MONTH) + 1; // Vì tháng bắt đầu từ 0
+                            int currentYear = calendar.get(Calendar.YEAR);
+                            String ngayDky = String.format("%02d/%02d/%04d", currentDay, currentMonth, currentYear);
+
                             Map<String, Object> newData = new HashMap<>();
                             newData.put("userName", name);
                             newData.put("userNgaySinh", ngaySinh);
                             newData.put("userGioiTinh", gioiTinh);
                             newData.put("userBio", "Bio");
                             newData.put("userEnergy", 5);
+                            newData.put("userScore", 0);
                             newData.put("userInvite", false);
+                            newData.put("userStart", ngayDky);
 
                             DocumentReference userRef = db.collection("users").document(userId);
                             userRef.set(newData)
