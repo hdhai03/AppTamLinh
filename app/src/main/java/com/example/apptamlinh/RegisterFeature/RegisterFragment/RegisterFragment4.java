@@ -27,8 +27,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class RegisterFragment4 extends Fragment {
@@ -98,6 +101,8 @@ public class RegisterFragment4 extends Fragment {
                             int currentYear = calendar.get(Calendar.YEAR);
                             String ngayDky = String.format("%02d/%02d/%04d", currentDay, currentMonth, currentYear);
 
+                            List<Boolean> userDiemDanh = new ArrayList<>();
+                            userDiemDanh.addAll(Collections.nCopies(7, Boolean.FALSE));
                             Map<String, Object> newData = new HashMap<>();
                             newData.put("userName", name);
                             newData.put("userNgaySinh", ngaySinh);
@@ -107,6 +112,8 @@ public class RegisterFragment4 extends Fragment {
                             newData.put("userScore", 0);
                             newData.put("userInvite", false);
                             newData.put("userThamGia", ngayDky);
+                            newData.put("userDiemDanh", userDiemDanh);
+                            
 
                             DocumentReference userRef = db.collection("users").document(userId);
                             userRef.set(newData)
