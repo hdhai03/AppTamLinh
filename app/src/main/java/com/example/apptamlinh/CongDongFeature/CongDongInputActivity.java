@@ -193,6 +193,7 @@ public class CongDongInputActivity extends AppCompatActivity {
         updates.put("postImgUrl3", imgUrl3);
         updates.put("postImgUrl4", imgUrl4);
         updates.put("postUserID", userId);
+        updates.put("postCommentedUSerID", "");
         updates.put("postTime", postTime);
 
         db.collection("post")

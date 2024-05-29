@@ -15,6 +15,15 @@
         android:theme="@style/Theme.AppTamLinh"
         tools:targetApi="31">
         <activity
+            android:name=".ProfileFeature.XemYNghia.XemYNghiaDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileFeature.XemYNghia.XemYNghiaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileFeature.HDGD.HDGDActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileFeature.BXH.UserDetailActivity"
             android:exported="false" />
         <activity

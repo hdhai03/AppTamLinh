@@ -26,6 +26,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
     private final Context context;
     private final FirebaseFirestore db;
     private final ArrayList<CommentModel> commentModelArrayList;
+    DocumentReference dbRef;
 
     public CommentAdapter(Context context, ArrayList<CommentModel> commentModelArrayList) {
         this.context = context;
@@ -47,6 +48,22 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
         setDefaultButton(commentModel.getCommentID(), holder.likeButton);
 
         holder.txtChiTiet.setText(commentModel.getCommentDetail());
+        dbRef = FirebaseFirestore.getInstance().collection("users").document(commentModel.getCommentUserID());
+        dbRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    // Lấy dữ liệu từ DocumentSnapshot
+                    String userName = documentSnapshot.getString("userName");
+                    holder.txtName.setText(userName);
+                } else {
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+            }
+        });
         holder.likeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

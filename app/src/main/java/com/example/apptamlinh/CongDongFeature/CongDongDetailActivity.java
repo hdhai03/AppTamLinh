@@ -3,7 +3,6 @@ package com.example.apptamlinh.CongDongFeature;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -22,11 +21,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.apptamlinh.R;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -34,11 +36,11 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class CongDongDetailActivity extends AppCompatActivity {
     private TextView txtTime, txtName, txtGioiTinh, txtNgaySinh, txtCauHoi, txtChiTiet;
@@ -80,12 +82,7 @@ public class CongDongDetailActivity extends AppCompatActivity {
         edtCMT = findViewById(R.id.edtCMT);
         btnSend = findViewById(R.id.btnSend);
 
-        btnBack_CongDong.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+        btnBack_CongDong.setOnClickListener(v -> onBackPressed());
 
         // Lấy postID từ Intent
         Intent intent = getIntent();
@@ -104,57 +101,50 @@ public class CongDongDetailActivity extends AppCompatActivity {
         mRecyclerView_CMT.setLayoutManager(new LinearLayoutManager(this));
 
         db = FirebaseFirestore.getInstance();
-        commentModels = new ArrayList<CommentModel>();
+        commentModels = new ArrayList<>();
         commentAdapter = new CommentAdapter(CongDongDetailActivity.this, commentModels);
 
         mRecyclerView_CMT.setAdapter(commentAdapter);
 
         EventChangeListener2();
 
-        btnSend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String commentDetail = edtCMT.getText().toString();
-                String commentUserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                String commentPostID = postID;
-                long commentTime = System.currentTimeMillis();
-                long commentLikeCount = 0;
+        btnSend.setOnClickListener(v -> {
+            String commentDetail = edtCMT.getText().toString();
+            String commentUserID = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
+            String commentPostID = postID;
+            long commentTime = System.currentTimeMillis();
+            long commentLikeCount = 0;
 
-                CommentModel commentModel = new CommentModel(commentDetail, commentUserID, commentPostID, commentTime, commentLikeCount);
-
-                addComment(commentModel);
-            }
+            CommentModel commentModel = new CommentModel(commentDetail, commentUserID, commentPostID, commentTime, commentLikeCount);
+            addComment(commentModel);
         });
 
     }
 
     private void EventChangeListener2() {
         db.collection("comment")
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                        if (error != null) {
-                            Log.e("Firestore error", error.getMessage());
-                            return;
-                        }
-                        postModels.clear();
-                        for (DocumentChange dc : value.getDocumentChanges()) {
-                            if (dc.getType() == DocumentChange.Type.ADDED) {
-                                CommentModel commentModel = dc.getDocument().toObject(CommentModel.class);
-                                commentModel.setCommentID(dc.getDocument().getId());
+                .addSnapshotListener((value, error) -> {
+                    if (error != null) {
+                        return;
+                    }
+                    postModels.clear();
+                    assert value != null;
+                    for (DocumentChange dc : value.getDocumentChanges()) {
+                        if (dc.getType() == DocumentChange.Type.ADDED) {
+                            CommentModel commentModel = dc.getDocument().toObject(CommentModel.class);
+                            commentModel.setCommentID(dc.getDocument().getId());
 
-                                if (commentModel.getCommentPostID().equals(postID)) {
-                                    commentModels.add(commentModel);
-                                }
+                            if (commentModel.getCommentPostID().equals(postID)) {
+                                commentModels.add(commentModel);
                             }
-                            Collections.sort(commentModels, new Comparator<CommentModel>() {
-                                @Override
-                                public int compare(CommentModel o1, CommentModel o2) {
-                                    return Long.compare(o2.getCommentLikeCount(), o1.getCommentLikeCount());
-                                }
-                            });
-                            commentAdapter.notifyDataSetChanged();
                         }
+                        commentModels.sort(new Comparator<CommentModel>() {
+                            @Override
+                            public int compare(CommentModel o1, CommentModel o2) {
+                                return Long.compare(o2.getCommentLikeCount(), o1.getCommentLikeCount());
+                            }
+                        });
+                        commentAdapter.notifyDataSetChanged();
                     }
                 });
     }
@@ -238,6 +228,7 @@ public class CongDongDetailActivity extends AppCompatActivity {
                     public void onSuccess(DocumentReference documentReference) {
                         String commentID = documentReference.getId();
                         updateCommentIDsForUser(commentID);
+                        updatePostCommentedUSerID();
                         updateScore();
                     }
                 })
@@ -268,27 +259,84 @@ public class CongDongDetailActivity extends AppCompatActivity {
                 });
     }
 
-    public void updateScore() {
-        DocumentReference userRef = FirebaseFirestore.getInstance()
-                .collection("users")
-                .document(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        Map<String, Object> updatedData = new HashMap<>();
-        int newEnergyValue = 10;
-        updatedData.put("userScore", FieldValue.increment(newEnergyValue));
+    private void updatePostCommentedUSerID() {
+        DocumentReference postRef = FirebaseFirestore.getInstance()
+                .collection("post")
+                .document(postID);
 
-        userRef.update(updatedData)
+        postRef.update("postCommentedUSerID", FieldValue.arrayUnion(FirebaseAuth.getInstance().getCurrentUser().getUid()))
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Log.d("Update User Energy", "Cập nhật năng lượng thành công");
+                        Log.d("Comments", "Comment ID successfully added to user's list");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e("Update User Energy", "Lỗi khi cập nhật năng lượng: " + e.getMessage());
+                        Log.w("Comments", "Failed to add comment ID to user's list", e);
                     }
                 });
     }
+
+    public void updateScore() {
+        DocumentReference userRef = FirebaseFirestore.getInstance()
+                .collection("users")
+                .document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        Map<String, Object> updatedData = new HashMap<>();
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String currentUserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        checkIfUserAlreadyCommented(currentUserID, new OnCheckCommentedListener() {
+            @Override
+            public void onCheckCompleted(boolean alreadyCommented) {
+                if (!alreadyCommented) {
+                    int plusScore = 10;
+                    updatedData.put("userScore", FieldValue.increment(plusScore));
+                    userRef.update(updatedData)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("Update User Energy", "Cập nhật năng lượng thành công");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.e("Update User Energy", "Lỗi khi cập nhật năng lượng: " + e.getMessage());
+                                }
+                            });
+                }
+            }
+        });
+    }
+
+    private void checkIfUserAlreadyCommented(String userID, OnCheckCommentedListener listener) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference postRef = db.collection("post").document(postID);
+
+        postRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        List<String> postCommentedUserIDs = (List<String>) document.get("postCommentedUSerID");
+                        listener.onCheckCompleted(postCommentedUserIDs != null && postCommentedUserIDs.contains(userID));
+                    } else {
+                        listener.onCheckCompleted(false);
+                    }
+                } else {
+                    Log.d("Firestore", "get failed with ", task.getException());
+                    listener.onCheckCompleted(false);
+                }
+            }
+        });
+    }
+
+    private interface OnCheckCommentedListener {
+        void onCheckCompleted(boolean alreadyCommented);
+    }
+
 }
 

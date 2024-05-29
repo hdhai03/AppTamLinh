@@ -1,4 +1,4 @@
-package com.example.apptamlinh.ProfileFeature.BXH;
+package com.example.apptamlinh.ProfileFeature.HDGD;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,9 +15,11 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.apptamlinh.CongDongFeature.CongDongDetailActivity;
+import com.example.apptamlinh.CongDongFeature.PostModel;
 import com.example.apptamlinh.CongDongFeature.RecyclerViewInterface;
 import com.example.apptamlinh.R;
-import com.example.apptamlinh.UserModel;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -25,14 +27,13 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.Objects;
 
-public class BXHActivity extends AppCompatActivity implements RecyclerViewInterface {
+public class HDGDActivity extends AppCompatActivity implements RecyclerViewInterface {
     private Button btnBack;
     RecyclerView mRecyclerView;
-    BxhAdapter bxhAdapter;
-    ArrayList<UserModel> userModels;
+    HDGDAdapter hdgdAdapter;
+    ArrayList<PostModel> postModels = new ArrayList<>();
 
     FirebaseFirestore db;
 
@@ -40,23 +41,12 @@ public class BXHActivity extends AppCompatActivity implements RecyclerViewInterf
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_bxhactivity);
+        setContentView(R.layout.activity_hdgdactivity);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        mRecyclerView = findViewById(R.id.mRecyclerView);
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        db = FirebaseFirestore.getInstance();
-        userModels = new ArrayList<UserModel>();
-        bxhAdapter = new BxhAdapter(BXHActivity.this, userModels, (RecyclerViewInterface) this);
-
-        mRecyclerView.setAdapter(bxhAdapter);
-
-        EventChangeListener();
 
         btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -65,17 +55,31 @@ public class BXHActivity extends AppCompatActivity implements RecyclerViewInterf
                 onBackPressed();
             }
         });
+
+        mRecyclerView = findViewById(R.id.mRecyclerView);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        db = FirebaseFirestore.getInstance();
+        postModels = new ArrayList<PostModel>();
+        hdgdAdapter = new HDGDAdapter(HDGDActivity.this, postModels, (RecyclerViewInterface) this);
+
+        mRecyclerView.setAdapter(hdgdAdapter);
+
+        EventChangeListener();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        userModels.clear();
+        // Clear the current list to avoid duplicates
+        postModels.clear();
+        // Re-fetch the data from Firestore
         EventChangeListener();
     }
 
     private void EventChangeListener() {
-        db.collection("users")
+        db.collection("post")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -83,36 +87,27 @@ public class BXHActivity extends AppCompatActivity implements RecyclerViewInterf
                             Log.e("Firestore error", error.getMessage());
                             return;
                         }
-                        userModels.clear();
+                        postModels.clear();
                         for (DocumentChange dc : value.getDocumentChanges()) {
                             if (dc.getType() == DocumentChange.Type.ADDED) {
-                                String userID = dc.getDocument().getId();
-                                String userName = dc.getDocument().getString("userName");
-                                long userScore = dc.getDocument().getLong("userScore");
-                                UserModel userSummary = new UserModel(userID, userName, userScore);
-                                userModels.add(userSummary);
+                                PostModel postModel = dc.getDocument().toObject(PostModel.class);
+                                postModel.setPostID(dc.getDocument().getId());
+                                if (Objects.equals(postModel.getPostUserID(), FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+                                    postModels.add(postModel);
+                                }
                             }
+                            hdgdAdapter.notifyDataSetChanged();
                         }
-                        Collections.sort(userModels, new Comparator<UserModel>() {
-                            @Override
-                            public int compare(UserModel u1, UserModel u2) {
-                                return Long.compare(u2.getUserScore(), u1.getUserScore());
-                            }
-                        });
-
-                        bxhAdapter.notifyDataSetChanged();
-
                     }
                 });
     }
 
     @Override
     public void onItemClick(int position) {
-        UserModel selectedUser = userModels.get(position);
-        String selectedUserID = selectedUser.getUserID(); // Assuming PostModel has a method getPostID()
-
-        Intent intentItem = new Intent(BXHActivity.this, UserDetailActivity.class);
-        intentItem.putExtra("selectedUserID", selectedUserID);
+        PostModel selectedPost = postModels.get(position);
+        String postID = selectedPost.getPostID(); // Assuming PostModel has a method getPostID()
+        Intent intentItem = new Intent(HDGDActivity.this, CongDongDetailActivity.class);
+        intentItem.putExtra("postID", postID);
         startActivity(intentItem);
     }
 }

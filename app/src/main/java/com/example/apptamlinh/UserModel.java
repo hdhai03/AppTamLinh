@@ -1,6 +1,6 @@
 package com.example.apptamlinh;
 
-public class UserModel {
+public class UserModel implements Comparable<UserModel> {
     String userID, userName;
     long userScore;
 
@@ -35,5 +35,11 @@ public class UserModel {
 
     public void setUserScore(long userScore) {
         this.userScore = userScore;
+    }
+
+    @Override
+    public int compareTo(UserModel other) {
+        // So sánh userScore của 2 đối tượng
+        return Long.compare(this.userScore, other.userScore);
     }
 }

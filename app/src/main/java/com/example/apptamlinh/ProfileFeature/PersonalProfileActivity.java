@@ -14,9 +14,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.apptamlinh.EnergyClass;
 import com.example.apptamlinh.MainActivity;
 import com.example.apptamlinh.ProfileFeature.BXH.BXHActivity;
+import com.example.apptamlinh.ProfileFeature.HDGD.HDGDActivity;
+import com.example.apptamlinh.ProfileFeature.XemYNghia.XemYNghiaActivity;
 import com.example.apptamlinh.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,13 +28,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PersonalProfileActivity extends AppCompatActivity {
     private Button btnBack_Profile, btnEnergy_Profile, btnDangXuat_Profile, btnChinhSua_Profile, btnMoiBanBe_Profile,
-            btnNhapMa_Profile, btnFreeEnergy_Profile, btnTroGiup_Profile, btnBXH_Profile;
+            btnNhapMa_Profile, btnFreeEnergy_Profile, btnTroGiup_Profile, btnBXH_Profile, btnHDGD_Profile, btnXemBai_Profile;
     TextView txtUserName, txtUserBio;
     private FirebaseAuth mAuth;
     DocumentReference dbRef;
-
-    EnergyClass eg = new EnergyClass();
-
     Long userEnergy = null;
 
     @Override
@@ -84,6 +82,8 @@ public class PersonalProfileActivity extends AppCompatActivity {
         btnFreeEnergy_Profile = findViewById(R.id.btnFreeEnergy_Profile);
         btnTroGiup_Profile = findViewById(R.id.btnTroGiup_Profile);
         btnBXH_Profile = findViewById(R.id.btnBXH_Profile);
+        btnHDGD_Profile = findViewById(R.id.btnHDGD_Profile);
+        btnXemBai_Profile = findViewById(R.id.btnXemBai_Profile);
 
         mAuth = FirebaseAuth.getInstance();
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -168,6 +168,22 @@ public class PersonalProfileActivity extends AppCompatActivity {
                 startActivity(intentBXH);
             }
         });
+
+        btnHDGD_Profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentHDGD = new Intent(PersonalProfileActivity.this, HDGDActivity.class);
+                startActivity(intentHDGD);
+            }
+        });
+        btnXemBai_Profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentXembai = new Intent(PersonalProfileActivity.this, XemYNghiaActivity.class);
+                startActivity(intentXembai);
+            }
+        });
+
 
     }
 
