@@ -67,7 +67,7 @@
             <Button
                 android:id="@+id/btnCacChiSo_ThanSH"
                 android:layout_width="380dp"
-                android:layout_height="110dp"
+                android:layout_height="105dp"
                 android:layout_marginTop="28dp"
                 android:layout_gravity="center"
                 android:background="@drawable/btn_cac_chi_so"/>
@@ -75,7 +75,7 @@
             <Button
                 android:id="@+id/btnBDNgaySinh_ThanSH"
                 android:layout_width="380dp"
-                android:layout_height="110dp"
+                android:layout_height="105dp"
                 android:layout_marginTop="28dp"
                 android:layout_gravity="center"
                 android:background="@drawable/btn_bieu_do_ngay_sinh"/>
@@ -83,7 +83,7 @@
             <Button
                 android:id="@+id/btnBDTongHop_ThanSH"
                 android:layout_width="380dp"
-                android:layout_height="110dp"
+                android:layout_height="105dp"
                 android:layout_marginTop="28dp"
                 android:layout_gravity="center"
                 android:background="@drawable/btn_bieu_do_tong_hop"/>
@@ -91,7 +91,7 @@
             <Button
                 android:id="@+id/btnChuKyVS_ThanSH"
                 android:layout_width="380dp"
-                android:layout_height="110dp"
+                android:layout_height="105dp"
                 android:layout_marginTop="28dp"
                 android:layout_gravity="center"
                 android:background="@drawable/btn_chu_ky_van_so"/>
@@ -99,7 +99,7 @@
             <Button
                 android:id="@+id/btnTuongHopSDT_ThanSH"
                 android:layout_width="380dp"
-                android:layout_height="110dp"
+                android:layout_height="105dp"
                 android:layout_marginTop="28dp"
                 android:layout_gravity="center"
                 android:background="@drawable/btn_tuong_hop_sdt"/>
@@ -107,7 +107,7 @@
             <Button
                 android:id="@+id/btnTuongHopTY_ThanSH"
                 android:layout_width="380dp"
-                android:layout_height="110dp"
+                android:layout_height="105dp"
                 android:layout_marginTop="28dp"
                 android:layout_gravity="center"
                 android:background="@drawable/btn_tuong_hop_tinh_yeu"/>

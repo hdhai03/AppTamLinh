@@ -23,6 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class CongDongActivity extends AppCompatActivity implements RecyclerViewInterface {
     private Button btnBack_CongDong, btnGuiCauHoi;
@@ -96,6 +97,12 @@ public class CongDongActivity extends AppCompatActivity implements RecyclerViewI
                                 postModel.setPostID(dc.getDocument().getId());
                                 postModels.add(postModel);
                             }
+                            postModels.sort(new Comparator<PostModel>() {
+                                @Override
+                                public int compare(PostModel o1, PostModel o2) {
+                                    return Long.compare(o2.getPostTime(), o1.getPostTime());
+                                }
+                            });
                             congDongAdapter.notifyDataSetChanged();
                         }
                     }

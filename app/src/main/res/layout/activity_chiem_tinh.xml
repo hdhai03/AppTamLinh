@@ -59,7 +59,7 @@
     <Button
         android:id="@+id/btnChiemTinhTQ_ChiemTinh"
         android:layout_width="380dp"
-        android:layout_height="115dp"
+        android:layout_height="105dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/btn_chiem_tinh_tong_quan"
         app:layout_constraintEnd_toEndOf="parent"

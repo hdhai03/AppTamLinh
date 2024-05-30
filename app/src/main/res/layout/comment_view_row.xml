@@ -53,13 +53,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="6dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="6dp"
                     android:fontFamily="@font/americana_b"
                     android:gravity="start"
-                    android:layout_marginRight="10dp"
                     android:text="Tôi chưa từng có mối tình nào. TÍnh cách không muốn mở lòng cho lắm, cũng không chủ động tiếp xúc, ..........."
                     android:textColor="@color/W1"
-                    android:textSize="8sp"
-                    android:layout_marginBottom="6dp" />
+                    android:textSize="12dp" />
 
                 <ImageButton
                     android:id="@+id/like_button"
